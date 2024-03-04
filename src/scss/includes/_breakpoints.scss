@@ -1,0 +1,19 @@
+$mobile: 541px;
+$tablet: 1025px;
+$desktop: 1920px;
+
+@mixin media($point) {
+  @if $point==desktop {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $point==mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  }
+}

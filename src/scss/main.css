@@ -1,0 +1,16 @@
+/*
+Theme Name: Pointer
+Author: cursor: pointer ;
+Version: 1.0.1
+*/
+.button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.button:hover, .button:focus {
+  outline: none !important;
+}
+/*# sourceMappingURL=main.css.map */
