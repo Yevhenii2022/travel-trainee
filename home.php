@@ -6,7 +6,8 @@ Template Name: Головна сторінка
 get_header();
 ?>
 <main>
-  <h1>HOME PAGE</h1>
+
+  <?php get_template_part('template-parts/hero'); ?>
 
 </main>
 <?php get_footer(); ?>

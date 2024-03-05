@@ -1,0 +1,110 @@
+.hero {
+	position: relative;
+
+	&__video {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		object-fit: cover;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	&__wrapper {
+		padding-bottom: 1.714rem;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+	}
+
+	&__box {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__title {
+		margin-bottom: -6rem;
+		max-width: 52rem;
+		color: $white;
+		font-family: $kudryashev;
+		font-size: 5.5rem;
+		line-height: 1;
+		letter-spacing: -3.1px;
+	}
+
+	&__text {
+		margin: 0 0
+			0.97rem
+			0.214rem;
+		color: $white;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+
+	&__circle {
+		margin-left: 30.5rem;
+		width: 8.241rem;
+		height: 8.241rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $white-bg;
+		border-radius: 50%;
+		animation: spin
+			6s linear
+			infinite;
+
+		svg {
+			width: 1.84rem;
+			height: 1.84rem;
+		}
+
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__inner {
+		display: flex;
+		gap: 0.714rem;
+	}
+
+	&__icon {
+		svg {
+			width: 2.214rem;
+			height: 2.214rem;
+			fill: $white;
+		}
+	}
+
+	&__tel {
+		width: fit-content;
+		svg {
+			width: 3rem;
+			height: 3rem;
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(
+			0deg
+		);
+	}
+	100% {
+		transform: rotate(
+			360deg
+		);
+	}
+}

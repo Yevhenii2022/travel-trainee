@@ -28,7 +28,7 @@
 		<header class="header">
 			<div class="container">
 				<div class="header__wrapper">
-					HEADER
+					<!-- HEADER -->
 				</div>
 			</div>
 		</header>

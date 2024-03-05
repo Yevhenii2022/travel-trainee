@@ -6,6 +6,46 @@ Theme Name: Pointer theme
 Author: cursor: pointer ;
 Version: 1.0.1
 */
+@font-face {
+  font-display: swap;
+  font-family: "Kudryashev";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff2") format("woff2"), url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff") format("woff"), url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff") format("woff"), url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.ttf") format("truetype");
+}
+html {
+  font-size: 0.972vw;
+}
+body {
+  color: #202020;
+  background-color: #fff;
+  font-family: "Helvetica";
+  font-size: 1rem;
+}
+
+.body--popup {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 102.857rem;
+  margin: 0 auto;
+  padding: 0 2.286rem;
+}
+@media (max-width: 541px) {
+  .container {
+    width: 100%;
+    padding: 0 1.067rem;
+  }
+}
+
 .button {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -17,4 +57,91 @@ Version: 1.0.1
 }
 .button:hover, .button:focus {
   outline: none !important;
+}
+.hero {
+  position: relative;
+}
+.hero__video {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero__wrapper {
+  padding-bottom: 1.714rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.hero__box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__title {
+  margin-bottom: -6rem;
+  max-width: 52rem;
+  color: #fff;
+  font-family: "Kudryashev";
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: -3.1px;
+}
+.hero__text {
+  margin: 0 0 0.97rem 0.214rem;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.hero__circle {
+  margin-left: 30.5rem;
+  width: 8.241rem;
+  height: 8.241rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaf2f5;
+  border-radius: 50%;
+  animation: spin 6s linear infinite;
+}
+.hero__circle svg {
+  width: 1.84rem;
+  height: 1.84rem;
+}
+.hero__circle:hover {
+  animation-play-state: paused;
+}
+.hero__contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.hero__inner {
+  display: flex;
+  gap: 0.714rem;
+}
+.hero__icon svg {
+  width: 2.214rem;
+  height: 2.214rem;
+  fill: #fff;
+}
+.hero__tel {
+  width: fit-content;
+}
+.hero__tel svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

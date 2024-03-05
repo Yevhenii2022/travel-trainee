@@ -1,3 +1,46 @@
+html {
+	font-size: 0.972vw; // font size 14px
+
+	@include media(
+		tablet
+	) {
+		// font-size: 1.4vw;
+	}
+	@include media(
+		mobile
+	) {
+		// font-size: 4vw; // font size 15px
+	}
+}
+
+body {
+	color: $black-text;
+	background-color: $white;
+	font-family: $helvetica;
+	font-size: 1rem;
+}
+// button {
+// 	margin: 0;
+// 	padding: 0;
+// 	background-color: transparent;
+// 	border: none;
+// }
+.body {
+	&--popup {
+		overflow: hidden;
+	}
+}
+
 .container {
-	
+	max-width: 102.857rem;
+	margin: 0 auto;
+	padding: 0
+		2.286rem;
+	@include media(
+		mobile
+	) {
+		width: 100%;
+		padding: 0
+			1.067rem;
+	}
 }
