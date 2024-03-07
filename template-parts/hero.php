@@ -18,9 +18,10 @@ $svg_content = file_get_contents($file_path);
 
   <div class="container">
     <div class="hero__wrapper">
+
       <div class="hero__box">
         <p class="hero__text"><?= $subtitle ?></p>
-        <h1 class="main__title hero__title"><?php echo $title ?></h1>
+        <h1 class="main__title"><?php echo $title ?></h1>
         <div class="hero__circle">
           <?php if ($svg_content !== false) {
             echo $svg_content;
@@ -28,9 +29,7 @@ $svg_content = file_get_contents($file_path);
         </div>
       </div>
 
-
       <div class="hero__contacts">
-
         <div class="hero__inner">
           <?php
           $instagram = get_field('instagram', 'options');
@@ -97,10 +96,6 @@ $svg_content = file_get_contents($file_path);
           </a>
         <?php endif; ?>
       </div>
-
-
-
-
     </div>
   </div>
 </section>

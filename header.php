@@ -28,7 +28,72 @@
 		<header class="header">
 			<div class="container">
 				<div class="header__wrapper">
-					<!-- HEADER -->
+
+					<div class="<?= is_front_page() ? 'header__logo--filter' : '' ?>">
+						<?= the_custom_logo(); ?>
+					</div>
+
+					<div class="header__inner">
+						<?php wp_nav_menu([
+							// 'theme_location'       => 'header',
+							'container'            => false,
+							'menu_class'           => 'menu__list',
+							'menu_id'              => false,
+							'echo'                 => true,
+							// 'items_wrap'           => '<ul id="%1$s" class="header__list %2$s">%3$s</ul>',
+						]);
+						?>
+
+
+						<?php
+						$btn_text = get_field('header_btn_lang', 'options') ?? '';
+						?>
+						<div class="button button__lang">
+							<?= $btn_text ?>
+							<svg viewBox="0 0 10 7" fill="none">
+								<path d="M0.757359 1.24264L5 5.48528L9.24264 1.24264" stroke-linecap="round" />
+							</svg>
+						</div>
+
+
+
+						<?php
+						$search_icon = get_field('search_icon', 'options');
+						$file_path = get_attached_file($search_icon);
+						$svg_content = file_get_contents($file_path);
+						?>
+						<div class="header__search">
+							<?php if ($svg_content !== false) {
+								echo $svg_content;
+							} ?>
+						</div>
+
+
+						<?php
+						$basket_icon = get_field('basket_icon', 'options');
+						$file_path = get_attached_file($basket_icon);
+						$svg_content = file_get_contents($file_path);
+						?>
+						<div class="header__basket">
+							<?php if ($svg_content !== false) {
+								echo $svg_content;
+							} ?>
+						</div>
+
+
+
+
+						<?php
+						$btn_text = get_field('header_btn_contact', 'options') ?? '';
+						?>
+						<div class="header__button button">
+							<?= $btn_text ?>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
+								<path stroke="#202020" stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+							</svg>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</header>

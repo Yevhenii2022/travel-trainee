@@ -19,12 +19,10 @@ body {
 	font-family: $helvetica;
 	font-size: 1rem;
 }
-// button {
-// 	margin: 0;
-// 	padding: 0;
-// 	background-color: transparent;
-// 	border: none;
-// }
+button {
+	background-color: transparent;
+	border: none;
+}
 .body {
 	&--popup {
 		overflow: hidden;
@@ -36,6 +34,12 @@ body {
 	margin: 0 auto;
 	padding: 0
 		2.286rem;
+
+	&--right {
+		padding: 0 0 0
+			2.286rem;
+	}
+
 	@include media(
 		mobile
 	) {

@@ -1,0 +1,29 @@
+.about {
+	padding-bottom: 8.571rem;
+	background-color: $white-bg;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 5.286rem;
+
+		img {
+			width: 51%;
+		}
+	}
+
+	&__inner {
+		width: 49%;
+
+		p {
+			font-size: 1.429rem;
+			line-height: 1.2;
+		}
+
+		p:not(
+				:last-child
+			) {
+			margin-bottom: 2.1rem;
+		}
+	}
+}

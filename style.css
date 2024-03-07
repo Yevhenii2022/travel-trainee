@@ -30,6 +30,11 @@ body {
   font-size: 1rem;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .body--popup {
   overflow: hidden;
 }
@@ -39,11 +44,32 @@ body {
   margin: 0 auto;
   padding: 0 2.286rem;
 }
+.container--right {
+  padding: 0 0 0 2.286rem;
+}
 @media (max-width: 541px) {
   .container {
     width: 100%;
     padding: 0 1.067rem;
   }
+}
+
+.main__title {
+  margin-bottom: -6rem;
+  max-width: 52rem;
+  color: #fff;
+  font-family: "Kudryashev";
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: -3.1px;
+}
+
+.section-title {
+  margin-bottom: 1.714rem;
+  font-family: "Kudryashev";
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: -3.1px;
 }
 
 .button {
@@ -54,15 +80,96 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.82rem 1.2rem;
+  background-color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.button svg {
+  width: 0.786rem;
+  height: 0.786rem;
 }
 .button:hover, .button:focus {
   outline: none !important;
 }
+.button__lang {
+  margin-right: 1.4rem;
+  gap: 0.34rem;
+  padding: 0.5rem 0;
+  color: #fff;
+  background-color: transparent;
+}
+.button__lang svg {
+  stroke: #fff;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  transition: all 1s ease-in-out;
+}
+.header--hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.header__wrapper {
+  height: 6.857rem;
+  display: flex;
+  padding: 1.143rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__search {
+  margin-right: 1.143rem;
+  width: 1.357rem;
+  height: 1.357rem;
+  cursor: pointer;
+}
+.header__search svg {
+  fill: #fff;
+}
+.header__basket {
+  margin-right: 2.286rem;
+  width: 1.357rem;
+  height: 1.357rem;
+  cursor: pointer;
+}
+.header__basket svg {
+  stroke: #fff;
+}
+.header__logo--filter {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(101%) contrast(101%);
+}
+
+.custom-logo {
+  width: 8.571rem;
+  height: 4.571rem;
+}
+
+.menu__list {
+  margin-right: 15.5rem;
+  display: flex;
+  gap: 2.34rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .hero {
   position: relative;
 }
 .hero__video {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   object-fit: cover;
@@ -82,15 +189,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.hero__title {
-  margin-bottom: -6rem;
-  max-width: 52rem;
-  color: #fff;
-  font-family: "Kudryashev";
-  font-size: 5.5rem;
-  line-height: 1;
-  letter-spacing: -3.1px;
-}
 .hero__text {
   margin: 0 0 0.97rem 0.214rem;
   color: #fff;
@@ -106,14 +204,17 @@ body {
   justify-content: center;
   background-color: #eaf2f5;
   border-radius: 50%;
+  cursor: pointer;
   animation: spin 6s linear infinite;
+  transition: all 0.3s ease-in-out;
+}
+.hero__circle:hover, .hero__circle:focus {
+  animation: none;
+  transform: rotate(0deg);
 }
 .hero__circle svg {
   width: 1.84rem;
   height: 1.84rem;
-}
-.hero__circle:hover {
-  animation-play-state: paused;
 }
 .hero__contacts {
   display: flex;
@@ -144,4 +245,26 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+.about {
+  padding-bottom: 8.571rem;
+  background-color: #eaf2f5;
+}
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5.286rem;
+}
+.about__wrapper img {
+  width: 51%;
+}
+.about__inner {
+  width: 49%;
+}
+.about__inner p {
+  font-size: 1.429rem;
+  line-height: 1.2;
+}
+.about__inner p:not(:last-child) {
+  margin-bottom: 2.1rem;
 }
