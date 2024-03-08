@@ -9,7 +9,7 @@ $image = get_field('about_img')
     <div class="about__wrapper">
 
       <div class="about__inner">
-        <h2 class="section-title"><?= $title ?></h2>
+        <h2 class="section__title"><?= $title ?></h2>
         <?= $text ?>
       </div>
 

@@ -1,4 +1,16 @@
 .button {
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.82rem
+		1.2rem;
+	color: $white;
+	background-color: $black-text;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: $transition;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -6,19 +18,11 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.82rem
-		1.2rem;
-	background-color: $white;
-	cursor: pointer;
-	text-transform: uppercase;
 
 	svg {
 		width: 0.786rem;
 		height: 0.786rem;
+		stroke: $white;
 	}
 
 	&:hover,
@@ -27,6 +31,7 @@
 	}
 
 	&:active {
+		background-color: $black;
 	}
 
 	&__lang {

@@ -1,0 +1,33 @@
+.gallery {
+	padding: 8.4rem 0;
+	background-color: $white-bg;
+
+	@include media(
+		mobile
+	) {
+		// padding-bottom: 13.333rem;
+	}
+
+	&__inner {
+		margin-bottom: 3.7rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+}
+
+.swiper
+	.swiper-slide {
+	height: 21.429rem;
+}
+
+.swiper
+	.swiper-slide:nth-child(
+		2n
+	) {
+	height: 35.214rem;
+}

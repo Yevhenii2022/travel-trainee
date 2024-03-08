@@ -69,7 +69,7 @@ eval("document.addEventListener(\"DOMContentLoaded\", function () {\n  var phone
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _parts_parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/parts */ \"./src/js/parts/parts.js\");\n/* harmony import */ var _libraries_libraries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libraries/libraries */ \"./src/js/libraries/libraries.js\");\n/* harmony import */ var _parts_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/slider */ \"./src/js/parts/slider.js\");\n/* harmony import */ var _parts_slider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_parts_slider__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _parts_parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/parts */ \"./src/js/parts/parts.js\");\n/* harmony import */ var _libraries_libraries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libraries/libraries */ \"./src/js/libraries/libraries.js\");\n\r\n\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/main.js?");
 
 /***/ }),
 
@@ -90,7 +90,7 @@ eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/js/parts/header.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/parts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ \"./src/js/parts/slider.js\");\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/js/parts/header.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./video */ \"./src/js/parts/video.js\");\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_video__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/parts.js?");
 
 /***/ }),
 
@@ -100,7 +100,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hea
   \********************************/
 /***/ (() => {
 
-eval("document.addEventListener(\"DOMContentLoaded\", function () {\r\n\tconst swiper = new Swiper(\".swiper__swiper\", {\r\n\t\tloop: true,\r\n\t\teffect: \"fade\",\r\n\r\n\t\t// If we need pagination\r\n\t\tpagination: {\r\n\t\t\tel: \".swiper__pagination\",\r\n\t\t\tclickable: true,\r\n\t\t},\r\n\r\n\t\t// Navigation arrows\r\n\t\tnavigation: {\r\n\t\t\tnextEl: \".swiper__nav--next\",\r\n\t\t\tprevEl: \".swiper__nav--prev\",\r\n\t\t},\r\n\t});\r\n\r\n\t\r\n});\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/slider.js?");
+eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst swiper =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.swiper__swiper',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\teffect:\r\n\t\t\t\t\t\t'fade',\r\n\r\n\t\t\t\t\t// If we need pagination\r\n\t\t\t\t\tpagination:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tel: '.swiper__pagination',\r\n\t\t\t\t\t\t\tclickable: true,\r\n\t\t\t\t\t\t},\r\n\r\n\t\t\t\t\t// Navigation arrows\r\n\t\t\t\t\tnavigation:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnextEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--next',\r\n\t\t\t\t\t\t\tprevEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--prev',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst homeGallery =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery__slider',\r\n\t\t\t\t{\r\n\t\t\t\t\tslidesPerView: 2.7,\r\n\t\t\t\t\tspaceBetween: 10,\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspeed: 1000,\r\n\t\t\t\t\tcenteredSlides: true,\r\n\t\t\t\t\tkeyboard:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tenabled: true,\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tbreakpoints:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t541: {\r\n\t\t\t\t\t\t\t\t// slidesPerView: 2,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t1024: {\r\n\t\t\t\t\t\t\t\tspaceBetween: 16,\r\n\t\t\t\t\t\t\t\tslidesPerView: 3.7,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/slider.js?");
+
+/***/ }),
+
+/***/ "./src/js/parts/video.js":
+/*!*******************************!*\
+  !*** ./src/js/parts/video.js ***!
+  \*******************************/
+/***/ (() => {
+
+eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst video =\r\n\t\t\tdocument.getElementById(\r\n\t\t\t\t'custom-video',\r\n\t\t\t);\r\n\t\tconst playPauseButton =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.video__play',\r\n\t\t\t);\r\n\t\tconst playPauseIcon =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.video__icon',\r\n\t\t\t);\r\n\r\n\t\tplayPauseButton.addEventListener(\r\n\t\t\t'click',\r\n\t\t\t() => {\r\n\t\t\t\tif (\r\n\t\t\t\t\tvideo.paused\r\n\t\t\t\t) {\r\n\t\t\t\t\tvideo.play();\r\n\t\t\t\t\tplayPauseIcon.innerHTML =\r\n\t\t\t\t\t\t'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 15 19\" fill=\"none\"><path fill=\"#fff\" d=\"M0 0h6v19H0zM9 0h6v19H9z\"/></svg>';\r\n\t\t\t\t} else {\r\n\t\t\t\t\tvideo.pause();\r\n\t\t\t\t\tplayPauseIcon.innerHTML =\r\n\t\t\t\t\t\t'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 15 19\" fill=\"none\"><path fill=\"#fff\" d=\"M0 0v19l15-9.5L0 0Z\" /></svg>';\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t);\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/video.js?");
 
 /***/ })
 

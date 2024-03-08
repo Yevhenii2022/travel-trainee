@@ -35,12 +35,11 @@
 
 					<div class="header__inner">
 						<?php wp_nav_menu([
-							// 'theme_location'       => 'header',
+							'theme_location'       => 'header_menu',
 							'container'            => false,
-							'menu_class'           => 'menu__list',
+							'menu_class'           => 'header__list',
 							'menu_id'              => false,
 							'echo'                 => true,
-							// 'items_wrap'           => '<ul id="%1$s" class="header__list %2$s">%3$s</ul>',
 						]);
 						?>
 
@@ -89,7 +88,7 @@
 						<div class="header__button button">
 							<?= $btn_text ?>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-								<path stroke="#202020" stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 							</svg>
 						</div>
 

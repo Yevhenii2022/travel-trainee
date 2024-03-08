@@ -2,7 +2,7 @@
 $title = get_field('hero_title') ?? '';
 $subtitle = get_field('hero_subtitle') ?? '';
 $icon_txt = get_field('hero_icon_txt') ?? '';
-$video = get_field('video');
+$video = get_field('hero_video');
 $icon = get_field('hero_icon');
 $file_path = get_attached_file($icon);
 $svg_content = file_get_contents($file_path);

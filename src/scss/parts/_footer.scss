@@ -1,3 +1,48 @@
-.footer{
-    
+.footer {
+	padding: 3.429rem
+		0;
+	background-color: $white-bg;
+	border-top: 0.071rem
+		solid
+		$black-text;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__inner {
+		display: flex;
+		gap: 8rem;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.03rem;
+		text-transform: uppercase;
+	}
+
+	&__socials {
+		display: flex;
+		gap: 0.571rem;
+		align-items: flex-end;
+	}
+
+	&__icon {
+		svg {
+			width: 1.786rem;
+			height: 1.786rem;
+			fill: $black-text;
+		}
+	}
+
+	&__contacts {
+		margin-right: 1.786rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		line-height: 1;
+		text-transform: uppercase;
+	}
 }

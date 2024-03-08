@@ -28,6 +28,14 @@
 		align-items: center;
 	}
 
+	&__list {
+		margin-right: 15.5rem;
+		display: flex;
+		gap: 2.34rem;
+		color: $white;
+		text-transform: uppercase;
+	}
+
 	&__search {
 		margin-right: 1.143rem;
 		width: 1.357rem;
@@ -68,12 +76,4 @@
 .custom-logo {
 	width: 8.571rem;
 	height: 4.571rem;
-}
-
-.menu__list {
-	margin-right: 15.5rem;
-	display: flex;
-	gap: 2.34rem;
-	color: $white;
-	text-transform: uppercase;
 }
