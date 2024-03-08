@@ -9,26 +9,29 @@ document.addEventListener(
 			document.querySelector(
 				'.video__play',
 			);
-		const playPauseIcon =
-			document.querySelector(
-				'.video__icon',
-			);
 
-		playPauseButton.addEventListener(
-			'click',
+		const togglePlayPause =
 			() => {
 				if (
 					video.paused
 				) {
 					video.play();
-					playPauseIcon.innerHTML =
-						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 19" fill="none"><path fill="#fff" d="M0 0h6v19H0zM9 0h6v19H9z"/></svg>';
+					playPauseButton.innerHTML =
+						'';
 				} else {
 					video.pause();
-					playPauseIcon.innerHTML =
-						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 19" fill="none"><path fill="#fff" d="M0 0v19l15-9.5L0 0Z" /></svg>';
+					playPauseButton.innerHTML =
+						'<svg class="video__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 19" fill="none"><path fill="#fff" d="M0 0v19l15-9.5L0 0Z" /></svg> Смотреть видео';
 				}
-			},
+			};
+
+		video.addEventListener(
+			'click',
+			togglePlayPause,
+		);
+		playPauseButton.addEventListener(
+			'click',
+			togglePlayPause,
 		);
 	},
 );

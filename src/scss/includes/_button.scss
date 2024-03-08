@@ -39,10 +39,26 @@
 		gap: 0.34rem;
 		padding: 0.5rem
 			0;
-		color: $white;
+		color: $black-text;
 		background-color: transparent;
 		svg {
-			stroke: $white;
+			stroke: $black-text;
+		}
+
+		&:active {
+			background-color: transparent;
+		}
+	}
+
+	&--white {
+		color: $black-text;
+		background-color: $white;
+		svg {
+			stroke: $black-text;
+		}
+
+		&:active {
+			background-color: $white;
 		}
 	}
 }

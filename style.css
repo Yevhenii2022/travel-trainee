@@ -107,11 +107,24 @@ button {
   margin-right: 1.4rem;
   gap: 0.34rem;
   padding: 0.5rem 0;
-  color: #fff;
+  color: #202020;
   background-color: transparent;
 }
 .button__lang svg {
-  stroke: #fff;
+  stroke: #202020;
+}
+.button__lang:active {
+  background-color: transparent;
+}
+.button--white {
+  color: #202020;
+  background-color: #fff;
+}
+.button--white svg {
+  stroke: #202020;
+}
+.button--white:active {
+  background-color: #fff;
 }
 
 .header {
@@ -141,7 +154,6 @@ button {
   margin-right: 15.5rem;
   display: flex;
   gap: 2.34rem;
-  color: #fff;
   text-transform: uppercase;
 }
 .header__search {
@@ -151,7 +163,7 @@ button {
   cursor: pointer;
 }
 .header__search svg {
-  fill: #fff;
+  fill: #202020;
 }
 .header__basket {
   margin-right: 2.286rem;
@@ -160,7 +172,24 @@ button {
   cursor: pointer;
 }
 .header__basket svg {
+  stroke: #202020;
+}
+.header--white {
+  color: #fff;
+}
+.header--white li:after {
+  background-color: #fff;
+}
+.header--white li:hover:after {
+  background-color: #fff;
+}
+.header--stroke svg {
   stroke: #fff;
+  fill: none;
+}
+.header--fill svg {
+  fill: #fff;
+  stroke: none;
 }
 .header__logo--filter {
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(101%) contrast(101%);
@@ -169,6 +198,48 @@ button {
 .custom-logo {
   width: 8.571rem;
   height: 4.571rem;
+}
+
+.menu-item {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+.menu-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -0.214rem;
+  width: 0;
+  height: 0.071rem;
+  background-color: #202020;
+  transition: width 0.5s;
+}
+.menu-item:hover:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -0.214rem;
+  height: 0.071rem;
+  background-color: #202020;
+  transition: width 0.5s;
+}
+
+.current-menu-item {
+  position: relative;
+}
+.current-menu-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.214rem;
+  width: 100%;
+  height: 0.071rem;
+  background-color: #202020;
 }
 
 .footer {
@@ -249,11 +320,10 @@ button {
   background-color: #eaf2f5;
   border-radius: 50%;
   cursor: pointer;
-  animation: spin 6s linear infinite;
+  transform: rotate(30deg);
   transition: all 0.3s ease-in-out;
 }
 .hero__circle:hover, .hero__circle:focus {
-  animation: none;
   transform: rotate(0deg);
 }
 .hero__circle svg {
@@ -282,14 +352,6 @@ button {
   height: 3rem;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .about {
   padding-bottom: 8.571rem;
   background-color: #eaf2f5;
@@ -321,6 +383,7 @@ button {
   width: 100%;
   height: 53.143rem;
   object-fit: cover;
+  cursor: pointer;
 }
 .video__play {
   display: flex;

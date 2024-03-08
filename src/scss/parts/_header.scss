@@ -32,7 +32,6 @@
 		margin-right: 15.5rem;
 		display: flex;
 		gap: 2.34rem;
-		color: $white;
 		text-transform: uppercase;
 	}
 
@@ -42,7 +41,7 @@
 		height: 1.357rem;
 		cursor: pointer;
 		svg {
-			fill: $white;
+			fill: $black-text;
 		}
 	}
 	&__basket {
@@ -51,7 +50,35 @@
 		height: 1.357rem;
 		cursor: pointer;
 		svg {
+			stroke: $black-text;
+		}
+	}
+
+	&--white {
+		color: $white;
+
+		li {
+			&:after {
+				background-color: $white;
+			}
+
+			&:hover:after {
+				background-color: $white;
+			}
+		}
+	}
+
+	&--stroke {
+		svg {
 			stroke: $white;
+			fill: none;
+		}
+	}
+
+	&--fill {
+		svg {
+			fill: $white;
+			stroke: none;
 		}
 	}
 
@@ -76,4 +103,50 @@
 .custom-logo {
 	width: 8.571rem;
 	height: 4.571rem;
+}
+
+.menu-item {
+	width: fit-content;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		bottom: -0.214rem;
+		width: 0;
+		height: 0.071rem;
+		background-color: $black-text;
+		transition: width
+			0.5s;
+	}
+
+	&:hover:after {
+		content: '';
+		width: 100%;
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -0.214rem;
+		height: 0.071rem;
+		background-color: $black-text;
+		transition: width
+			0.5s;
+	}
+}
+
+.current-menu-item {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -0.214rem;
+		width: 100%;
+		height: 0.071rem;
+		background-color: $black-text;
+	}
 }

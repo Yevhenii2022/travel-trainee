@@ -44,14 +44,13 @@
 		background-color: $white-bg;
 		border-radius: 50%;
 		cursor: pointer;
-		animation: spin
-			6s linear
-			infinite;
+		transform: rotate(
+			30deg
+		);
 		transition: $transition;
 
 		&:hover,
 		&:focus {
-			animation: none;
 			transform: rotate(
 				0deg
 			);
@@ -88,18 +87,5 @@
 			width: 3rem;
 			height: 3rem;
 		}
-	}
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(
-			0deg
-		);
-	}
-	100% {
-		transform: rotate(
-			360deg
-		);
 	}
 }
