@@ -1,0 +1,38 @@
+.gallery-page {
+	padding: 12.571rem
+		0 8.571rem 0;
+	background-color: $white-bg;
+
+	@include media(
+		mobile
+	) {
+		// padding-bottom: 13.333rem;
+	}
+
+	&__title {
+		margin-bottom: 2.286rem;
+		text-align: center;
+	}
+
+	&__slider {
+		img {
+			width: 15.429rem;
+			height: 10.5rem;
+		}
+	}
+
+	&__slider2 {
+		display: flex;
+		justify-content: center;
+		img {
+			margin-bottom: 4rem;
+			width: 56.857rem;
+			height: 38.643rem;
+			align-self: center;
+		}
+	}
+}
+
+.swiper-pagination {
+	bottom: 1.143rem;
+}

@@ -417,11 +417,36 @@ button {
 .gallery__title {
   margin-bottom: 0;
 }
-
-.swiper .swiper-slide {
+.gallery__slider .swiper-slide {
   height: 21.429rem;
 }
-
-.swiper .swiper-slide:nth-child(2n) {
+.gallery__slider .swiper-slide:nth-child(2n) {
   height: 35.214rem;
+}
+
+.gallery-page {
+  padding: 12.571rem 0 8.571rem 0;
+  background-color: #eaf2f5;
+}
+.gallery-page__title {
+  margin-bottom: 2.286rem;
+  text-align: center;
+}
+.gallery-page__slider img {
+  width: 15.429rem;
+  height: 10.5rem;
+}
+.gallery-page__slider2 {
+  display: flex;
+  justify-content: center;
+}
+.gallery-page__slider2 img {
+  margin-bottom: 4rem;
+  width: 56.857rem;
+  height: 38.643rem;
+  align-self: center;
+}
+
+.swiper-pagination {
+  bottom: 1.143rem;
 }

@@ -52,5 +52,43 @@ document.addEventListener(
 						},
 				},
 			);
+
+		const galleryPage =
+			new Swiper(
+				'.gallery-page__slider',
+				{
+					loop: true,
+					spaceBetween: 16,
+					slidesPerView: 6.5,
+					centeredSlides: true,
+					freeMode: true,
+					watchSlidesProgress: true,
+				},
+			);
+
+		const galleryPage2 =
+			new Swiper(
+				'.gallery-page__slider2',
+				{
+					loop: true,
+					spaceBetween: 10,
+					pagination:
+						{
+							el: '.swiper-pagination',
+							type: 'fraction',
+						},
+					navigation:
+						{
+							nextEl:
+								'.swiper-button-next',
+							prevEl:
+								'.swiper-button-prev',
+						},
+					thumbs: {
+						swiper:
+							swiper,
+					},
+				},
+			);
 	},
 );
