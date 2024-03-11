@@ -1,6 +1,6 @@
-/*!*****************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
-  \*****************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../../../node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
+  \*************************************************************************************************************************************************************************/
 /*
 Theme Name: Pointer theme
 Author: cursor: pointer ;
@@ -186,10 +186,18 @@ button {
 .header--stroke svg {
   stroke: #fff;
   fill: none;
+  transition: all 0.3s ease-in-out;
+}
+.header--stroke svg:hover, .header--stroke svg:focus {
+  stroke: #eaf2f5;
 }
 .header--fill svg {
   fill: #fff;
   stroke: none;
+  transition: all 0.3s ease-in-out;
+}
+.header--fill svg:hover, .header--fill svg:focus {
+  fill: #eaf2f5;
 }
 .header__logo--filter {
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(101%) contrast(101%);
@@ -270,6 +278,10 @@ button {
   width: 1.786rem;
   height: 1.786rem;
   fill: #202020;
+  transition: all 0.3s ease-in-out;
+}
+.footer__icon svg:hover, .footer__icon svg:focus {
+  transform: scale(1.13);
 }
 .footer__contacts {
   margin-right: 1.786rem;
@@ -343,6 +355,10 @@ button {
   width: 2.214rem;
   height: 2.214rem;
   fill: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.hero__icon svg:hover, .hero__icon svg:focus {
+  transform: scale(1.13);
 }
 .hero__tel {
   width: fit-content;
@@ -350,6 +366,10 @@ button {
 .hero__tel svg {
   width: 3rem;
   height: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+.hero__tel svg:hover, .hero__tel svg:focus {
+  transform: scale(1.13);
 }
 
 .about {

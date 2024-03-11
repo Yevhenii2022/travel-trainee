@@ -78,6 +78,14 @@
 			width: 2.214rem;
 			height: 2.214rem;
 			fill: $white;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				transform: scale(
+					1.13
+				);
+			}
 		}
 	}
 
@@ -86,6 +94,14 @@
 		svg {
 			width: 3rem;
 			height: 3rem;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				transform: scale(
+					1.13
+				);
+			}
 		}
 	}
 }

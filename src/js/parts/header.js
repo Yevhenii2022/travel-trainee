@@ -11,9 +11,8 @@ document.addEventListener(
 			'scroll',
 			function () {
 				var scrolled =
-					window.PageYOffset ||
-					this
-						.document
+					window.pageYOffset ||
+					document
 						.documentElement
 						.scrollTop;
 
@@ -39,6 +38,38 @@ document.addEventListener(
 				}
 				scrollPrev =
 					scrolled;
+
+				const body =
+					document.querySelector(
+						'body',
+					);
+				if (
+					body.classList.contains(
+						'home',
+					)
+				) {
+					if (
+						scrolled >
+						80
+					) {
+						header.style.backgroundColor =
+							'#547fb8';
+					} else {
+						header.style.backgroundColor =
+							'';
+					}
+				} else {
+					if (
+						scrolled >
+						80
+					) {
+						header.style.backgroundColor =
+							'#FFFFFF';
+					} else {
+						header.style.backgroundColor =
+							'';
+					}
+				}
 			},
 		);
 	},

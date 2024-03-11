@@ -34,6 +34,14 @@
 			width: 1.786rem;
 			height: 1.786rem;
 			fill: $black-text;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				transform: scale(
+					1.13
+				);
+			}
 		}
 	}
 

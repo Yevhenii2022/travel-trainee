@@ -72,6 +72,12 @@
 		svg {
 			stroke: $white;
 			fill: none;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				stroke: $white-bg;
+			}
 		}
 	}
 
@@ -79,6 +85,12 @@
 		svg {
 			fill: $white;
 			stroke: none;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				fill: $white-bg;
+			}
 		}
 	}
 
