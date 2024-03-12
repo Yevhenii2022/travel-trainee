@@ -63,3 +63,38 @@
 		}
 	}
 }
+
+.form__button {
+	margin-top: 0.682rem;
+	width: fit-content;
+	padding: 0.96rem
+		2.429rem
+		0.786rem
+		1.143rem;
+	font-family: inherit;
+	font-size: 1rem;
+	color: $white;
+	background-color: $black-text;
+	cursor: pointer;
+	text-transform: uppercase;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 12' fill='none'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1'/%3E%3C/svg%3E");
+	background-size: 0.9rem
+		0.9rem;
+	background-repeat: no-repeat;
+	background-position: 93.3%
+		center;
+	transition: $transition;
+
+	&:active {
+		background-color: $black;
+	}
+
+	&:disabled {
+		background-color: rgba(
+			32,
+			32,
+			32,
+			0.4
+		);
+	}
+}

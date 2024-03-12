@@ -28,6 +28,9 @@ body {
   background-color: #fff;
   font-family: "Helvetica";
   font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 button {
@@ -126,6 +129,88 @@ button {
 }
 .button--white:active {
   background-color: #fff;
+}
+
+.form__button {
+  margin-top: 0.682rem;
+  width: fit-content;
+  padding: 0.96rem 2.429rem 0.786rem 1.143rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #202020;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 12' fill='none'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1'/%3E%3C/svg%3E");
+  background-size: 0.9rem 0.9rem;
+  background-repeat: no-repeat;
+  background-position: 93.3% center;
+  transition: all 0.3s ease-in-out;
+}
+.form__button:active {
+  background-color: #000;
+}
+.form__button:disabled {
+  background-color: rgba(32, 32, 32, 0.4);
+}
+
+.form__input {
+  margin-bottom: 2rem;
+}
+.form__input label {
+  position: relative;
+}
+.form__input label input,
+.form__input label textarea {
+  width: 100%;
+  padding-bottom: 0.571rem;
+  border-bottom: 0.071rem solid rgba(32, 32, 32, 0.4);
+  font-size: 0.714rem;
+  line-height: 1.2;
+  transition: all 0.3s ease-in-out;
+}
+.form__input label input::placeholder,
+.form__input label textarea::placeholder {
+  color: #202020;
+  text-transform: uppercase;
+}
+.form__input label input:hover, .form__input label input:focus, .form__input label input:active,
+.form__input label textarea:hover,
+.form__input label textarea:focus,
+.form__input label textarea:active {
+  border-color: #202020;
+}
+.form__input label textarea {
+  height: 6rem;
+  font-size: 0.9rem;
+  resize: none;
+}
+.form__input label input.wpcf7-not-valid {
+  border-color: #ff4040;
+}
+.form__input:has(.wpcf7-not-valid) .form__icon {
+  display: block;
+}
+.form__icon {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.357rem;
+  height: 1.357rem;
+  cursor: pointer;
+}
+
+.wpcf7-not-valid-tip {
+  display: none;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7-response-output {
+  display: none;
 }
 
 .header {
@@ -473,7 +558,7 @@ button {
   line-height: 1.2;
 }
 .popup__inner p {
-  margin-bottom: 2.286rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
 }
 .popup__button {

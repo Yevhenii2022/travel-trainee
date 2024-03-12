@@ -62,6 +62,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _par
 
 /***/ }),
 
+/***/ "./src/js/parts/form.js":
+/*!******************************!*\
+  !*** ./src/js/parts/form.js ***!
+  \******************************/
+/***/ (() => {
+
+eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst wpcf7Elm =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.wpcf7',\r\n\t\t\t);\r\n\t\tconst submitButton =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.form__button',\r\n\t\t\t);\r\n\t\tconst formInput =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.wpcf7-form-control',\r\n\t\t\t);\r\n\t\tconst deleteIcon =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.form__icon',\r\n\t\t\t);\r\n\t\tconst popover =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.popup',\r\n\t\t\t);\r\n\r\n\t\tif (wpcf7Elm) {\r\n\t\t\twpcf7Elm.addEventListener(\r\n\t\t\t\t'wpcf7beforesubmit',\r\n\t\t\t\t() => {\r\n\t\t\t\t\tif (\r\n\t\t\t\t\t\tsubmitButton\r\n\t\t\t\t\t) {\r\n\t\t\t\t\t\tsubmitButton.setAttribute(\r\n\t\t\t\t\t\t\t'disabled',\r\n\t\t\t\t\t\t\t'disabled',\r\n\t\t\t\t\t\t);\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\tfalse,\r\n\t\t\t);\r\n\r\n\t\t\twpcf7Elm.addEventListener(\r\n\t\t\t\t'wpcf7mailsent',\r\n\t\t\t\t// \"wpcf7mailfailed\",\r\n\t\t\t\t// \"wpcf7submit\",\r\n\t\t\t\tevent => {\r\n\t\t\t\t\tconst form =\r\n\t\t\t\t\t\tevent.target;\r\n\t\t\t\t\tform.reset();\r\n\t\t\t\t\tpopover.hidePopover();\r\n\t\t\t\t},\r\n\t\t\t\tfalse,\r\n\t\t\t);\r\n\r\n\t\t\twpcf7Elm.addEventListener(\r\n\t\t\t\t'wpcf7submit',\r\n\t\t\t\t() => {\r\n\t\t\t\t\tif (\r\n\t\t\t\t\t\tsubmitButton\r\n\t\t\t\t\t) {\r\n\t\t\t\t\t\tsubmitButton.removeAttribute(\r\n\t\t\t\t\t\t\t'disabled',\r\n\t\t\t\t\t\t);\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\tfalse,\r\n\t\t\t);\r\n\r\n\t\t\tif (\r\n\t\t\t\tdeleteIcon &&\r\n\t\t\t\tformInput\r\n\t\t\t) {\r\n\t\t\t\tdeleteIcon.addEventListener(\r\n\t\t\t\t\t'click',\r\n\t\t\t\t\t() => {\r\n\t\t\t\t\t\tWpcf7cf.clearFormFields(\r\n\t\t\t\t\t\t\tformInput,\r\n\t\t\t\t\t\t);\r\n\t\t\t\t\t},\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t\t}\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/form.js?");
+
+/***/ }),
+
 /***/ "./src/js/parts/header.js":
 /*!********************************!*\
   !*** ./src/js/parts/header.js ***!
@@ -79,7 +89,7 @@ eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ \"./src/js/parts/slider.js\");\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/js/parts/header.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./video */ \"./src/js/parts/video.js\");\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_video__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/parts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ \"./src/js/parts/slider.js\");\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/js/parts/header.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./video */ \"./src/js/parts/video.js\");\n/* harmony import */ var _video__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_video__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form */ \"./src/js/parts/form.js\");\n/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_form__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/parts.js?");
 
 /***/ }),
 

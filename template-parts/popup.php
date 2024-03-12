@@ -16,5 +16,6 @@ $subtitle = get_field('form_subtitle', 'options') ?? '';
     </button>
   </div>
 
+  <?php get_template_part('template-parts/form'); ?>
 
 </div>
