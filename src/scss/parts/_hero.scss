@@ -36,29 +36,29 @@
 
 	&__circle {
 		margin-left: 30.5rem;
-		width: 8.241rem;
-		height: 8.241rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: $white-bg;
-		border-radius: 50%;
-		cursor: pointer;
-		transform: rotate(
-			30deg
-		);
-		transition: $transition;
-
-		&:hover,
-		&:focus {
-			transform: rotate(
-				0deg
-			);
-		}
+		// width: 8.241rem;
+		// height: 8.241rem;
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		// background-color: $white-bg;
+		// border-radius: 50%;
 
 		svg {
-			width: 1.84rem;
-			height: 1.84rem;
+			width: 8.241rem;
+			height: 8.241rem;
+			transform: rotate(
+				30deg
+			);
+			transition: $transition;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				transform: rotate(
+					0deg
+				);
+			}
 		}
 	}
 

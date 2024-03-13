@@ -1,7 +1,7 @@
 <?php
-$title = get_field('about_title') ?? '';
-$text = get_field('about_text') ?? '';
-$image = get_field('about_img')
+$title = get_sub_field('about_title') ?? '';
+$text = get_sub_field('about_text') ?? '';
+$image = get_sub_field('about_img')
 ?>
 
 <section class="about">

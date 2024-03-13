@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scss/main.scss":
+/*!****************************!*\
+  !*** ./src/scss/main.scss ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpack_theme/./src/scss/main.scss?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -109,18 +120,7 @@ eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n
   \*******************************/
 /***/ (() => {
 
-eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst video =\r\n\t\t\tdocument.getElementById(\r\n\t\t\t\t'custom-video',\r\n\t\t\t);\r\n\t\tconst playPauseButton =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.video__play',\r\n\t\t\t);\r\n\r\n\t\tconst togglePlayPause =\r\n\t\t\t() => {\r\n\t\t\t\tif (\r\n\t\t\t\t\tvideo.paused\r\n\t\t\t\t) {\r\n\t\t\t\t\tvideo.play();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'';\r\n\t\t\t\t} else {\r\n\t\t\t\t\tvideo.pause();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'<svg class=\"video__icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 15 19\" fill=\"none\"><path fill=\"#fff\" d=\"M0 0v19l15-9.5L0 0Z\" /></svg> Смотреть видео';\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\tvideo.addEventListener(\r\n\t\t\t'click',\r\n\t\t\ttogglePlayPause,\r\n\t\t);\r\n\t\tplayPauseButton.addEventListener(\r\n\t\t\t'click',\r\n\t\t\ttogglePlayPause,\r\n\t\t);\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/video.js?");
-
-/***/ }),
-
-/***/ "./src/scss/main.scss":
-/*!****************************!*\
-  !*** ./src/scss/main.scss ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpack_theme/./src/scss/main.scss?");
+eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst video =\r\n\t\t\tdocument.getElementById(\r\n\t\t\t\t'custom-video',\r\n\t\t\t);\r\n\t\tconst playPauseButton =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.video__play',\r\n\t\t\t);\r\n\r\n\t\tconst togglePlayPause =\r\n\t\t\t() => {\r\n\t\t\t\tif (\r\n\t\t\t\t\tvideo.paused\r\n\t\t\t\t) {\r\n\t\t\t\t\tvideo.play();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'';\r\n\t\t\t\t} else {\r\n\t\t\t\t\tvideo.pause();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'<svg class=\"video__icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 15 19\" fill=\"none\"><path fill=\"#fff\" d=\"M0 0v19l15-9.5L0 0Z\" /></svg> Смотреть видео';\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\tif (video) {\r\n\t\t\tvideo.addEventListener(\r\n\t\t\t\t'click',\r\n\t\t\t\ttogglePlayPause,\r\n\t\t\t);\r\n\t\t}\r\n\r\n\t\tif (\r\n\t\t\tplayPauseButton\r\n\t\t) {\r\n\t\t\tplayPauseButton.addEventListener(\r\n\t\t\t\t'click',\r\n\t\t\t\ttogglePlayPause,\r\n\t\t\t);\r\n\t\t}\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/video.js?");
 
 /***/ })
 

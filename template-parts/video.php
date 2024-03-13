@@ -1,5 +1,5 @@
 <?php
-$video = get_field('video');
+$video = get_sub_field('video');
 ?>
 
 <?php if ($video) : ?>

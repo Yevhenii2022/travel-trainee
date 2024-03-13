@@ -25,13 +25,20 @@ document.addEventListener(
 				}
 			};
 
-		video.addEventListener(
-			'click',
-			togglePlayPause,
-		);
-		playPauseButton.addEventListener(
-			'click',
-			togglePlayPause,
-		);
+		if (video) {
+			video.addEventListener(
+				'click',
+				togglePlayPause,
+			);
+		}
+
+		if (
+			playPauseButton
+		) {
+			playPauseButton.addEventListener(
+				'click',
+				togglePlayPause,
+			);
+		}
 	},
 );

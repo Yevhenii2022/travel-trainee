@@ -4,14 +4,14 @@
     <div class="container">
       <div class="gallery__inner">
         <?php
-        $title = get_field('gallery_title');
+        $title = get_sub_field('gallery_title');
         ?>
         <?php if ($title) : ?>
           <h2 class="gallery__title section__title"><?= $title; ?></h2>
         <?php endif; ?>
 
         <?php
-        $btn_text = get_field('gallery_btn_text') ?? '';
+        $btn_text = get_sub_field('gallery_btn_text') ?? '';
         ?>
         <a class="button" href="<?php the_permalink(60); ?>" aria-label="посилання на сторінку галерея">
           <?= $btn_text ?>
@@ -25,7 +25,7 @@
     <div class="gallery__slider swiper">
       <div class="swiper-wrapper">
         <?php
-        $images = get_field('gallery_list');
+        $images = get_sub_field('gallery_list');
         if ($images) {
           foreach ($images as $image) {
             echo '<div class="swiper-slide">';
