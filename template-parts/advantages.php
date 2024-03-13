@@ -8,6 +8,7 @@ $image = get_sub_field('advantages_img');
     <div class="аdvantages__wrapper">
 
 
+
       <h2 class="section__title"><?= $title ?></h2>
 
 
@@ -16,6 +17,7 @@ $image = get_sub_field('advantages_img');
         echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка галереї']);
       }
       ?>
+
 
 
     </div>
