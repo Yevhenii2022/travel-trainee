@@ -17,6 +17,8 @@ get_header();
         get_template_part('template-parts/about');
       } elseif (get_row_layout() == 'video') {
         get_template_part('template-parts/video');
+      } elseif (get_row_layout() == 'advantages') {
+        get_template_part('template-parts/advantages');
       } elseif (get_row_layout() == 'short-gallery') {
         get_template_part('template-parts/gallery');
       } ?>
