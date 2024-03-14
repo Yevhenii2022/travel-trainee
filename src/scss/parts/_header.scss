@@ -23,13 +23,18 @@
 	}
 
 	&__inner {
+		width: 60.3rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 
+	&__nav {
+		display: flex;
+		align-items: center;
+	}
+
 	&__list {
-		margin-right: 15.5rem;
 		display: flex;
 		gap: 2.34rem;
 		text-transform: uppercase;
@@ -37,13 +42,15 @@
 
 	&__search {
 		margin-right: 1.143rem;
-		width: 1.357rem;
-		height: 1.357rem;
 		cursor: pointer;
+
 		svg {
+			width: 1.357rem;
+			height: 1.357rem;
 			fill: $black-text;
 		}
 	}
+
 	&__basket {
 		margin-right: 2.286rem;
 		width: 1.357rem;

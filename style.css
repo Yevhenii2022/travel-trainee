@@ -91,7 +91,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   padding: 0.82rem 1.2rem;
   font-family: inherit;
   color: #fff;
@@ -243,23 +243,27 @@ button {
   align-items: center;
 }
 .header__inner {
+  width: 60.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.header__nav {
+  display: flex;
+  align-items: center;
+}
 .header__list {
-  margin-right: 15.5rem;
   display: flex;
   gap: 2.34rem;
   text-transform: uppercase;
 }
 .header__search {
   margin-right: 1.143rem;
-  width: 1.357rem;
-  height: 1.357rem;
   cursor: pointer;
 }
 .header__search svg {
+  width: 1.357rem;
+  height: 1.357rem;
   fill: #202020;
 }
 .header__basket {

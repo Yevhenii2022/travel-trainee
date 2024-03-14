@@ -43,47 +43,49 @@
 						]);
 						?>
 
-						<?php
-						$btn_text = get_field('header_btn_lang', 'options') ?? '';
-						?>
-						<div class="button button__lang <?= is_front_page() ? 'header--white header--stroke' : '' ?>">
-							<?= $btn_text ?>
-							<svg viewBox="0 0 10 7" fill="none">
-								<path d="M0.757359 1.24264L5 5.48528L9.24264 1.24264" stroke-linecap="round" />
-							</svg>
-						</div>
+						<div class="header__nav">
+							<?php
+							$btn_text = get_field('header_btn_lang', 'options') ?? '';
+							?>
+							<div class="button button__lang <?= is_front_page() ? 'header--white header--stroke' : '' ?>">
+								<?= $btn_text ?>
+								<svg viewBox="0 0 10 7" fill="none">
+									<path d="M0.757359 1.24264L5 5.48528L9.24264 1.24264" stroke-linecap="round" />
+								</svg>
+							</div>
 
-						<?php
-						$search_icon = get_field('search_icon', 'options');
-						$file_path = get_attached_file($search_icon);
-						$svg_content = file_get_contents($file_path);
-						?>
-						<div class="header__search <?= is_front_page() ? 'header--fill' : '' ?>">
-							<?php if ($svg_content !== false) {
-								echo $svg_content;
-							} ?>
-						</div>
+							<?php
+							$search_icon = get_field('search_icon', 'options');
+							$file_path = get_attached_file($search_icon);
+							$svg_content = file_get_contents($file_path);
+							?>
+							<div class="header__search <?= is_front_page() ? 'header--fill' : '' ?>">
+								<?php if ($svg_content !== false) {
+									echo $svg_content;
+								} ?>
+							</div>
 
-						<?php
-						$basket_icon = get_field('basket_icon', 'options');
-						$file_path = get_attached_file($basket_icon);
-						$svg_content = file_get_contents($file_path);
-						?>
-						<div class="header__basket <?= is_front_page() ? 'header--stroke' : '' ?>">
-							<?php if ($svg_content !== false) {
-								echo $svg_content;
-							} ?>
-						</div>
+							<?php
+							$basket_icon = get_field('basket_icon', 'options');
+							$file_path = get_attached_file($basket_icon);
+							$svg_content = file_get_contents($file_path);
+							?>
+							<div class="header__basket <?= is_front_page() ? 'header--stroke' : '' ?>">
+								<?php if ($svg_content !== false) {
+									echo $svg_content;
+								} ?>
+							</div>
 
-						<?php
-						$btn_text = get_field('header_btn_contact', 'options') ?? '';
-						?>
-						<button popovertarget="consultation" class="header__button button <?= is_front_page() ? 'button--white' : '' ?>">
-							<?= $btn_text ?>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
-							</svg>
-						</button>
+							<?php
+							$btn_text = get_field('header_btn_contact', 'options') ?? '';
+							?>
+							<button popovertarget="consultation" class="header__button button <?= is_front_page() ? 'button--white' : '' ?>">
+								<?= $btn_text ?>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+								</svg>
+							</button>
+						</div>
 
 						<?php get_template_part('template-parts/popup'); ?>
 
