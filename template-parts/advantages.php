@@ -1,6 +1,6 @@
 <?php
 $title = get_sub_field('advantages_title') ?? '';
-$direction = get_sub_field('direction') ?? '';
+$direction = get_sub_field('advantages_direction') ?? '';
 $image = get_sub_field('advantages_img');
 ?>
 
@@ -34,7 +34,7 @@ $image = get_sub_field('advantages_img');
 
     <?php
     if ($image) {
-      echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка галереї']);
+      echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка секції переваги']);
     }
     ?>
 

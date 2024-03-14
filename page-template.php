@@ -2,7 +2,6 @@
 /*
 Template Name: Набірна сторінка
 */
-
 get_header();
 ?>
 <main>
@@ -18,12 +17,15 @@ get_header();
         get_template_part('template-parts/video');
       } elseif (get_row_layout() == 'advantages') {
         get_template_part('template-parts/advantages');
+      } elseif (get_row_layout() == 'order') {
+        get_template_part('template-parts/order');
       } elseif (get_row_layout() == 'short-gallery') {
         get_template_part('template-parts/gallery');
+      } elseif (get_row_layout() == 'gallery') {
+        get_template_part('template-parts/gallery-page');
       } ?>
     <?php endwhile ?>
   <?php } ?>
-
 
 </main>
 <?php get_footer(); ?>

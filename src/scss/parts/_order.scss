@@ -1,0 +1,40 @@
+.order {
+	&__wrapper {
+		display: flex;
+
+		&--row-reverse {
+			flex-direction: row-reverse;
+		}
+
+		img {
+			width: 50%;
+			height: 53.143rem;
+		}
+	}
+
+	&__inner {
+		padding: 0
+			2.286rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__list {
+		margin-bottom: 1.4rem;
+		display: flex;
+
+		svg {
+			width: 1.84rem;
+			height: 1.786rem;
+		}
+	}
+
+	&__title {
+		margin-bottom: 3.15rem;
+		font-size: 3.929rem;
+		text-align: center;
+		letter-spacing: -0.136rem;
+	}
+}

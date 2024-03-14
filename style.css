@@ -33,6 +33,16 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+body::-webkit-scrollbar {
+  width: 0.786rem;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #badae7;
+  border-radius: 0.571rem;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #9ec7d6;
+}
 
 button {
   background-color: transparent;
@@ -65,7 +75,7 @@ button {
   font-family: "Kudryashev";
   font-size: 5.5rem;
   line-height: 1;
-  letter-spacing: -3.1px;
+  letter-spacing: -0.221rem;
 }
 
 .section__title {
@@ -73,7 +83,7 @@ button {
   font-family: "Kudryashev";
   font-size: 5.5rem;
   line-height: 1;
-  letter-spacing: -3.1px;
+  letter-spacing: -0.221rem;
 }
 
 .button {
@@ -514,7 +524,7 @@ button {
   flex-direction: row-reverse;
 }
 .аdvantages__wrapper img {
-  width: 51%;
+  width: 50%;
   height: 53.143rem;
 }
 .аdvantages__inner {
@@ -542,6 +552,38 @@ button {
   font-size: 2.286rem;
   line-height: 1;
   letter-spacing: -3.1px;
+}
+
+.order__wrapper {
+  display: flex;
+}
+.order__wrapper--row-reverse {
+  flex-direction: row-reverse;
+}
+.order__wrapper img {
+  width: 50%;
+  height: 53.143rem;
+}
+.order__inner {
+  padding: 0 2.286rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order__list {
+  margin-bottom: 1.4rem;
+  display: flex;
+}
+.order__list svg {
+  width: 1.84rem;
+  height: 1.786rem;
+}
+.order__title {
+  margin-bottom: 3.15rem;
+  font-size: 3.929rem;
+  text-align: center;
+  letter-spacing: -0.136rem;
 }
 
 .gallery {
