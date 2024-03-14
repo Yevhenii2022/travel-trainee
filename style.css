@@ -1,6 +1,7 @@
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
   \*****************************************************************************************************************************************/
+@charset "UTF-8";
 /*
 Theme Name: Pointer theme
 Author: cursor: pointer ;
@@ -501,6 +502,46 @@ button {
 .video__play svg {
   width: 1.1rem;
   height: 1.4rem;
+}
+
+.аdvantages {
+  background-color: #eaf2f5;
+}
+.аdvantages__wrapper {
+  display: flex;
+}
+.аdvantages__wrapper--row-reverse {
+  flex-direction: row-reverse;
+}
+.аdvantages__wrapper img {
+  width: 51%;
+  height: 53.143rem;
+}
+.аdvantages__inner {
+  padding: 0 0 2.32rem 2.39rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.аdvantages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.18rem;
+}
+.аdvantages__item {
+  display: flex;
+  gap: 1rem;
+}
+.аdvantages__item p {
+  align-self: flex-end;
+  font-size: 1.429rem;
+  line-height: 1.2;
+}
+.аdvantages__item span {
+  font-family: "Kudryashev";
+  font-size: 2.286rem;
+  line-height: 1;
+  letter-spacing: -3.1px;
 }
 
 .gallery {

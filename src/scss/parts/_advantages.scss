@@ -1,1 +1,49 @@
-   
+.аdvantages {
+	background-color: $white-bg;
+
+	&__wrapper {
+		display: flex;
+
+		&--row-reverse {
+			flex-direction: row-reverse;
+		}
+
+		img {
+			width: 51%;
+			height: 53.143rem;
+		}
+	}
+
+	&__inner {
+		padding: 0 0
+			2.32rem
+			2.39rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.18rem;
+	}
+
+	&__item {
+		display: flex;
+		gap: 1rem;
+
+		p {
+			align-self: flex-end;
+			font-size: 1.429rem;
+			line-height: 1.2;
+		}
+
+		span {
+			font-family: $kudryashev;
+			font-size: 2.286rem;
+			line-height: 1;
+			letter-spacing: -3.1px;
+		}
+	}
+}
