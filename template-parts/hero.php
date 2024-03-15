@@ -22,11 +22,11 @@ $svg_content = file_get_contents($file_path);
       <div class="hero__box">
         <p class="hero__text"><?= $subtitle ?></p>
         <h1 class="main__title"><?php echo $title ?></h1>
-        <div class="hero__circle">
+        <a class="hero__circle" href="<?php the_permalink(58); ?>" aria-label="посилання на сторінку екскурсій">
           <?php if ($svg_content !== false) {
             echo $svg_content;
           } ?>
-        </div>
+        </a>
       </div>
 
       <div class="hero__contacts">

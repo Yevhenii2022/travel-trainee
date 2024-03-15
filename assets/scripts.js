@@ -9,17 +9,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/scss/main.scss":
-/*!****************************!*\
-  !*** ./src/scss/main.scss ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpack_theme/./src/scss/main.scss?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -110,7 +99,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sli
   \********************************/
 /***/ (() => {
 
-eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst swiper =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.swiper__swiper',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\teffect:\r\n\t\t\t\t\t\t'fade',\r\n\r\n\t\t\t\t\t// If we need pagination\r\n\t\t\t\t\tpagination:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tel: '.swiper__pagination',\r\n\t\t\t\t\t\t\tclickable: true,\r\n\t\t\t\t\t\t},\r\n\r\n\t\t\t\t\t// Navigation arrows\r\n\t\t\t\t\tnavigation:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnextEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--next',\r\n\t\t\t\t\t\t\tprevEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--prev',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst homeGallery =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery__slider',\r\n\t\t\t\t{\r\n\t\t\t\t\tslidesPerView: 2.7,\r\n\t\t\t\t\tspaceBetween: 10,\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspeed: 1000,\r\n\t\t\t\t\tcenteredSlides: true,\r\n\t\t\t\t\tkeyboard:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tenabled: true,\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tbreakpoints:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t541: {\r\n\t\t\t\t\t\t\t\t// slidesPerView: 2,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t1024: {\r\n\t\t\t\t\t\t\t\tspaceBetween: 16,\r\n\t\t\t\t\t\t\t\tslidesPerView: 3.7,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst galleryPage =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery-page__slider',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspaceBetween: 16,\r\n\t\t\t\t\tslidesPerView: 6.5,\r\n\t\t\t\t\tcenteredSlides: true,\r\n\t\t\t\t\tfreeMode: true,\r\n\t\t\t\t\twatchSlidesProgress: true,\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst galleryPage2 =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery-page__slider2',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspaceBetween: 10,\r\n\t\t\t\t\tpagination:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tel: '.swiper-pagination',\r\n\t\t\t\t\t\t\ttype: 'fraction',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tnavigation:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnextEl:\r\n\t\t\t\t\t\t\t\t'.swiper-button-next',\r\n\t\t\t\t\t\t\tprevEl:\r\n\t\t\t\t\t\t\t\t'.swiper-button-prev',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tthumbs: {\r\n\t\t\t\t\t\tswiper:\r\n\t\t\t\t\t\t\tswiper,\r\n\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/slider.js?");
+eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst swiper =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.swiper__swiper',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\teffect:\r\n\t\t\t\t\t\t'fade',\r\n\r\n\t\t\t\t\t// If we need pagination\r\n\t\t\t\t\tpagination:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tel: '.swiper__pagination',\r\n\t\t\t\t\t\t\tclickable: true,\r\n\t\t\t\t\t\t},\r\n\r\n\t\t\t\t\t// Navigation arrows\r\n\t\t\t\t\tnavigation:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnextEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--next',\r\n\t\t\t\t\t\t\tprevEl:\r\n\t\t\t\t\t\t\t\t'.swiper__nav--prev',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst homeGallery =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery__slider',\r\n\t\t\t\t{\r\n\t\t\t\t\tslidesPerView: 2.7,\r\n\t\t\t\t\tspaceBetween: 10,\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspeed: 1000,\r\n\t\t\t\t\tcenteredSlides: true,\r\n\t\t\t\t\tgrabCursor: true,\r\n\t\t\t\t\tkeyboard:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tenabled: true,\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tbreakpoints:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t541: {\r\n\t\t\t\t\t\t\t\t// slidesPerView: 2,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t1024: {\r\n\t\t\t\t\t\t\t\tspaceBetween: 16,\r\n\t\t\t\t\t\t\t\tslidesPerView: 3.7,\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst galleryPage =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery-page__slider',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspaceBetween: 16,\r\n\t\t\t\t\tslidesPerView: 6.5,\r\n\t\t\t\t\tcenteredSlides: true,\r\n\t\t\t\t\tfreeMode: true,\r\n\t\t\t\t\twatchSlidesProgress: true,\r\n\t\t\t\t},\r\n\t\t\t);\r\n\r\n\t\tconst galleryPage2 =\r\n\t\t\tnew Swiper(\r\n\t\t\t\t'.gallery-page__slider2',\r\n\t\t\t\t{\r\n\t\t\t\t\tloop: true,\r\n\t\t\t\t\tspaceBetween: 10,\r\n\t\t\t\t\tpagination:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tel: '.swiper-pagination',\r\n\t\t\t\t\t\t\ttype: 'fraction',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tnavigation:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnextEl:\r\n\t\t\t\t\t\t\t\t'.swiper-button-next',\r\n\t\t\t\t\t\t\tprevEl:\r\n\t\t\t\t\t\t\t\t'.swiper-button-prev',\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\tthumbs: {\r\n\t\t\t\t\t\tswiper:\r\n\t\t\t\t\t\t\tswiper,\r\n\t\t\t\t\t},\r\n\t\t\t\t},\r\n\t\t\t);\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/slider.js?");
 
 /***/ }),
 
@@ -121,6 +110,17 @@ eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n
 /***/ (() => {
 
 eval("document.addEventListener(\r\n\t'DOMContentLoaded',\r\n\tfunction () {\r\n\t\tconst video =\r\n\t\t\tdocument.getElementById(\r\n\t\t\t\t'custom-video',\r\n\t\t\t);\r\n\t\tconst playPauseButton =\r\n\t\t\tdocument.querySelector(\r\n\t\t\t\t'.video__play',\r\n\t\t\t);\r\n\r\n\t\tconst togglePlayPause =\r\n\t\t\t() => {\r\n\t\t\t\tif (\r\n\t\t\t\t\tvideo.paused\r\n\t\t\t\t) {\r\n\t\t\t\t\tvideo.play();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'';\r\n\t\t\t\t} else {\r\n\t\t\t\t\tvideo.pause();\r\n\t\t\t\t\tplayPauseButton.innerHTML =\r\n\t\t\t\t\t\t'<svg class=\"video__icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 15 19\" fill=\"none\"><path fill=\"#fff\" d=\"M0 0v19l15-9.5L0 0Z\" /></svg> Смотреть видео';\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\tif (video) {\r\n\t\t\tvideo.addEventListener(\r\n\t\t\t\t'click',\r\n\t\t\t\ttogglePlayPause,\r\n\t\t\t);\r\n\t\t}\r\n\r\n\t\tif (\r\n\t\t\tplayPauseButton\r\n\t\t) {\r\n\t\t\tplayPauseButton.addEventListener(\r\n\t\t\t\t'click',\r\n\t\t\t\ttogglePlayPause,\r\n\t\t\t);\r\n\t\t}\r\n\t},\r\n);\r\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/parts/video.js?");
+
+/***/ }),
+
+/***/ "./src/scss/main.scss":
+/*!****************************!*\
+  !*** ./src/scss/main.scss ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpack_theme/./src/scss/main.scss?");
 
 /***/ })
 

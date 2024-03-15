@@ -36,6 +36,9 @@
 
 	&__circle {
 		margin-left: 30.5rem;
+		width: fit-content;
+		border-radius: 50%;
+		cursor: pointer;
 
 		svg {
 			width: 8.241rem;
@@ -44,10 +47,11 @@
 				30deg
 			);
 			transition: $transition;
-			cursor: pointer;
+		}
 
-			&:hover,
-			&:focus {
+		&:hover,
+		&:focus {
+			svg {
 				transform: rotate(
 					0deg
 				);

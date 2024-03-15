@@ -1,6 +1,6 @@
-/*!*****************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
-  \*****************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../../../node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
+  \*************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /*
 Theme Name: Pointer theme
@@ -94,6 +94,7 @@ button {
   gap: 0.7rem;
   padding: 0.82rem 1.2rem;
   font-family: inherit;
+  font-size: 1rem;
   color: #fff;
   background-color: #202020;
   cursor: pointer;
@@ -178,6 +179,7 @@ button {
   border-bottom: 0.071rem solid rgba(32, 32, 32, 0.4);
   font-size: 0.714rem;
   line-height: 1.2;
+  color: #202020;
   transition: all 0.3s ease-in-out;
 }
 .form__input label input::placeholder,
@@ -464,15 +466,17 @@ button {
 }
 .hero__circle {
   margin-left: 30.5rem;
+  width: fit-content;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .hero__circle svg {
   width: 8.241rem;
   height: 8.241rem;
   transform: rotate(30deg);
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
-.hero__circle svg:hover, .hero__circle svg:focus {
+.hero__circle:hover svg, .hero__circle:focus svg {
   transform: rotate(0deg);
 }
 .hero__contacts {

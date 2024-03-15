@@ -36,6 +36,7 @@ document.addEventListener(
 					loop: true,
 					speed: 1000,
 					centeredSlides: true,
+					grabCursor: true,
 					keyboard:
 						{
 							enabled: true,
