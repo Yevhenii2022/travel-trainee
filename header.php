@@ -59,10 +59,11 @@
 							$file_path = get_attached_file($search_icon);
 							$svg_content = file_get_contents($file_path);
 							?>
-							<div class="header__search <?= is_front_page() ? 'header--fill' : '' ?>">
+							<div class="header__search <?= is_front_page() ? 'header--white header--fill' : '' ?>">
 								<?php if ($svg_content !== false) {
 									echo $svg_content;
 								} ?>
+								<input type="search" class="header__input">
 							</div>
 
 							<?php
