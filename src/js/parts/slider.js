@@ -10,19 +10,59 @@ document.addEventListener(
 						'fade',
 
 					// If we need pagination
+					// pagination:
+					// 	{
+					// 		el: '.swiper__pagination',
+					// 		clickable: true,
+					// 	},
+
+					// Navigation arrows
+					// navigation:
+					// 	{
+					// 		nextEl:
+					// 			'.swiper__nav--next',
+					// 		prevEl:
+					// 			'.swiper__nav--prev',
+					// 	},
+				},
+			);
+
+		const excursions =
+			new Swiper(
+				'.excursions__slider',
+				{
+					slidesPerView: 1,
+					loop: true,
+					speed: 800,
+					centeredSlides: true,
+					keyboard:
+						{
+							enabled: true,
+						},
 					pagination:
 						{
 							el: '.swiper__pagination',
-							clickable: true,
+							type: 'fraction',
 						},
-
-					// Navigation arrows
 					navigation:
 						{
 							nextEl:
 								'.swiper__nav--next',
 							prevEl:
 								'.swiper__nav--prev',
+						},
+					breakpoints:
+						{
+							541: {
+								spaceBetween: 16,
+								slidesPerView: 2.3,
+								pagination: false,
+							},
+							1024: {
+								slidesPerView: 3.3,
+								spaceBetween: 16,
+								pagination: false,
+							},
 						},
 				},
 			);
@@ -36,7 +76,6 @@ document.addEventListener(
 					loop: true,
 					speed: 1000,
 					centeredSlides: true,
-					grabCursor: true,
 					keyboard:
 						{
 							enabled: true,
@@ -91,5 +130,40 @@ document.addEventListener(
 					},
 				},
 			);
+
+		//fancybox
+		Fancybox.bind(
+			'[data-fancybox="gallery"]',
+			{
+				// compact: false,
+				idle: false,
+				// animated: false,
+				showClass: false,
+				hideClass: false,
+				dragToClose: false,
+				contentClick: false,
+
+				Images: {
+					// zoom: false,
+				},
+
+				Toolbar: {
+					display: {
+						left: [],
+						middle:
+							[
+								'infobar',
+							],
+						right: [
+							'close',
+						],
+					},
+				},
+
+				Thumbs: {
+					type: 'classic',
+				},
+			},
+		);
 	},
 );

@@ -166,6 +166,10 @@ button {
   background-color: rgba(32, 32, 32, 0.4);
 }
 
+.excursions__button {
+  margin: 0 auto;
+}
+
 .form__input {
   margin-bottom: 2rem;
 }
@@ -226,6 +230,73 @@ button {
   display: none;
 }
 
+.excursion-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.excursion-card__image img {
+  height: 20rem;
+}
+.excursion-card__wrapper {
+  padding: 1.6rem 1.143rem;
+}
+.excursion-card__title {
+  margin-bottom: 0.571rem;
+  height: 4.571rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 2.286rem;
+  letter-spacing: -0.09rem;
+}
+.excursion-card__text {
+  margin-bottom: 4rem;
+  height: 2.429rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.2;
+}
+.excursion-card__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.excursion-card__price {
+  font-family: "Kudryashev";
+  font-size: 2.286rem;
+  letter-spacing: -0.12rem;
+}
+
+@media (max-width: 541px) {
+  .swiper__nav--prev {
+    width: 1.786rem;
+    height: 1.786rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23202020' transform='rotate(-180 12.5 12.5)'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='M12.151 8.863 8.515 12.5m0 0 3.636 3.637M8.515 12.5H17'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 541px) {
+  .swiper__nav--next {
+    width: 1.786rem;
+    height: 1.786rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23202020'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m12.849 16.137 3.636-3.637m0 0L12.85 8.863m3.636 3.637H8'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+}
+
+.swiper__pagination {
+  width: 1.38rem;
+  line-height: 1.2;
+}
+.swiper__pagination span {
+  margin: 0 -0.214rem;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -261,7 +332,7 @@ button {
 }
 .header__search {
   padding: 0.714rem 0;
-  margin-right: 0.6rem;
+  margin-right: 0.5rem;
   display: flex;
   transition: all 0.3s ease-in-out;
 }
@@ -299,7 +370,7 @@ button {
   cursor: pointer;
 }
 .header__basket {
-  margin-right: 2.286rem;
+  margin-right: 2.1rem;
   width: 1.357rem;
   height: 1.357rem;
   cursor: pointer;
@@ -408,7 +479,7 @@ button {
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: 1.03rem;
+  gap: 1rem;
   text-transform: uppercase;
 }
 .footer__socials {
@@ -447,7 +518,7 @@ button {
   z-index: -1;
 }
 .hero__wrapper {
-  padding-bottom: 1.714rem;
+  padding-bottom: 1.6rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -561,6 +632,36 @@ button {
   height: 1.4rem;
 }
 
+.excursions {
+  padding: 8.2rem 0 8.6rem 0;
+  background-color: #eaf2f5;
+}
+.excursions__subtitle {
+  margin-bottom: 0.9rem;
+  font-size: 1.262rem;
+  text-align: center;
+  font-weight: 600;
+}
+.excursions__title {
+  margin: 0 auto;
+  margin-bottom: 3.65rem;
+  width: 39.286rem;
+  text-align: center;
+}
+.excursions__slider {
+  margin-bottom: 4.6rem;
+}
+.excursions__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 541px) {
+  .excursions__box {
+    margin-top: 1.786rem;
+  }
+}
+
 .аdvantages {
   background-color: #eaf2f5;
 }
@@ -648,6 +749,7 @@ button {
 }
 .gallery__slider .swiper-slide {
   height: 21.429rem;
+  cursor: grab;
 }
 .gallery__slider .swiper-slide:nth-child(2n) {
   height: 35.214rem;

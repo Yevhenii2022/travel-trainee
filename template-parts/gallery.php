@@ -28,9 +28,10 @@
         $images = get_sub_field('gallery_list');
         if ($images) {
           foreach ($images as $image) {
-            echo '<div class="swiper-slide">';
+            $image_url = wp_get_attachment_url($image);
+            echo '<a class="swiper-slide" href="' . esc_url($image_url) . '" data-fancybox="gallery">';
             echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка галереї']);
-            echo '</div>';
+            echo '</a>';
           }
         }
         ?>

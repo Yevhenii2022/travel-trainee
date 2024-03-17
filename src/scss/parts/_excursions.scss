@@ -1,0 +1,41 @@
+.excursions {
+	padding: 8.2rem 0
+		8.6rem 0;
+	background-color: $white-bg;
+
+	@include media(
+		mobile
+	) {
+		// padding-bottom: 13.333rem;
+	}
+
+	&__subtitle {
+		margin-bottom: 0.9rem;
+		font-size: 1.262rem;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	&__title {
+		margin: 0 auto;
+		margin-bottom: 3.65rem;
+		width: 39.286rem;
+		text-align: center;
+	}
+
+	&__slider {
+		margin-bottom: 4.6rem;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media(
+			mobile
+		) {
+			margin-top: 1.786rem;
+		}
+	}
+}
