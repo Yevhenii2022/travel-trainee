@@ -47,14 +47,9 @@
 						?>
 
 						<div class="header__nav">
-							<?php
-							$btn_text = get_field('header_btn_lang', 'options') ?? '';
-							?>
-							<div class="button button__lang <?= is_front_page() ? 'header--white header--stroke' : '' ?>">
-								<?= $btn_text ?>
-								<svg viewBox="0 0 10 7" fill="none">
-									<path d="M0.757359 1.24264L5 5.48528L9.24264 1.24264" stroke-linecap="round" />
-								</svg>
+
+							<div class="custom-select">
+								<?php pll_the_languages(array('dropdown' => 1)); ?>
 							</div>
 
 							<?php

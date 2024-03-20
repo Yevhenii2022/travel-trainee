@@ -1,4 +1,4 @@
-<?php echo do_shortcode('[contact-form-7 id="30b99c1" title="Форма Консультації"]') ?>
+<?php echo do_shortcode(get_field('form_code', 'options')) ?>
 
 <!-- <div class="form__wrapper">
    <div class="form__input">

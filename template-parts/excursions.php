@@ -17,36 +17,29 @@
       <?php endif; ?>
     </div>
 
-
-
     <div class="excursions__slider swiper">
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide">
-          <?php get_template_part('template-parts/excursion-card'); ?>
-        </div>
-        <div class="swiper-slide">
-          <?php get_template_part('template-parts/excursion-card'); ?>
-        </div>
-        <div class="swiper-slide">
-          <?php get_template_part('template-parts/excursion-card'); ?>
-        </div>
-        <div class="swiper-slide">
-          <?php get_template_part('template-parts/excursion-card'); ?>
-        </div>
+        <?php $excursions_list = get_sub_field('excursions_list');
+        foreach ($excursions_list as $excursion) {
+        ?>
+          <div class="swiper-slide">
+            <?php $excursion_element = $excursion['excursions_product'];
+            if ($excursion_element instanceof WP_Post) {
+              set_query_var('custom_data', $excursion_element);
+
+              get_template_part('template-parts/excursion-card');
+            } ?>
+          </div>
+        <?php } ?>
 
       </div>
-
-
       <div class="excursions__box">
         <div class="swiper__nav--prev"></div>
         <div class="swiper__pagination"></div>
         <div class="swiper__nav--next"></div>
       </div>
-
     </div>
-
-
 
     <?php
     $btn_text = get_sub_field('excursions_btn_text') ?? '';
@@ -57,9 +50,6 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
       </svg>
     </a>
-
-
-
 
   </div>
 </section>

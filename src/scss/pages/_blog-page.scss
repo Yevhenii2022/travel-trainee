@@ -1,0 +1,26 @@
+.blog {
+	padding: 12.571rem
+		0 8.571rem 0;
+	background-color: $white-bg;
+
+	@include media(
+		mobile
+	) {
+		// padding-bottom: 13.333rem;
+	}
+
+	&__title {
+		margin-bottom: 5.714rem;
+		text-align: center;
+	}
+
+	&__inner {
+		margin-bottom: 5.143rem;
+		display: grid;
+		grid-template-columns: repeat(
+			3,
+			1fr
+		);
+		gap: 1.071rem;
+	}
+}

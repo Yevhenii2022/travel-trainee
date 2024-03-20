@@ -181,4 +181,160 @@ require get_template_directory() . '/inc/custom-post-type.php';
 /**
  * Register string traslation Polylang (uncomment if you use Polylang)
  */
-// require get_template_directory() . '/inc/translates-registration.php';
+require get_template_directory() . '/inc/translates-registration.php';
+
+//WOOCOMMERCE
+class WC_Product_Excursion extends WC_Product_Simple
+{
+	// Возвращает тип продукта
+	public function get_type()
+	{
+		return 'excursion';
+	}
+
+	// Показывает даты экскурсий
+	public function get_excursion_dates()
+	{
+		return $this->get_meta('_excursion_dates', true);
+	}
+
+	public function is_virtual()
+	{
+		return true;
+	}
+}
+
+// Добавление типа продукта "экскурсия" в выпадающий список
+function add_type_to_dropdown($types)
+{
+	// Очищаем массив типов продуктов
+	$types = array();
+	// Добавляем только тип "Экскурсия"
+	$types['excursion'] = __('Excursion', 'vicodemedia');
+	return $types;
+}
+add_filter('product_type_selector', 'add_type_to_dropdown');
+
+// Добавление поля для указания цены экскурсии и дат экскурсии
+function add_excursion_fields()
+{
+	global $product_object;
+?>
+	<div class='options_group show_if_excursion'>
+		<?php
+		// Задаем значение дат в виде массива для MultiDatesPicker
+		$excursion_dates = $product_object->get_meta('_excursion_dates', true);
+		$excursion_dates_array = explode(',', $excursion_dates);
+
+		// Вывод поля для дат экскурсии
+		woocommerce_wp_text_input(
+			array(
+				'id'          => '_excursion_dates',
+				'label'       => __('Disabled Dates', 'vicodemedia'),
+				'value'       => $excursion_dates,
+				'default'     => '',
+				'placeholder' => 'Enter Disabled Dates',
+				'type'        => 'text', // Изменено на тип text
+				'desc_tip'    => true, // Добавляем подсказку в виде тултипа
+				'description' => __('Выберите даты в которые экскурсия будет не доступна', 'vicodemedia'), // Текст подсказки
+			)
+		);
+
+
+		// Вывод поля для базовой цены
+		woocommerce_wp_text_input(
+			array(
+				'id'          => '_regular_price',
+				'label'       => __('Regular Price', 'vicodemedia'),
+				'value'       => $product_object->get_regular_price(), // Получение цены до дисконта
+				'placeholder' => 'Введіть ціну до знижки (якщо потрібно)',
+				'data_type'   => 'price',
+			)
+		);
+
+		// Вывод поля для цены экскурсии
+		woocommerce_wp_text_input(
+			array(
+				'id'          => '_excursion_price',
+				'label'       => __('Excursion Price', 'vicodemedia'),
+				'value'       => $product_object->get_meta('_excursion_price', true),
+				'default'     => '',
+				'placeholder' => 'Введіть кінцеву ціну продажу',
+				'data_type' => 'price',
+			)
+		);
+		?>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$('#_excursion_dates').multiDatesPicker({
+					dateFormat: "dd-mm-yy",
+					minDate: new Date(),
+				});
+			});
+		</script>
+	</div>
+<?php
+}
+add_action('woocommerce_product_options_general_product_data', 'add_excursion_fields');
+
+// Сохранение дат экскурсий и цены экскурсии
+function save_excursion_data($post_id)
+{
+	$dates = isset($_POST['_excursion_dates']) ? sanitize_text_field($_POST['_excursion_dates']) : '';
+	$price = isset($_POST['_excursion_price']) ? sanitize_text_field($_POST['_excursion_price']) : '';
+
+	update_post_meta($post_id, '_excursion_dates', $dates);
+	update_post_meta($post_id, '_excursion_price', $price);
+
+	// Сохранение базовой цены
+	$regular_price = isset($_POST['_regular_price']) ? sanitize_text_field($_POST['_regular_price']) : '';
+	update_post_meta($post_id, '_regular_price', $regular_price);
+}
+add_action('woocommerce_process_product_meta_excursion', 'save_excursion_data');
+
+// Добавление даты экскурсии в метаданные товара при добавлении в корзину
+function add_excursion_date_to_cart_item_data($cart_item_data, $product_id, $variation_id)
+{
+	if (isset($_POST['excursion_date'])) {
+		$cart_item_data['excursion_date'] = sanitize_text_field($_POST['excursion_date']);
+	}
+	if (isset($_POST['guests'])) {
+		$cart_item_data['guests'] = sanitize_text_field($_POST['guests']);
+	}
+	return $cart_item_data;
+}
+add_filter('woocommerce_add_cart_item_data', 'add_excursion_date_to_cart_item_data', 10, 3);
+
+// Добавляем данные в линию ордера
+function add_excursion_date_and_guests_to_order_line_item($item, $cart_item_key, $values, $order)
+{
+	// Получаем дату экскурсии из корзины
+	$excursion_date = isset($values['excursion_date']) ? $values['excursion_date'] : '';
+
+	// Получаем количество гостей из корзины
+	$guests = isset($values['guests']) ? $values['guests'] : '1';
+
+	// Добавляем дату экскурсии в линию ордера
+	if ($excursion_date) {
+		$excursion_date_label = __('Дата экскурсии', 'vicodemedia'); // Перевод текста "Дата экскурсии"
+		$item->add_meta_data($excursion_date_label, $excursion_date);
+	}
+
+	// Добавляем количество гостей в линию ордера
+	if ($guests) {
+		$guests_label = __('Количество гостей', 'vicodemedia'); // Перевод текста "Количество гостей"
+		$item->add_meta_data($guests_label, $guests);
+	}
+
+	// Возвращаем объект линии ордера с добавленными данными
+	return $item;
+}
+add_action('woocommerce_checkout_create_order_line_item', 'add_excursion_date_and_guests_to_order_line_item', 10, 4);
+
+add_filter('woocommerce_product_tabs', 'remove_tabs', 98);
+function remove_tabs($tabs)
+{
+	unset($tabs['additional_information']);
+	unset($tabs['shipping']);
+	return $tabs;
+}

@@ -101,39 +101,47 @@ document.addEventListener(
 				'.header__search',
 			);
 		const searchInput =
-			headerSearch.querySelector(
+			document.querySelector(
 				'.header__input',
 			);
 
-		headerSearch.addEventListener(
-			'click',
-			function (
-				event,
-			) {
-				event.stopPropagation();
-
-				headerSearch.classList.toggle(
-					'active',
-				);
-
-				if (
-					headerSearch.classList.contains(
-						'active',
-					)
+		if (
+			headerSearch
+		) {
+			headerSearch.addEventListener(
+				'click',
+				function (
+					event,
 				) {
-					searchInput.focus();
-				}
-			},
-		);
+					event.stopPropagation();
 
-		searchInput.addEventListener(
-			'click',
-			function (
-				event,
-			) {
-				event.stopPropagation();
-			},
-		);
+					headerSearch.classList.toggle(
+						'active',
+					);
+
+					if (
+						headerSearch.classList.contains(
+							'active',
+						)
+					) {
+						searchInput.focus();
+					}
+				},
+			);
+		}
+
+		if (
+			searchInput
+		) {
+			searchInput.addEventListener(
+				'click',
+				function (
+					event,
+				) {
+					event.stopPropagation();
+				},
+			);
+		}
 
 		document.addEventListener(
 			'click',

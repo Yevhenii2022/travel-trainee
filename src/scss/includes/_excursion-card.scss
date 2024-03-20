@@ -42,8 +42,22 @@
 	}
 
 	&__price {
-		font-family: $kudryashev;
-		font-size: 2.286rem;
-		letter-spacing: -0.12rem;
+		display: flex;
+		color: $gray-text;
+
+		p {
+			color: $black-text;
+			font-family: $kudryashev;
+			font-size: 2.286rem;
+			letter-spacing: -0.12rem;
+		}
+
+		span {
+			text-decoration: line-through;
+			text-decoration-color: inherit;
+			text-decoration-thickness: 0.071rem;
+			text-decoration-skip-ink: none;
+			line-height: 1.2;
+		}
 	}
 }
