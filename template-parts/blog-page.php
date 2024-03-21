@@ -11,39 +11,38 @@
       <?php endif; ?>
 
 
+      <div class="blog__category">
+        <ul>
+          <li>
+            <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><?php pll_e('Все') ?></a>
+          </li>
+          <?php
+          $categories = get_categories(array(
+            'orderby' => 'name',
+            'order'   => 'ASC'
+          ));
 
-      <ul>
-        <li>
-          <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><?php pll_e('Все') ?></a>
-        </li>
-
-        <?php
-        $categories = get_categories(array(
-          'orderby' => 'name',
-          'order'   => 'ASC'
-        ));
-
-        foreach ($categories as $category) {
-          if ($category->name != 'Без категорії') {
-            printf(
-              '<li><a href="%1$s">%2$s</a></li>',
-              esc_url(get_category_link($category->term_id)),
-              esc_html($category->name)
-            );
+          foreach ($categories as $category) {
+            if ($category->name != 'Без категорії') {
+              printf(
+                '<li><a href="%1$s">%2$s</a></li>',
+                esc_url(get_category_link($category->term_id)),
+                esc_html($category->name)
+              );
+            }
           }
-        }
-        ?>
-      </ul>
+          ?>
+        </ul>
 
-      <div class="blog__count">
-        <?php
-        $total_posts = wp_count_posts()->publish;
-        echo '(' . $total_posts . ')';
-        ?>
-        <?php
-        $count_text = get_sub_field('blog_count') ?? '';
-        ?>
-        <p><?= $count_text ?></p>
+        <div class="blog__count">
+          <?php
+          $count_text = get_sub_field('blog_count') ?? '';
+          $current_language = pll_current_language();
+          $total_posts = pll_count_posts($current_language);
+          echo '(' . $total_posts . ')';
+          ?>
+          <p><?= $count_text ?></p>
+        </div>
       </div>
 
       <ul class="blog__inner">
@@ -51,7 +50,7 @@
         global $post;
         $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $query = new WP_Query([
-          'posts_per_page' => 1,
+          'posts_per_page' => 6,
           'paged' => $current_page,
           'orderby' => 'date',
         ]);
@@ -67,9 +66,8 @@
       </ul>
 
 
-
       <?php
-      $posts_per_page = 1;
+      $posts_per_page = 6;
       $total_pages = $query->max_num_pages;
       $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -78,22 +76,17 @@
         'format' => 'page/%#%',
         'current' => $current_page,
         'total' => $total_pages,
-        'prev_text' => ('&#8592;'),
-        'next_text' => ('&#8594'),
+        'prev_text' => '<span class="prev-arrow"></span>',
+        'next_text' => '<span class="next-arrow"></span>',
       );
-      echo '<div id="pagination" class="pagination">';
+      echo '<div class="pagination">';
       echo paginate_links($pagination_args);
       echo '</div>';
-
 
       wp_reset_postdata();
       ?>
 
 
-
-
     </div>
-
-
   </div>
 </section>

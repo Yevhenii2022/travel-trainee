@@ -3,7 +3,7 @@ $data = get_query_var('custom_data');
 $data_id = $data->ID;
 $product = wc_get_product($data_id);
 $title = $product->get_title() ?? '';
-$content = $product->get_description();
+$content = $product->get_description() ?? '';
 $excerpt = $product->get_short_description() ?? '';
 $image = get_the_post_thumbnail_url($data_id, 'full');
 $regular_price = $product->get_regular_price() ?? '';
@@ -13,7 +13,14 @@ $currency_symbol = get_woocommerce_currency_symbol();
 
 <article class="excursion-card">
   <div class="excursion-card__image">
-    <img src="<?php echo esc_url($image); ?>" alt="">
+    <?php if ($image) : ?>
+      <img src="<?php echo esc_url($image); ?>" alt="<?= $title; ?>">
+    <?php else :
+      $upload_dir = wp_upload_dir();
+      $image_url = $upload_dir['baseurl'] . '/2024/03/woocommerce-placeholder.png';
+    ?>
+      <img src="<?php echo esc_url($image_url); ?>" alt="дефолтне зображення">
+    <?php endif; ?>
   </div>
 
   <div class="excursion-card__wrapper">

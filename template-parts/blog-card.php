@@ -1,13 +1,20 @@
 <li>
   <article class="blog-card">
     <div class="blog-card__image">
-      <?php the_post_thumbnail(); ?>
+      <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail(); ?>
+      <?php else :
+        $upload_dir = wp_upload_dir();
+        $image_url = $upload_dir['baseurl'] . '/2024/03/woocommerce-placeholder.png';
+      ?>
+        <img src="<?php echo esc_url($image_url); ?>" alt="дефолтне зображення">
+      <?php endif; ?>
     </div>
 
     <div class="blog-card__bottom">
-      <p class="blog-card__time"><?php the_time('d.m.y'); ?></p>
+      <span class="blog-card__time"><?php the_time('d.m.y'); ?></span>
       <h3 class="section__title blog-card__title"><?php the_title(); ?></h3>
-      <p class="blog-card__text">Узнайте об уникальной коллекции велосипедов и их роли в культуре и транспорте страны на нашем захватывающем маршруте. Узнайте об уникальной коллекции велосипедов и их роли в культуре и транспорте страны на нашем захватывающем маршруте.</p>
+      <?php the_excerpt(); ?>
 
       <?php
       $btn_text = get_sub_field('blog_card_btn_text') ?? '';

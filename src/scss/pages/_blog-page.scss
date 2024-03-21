@@ -14,8 +14,29 @@
 		text-align: center;
 	}
 
+	&__category {
+		margin-bottom: 1.714rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-transform: uppercase;
+
+		ul {
+			display: flex;
+			gap: 2.286rem;
+		}
+	}
+
+	&__count {
+		display: flex;
+		gap: 0.714rem;
+
+		p {
+			color: $gray-text;
+		}
+	}
+
 	&__inner {
-		margin-bottom: 5.143rem;
 		display: grid;
 		grid-template-columns: repeat(
 			3,

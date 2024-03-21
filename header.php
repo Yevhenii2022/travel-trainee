@@ -48,7 +48,7 @@
 
 						<div class="header__nav">
 
-							<div class="custom-select">
+							<div class="custom-select <?= is_front_page() ? 'header--white' : '' ?>">
 								<?php pll_the_languages(array('dropdown' => 1)); ?>
 							</div>
 
