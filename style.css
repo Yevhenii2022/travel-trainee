@@ -290,7 +290,7 @@ button {
   height: 20rem;
 }
 .blog-card__bottom {
-  padding: 1.05rem 1.143rem 1.714rem 1.143rem;
+  padding: 1.1rem 1.143rem 1.714rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.571rem;
@@ -317,6 +317,43 @@ button {
   overflow: hidden;
   font-size: 2.286rem;
   letter-spacing: -0.09rem;
+}
+
+.blog-banner {
+  margin-bottom: 5.143rem;
+  display: flex;
+  background-color: #fff;
+}
+.blog-banner__image {
+  width: 51%;
+}
+.blog-banner__image img {
+  height: 37.786rem;
+}
+.blog-banner__wrapper {
+  width: 50%;
+  padding: 2.286rem 12.143rem 2.286rem 3.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blog-banner__wrapper p {
+  margin-bottom: 0.7rem;
+  height: 5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  line-height: 1.2;
+}
+.blog-banner__time {
+  opacity: 0.4;
+  line-height: 1.2;
+}
+.blog-banner__title {
+  margin: 1.143rem 0;
+  font-size: 3.929rem;
+  letter-spacing: -0.16rem;
 }
 
 @media (max-width: 541px) {
@@ -368,7 +405,7 @@ button {
   align-items: center;
 }
 .pagination .page-numbers:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 0.6rem;
 }
 
 .pagination .page-numbers.current {
@@ -1043,6 +1080,34 @@ button {
     background-color: rgba(0, 0, 0, 0.25);
   }
 }
+.excursions-page {
+  padding: 12.4rem 0 8.571rem 0;
+  background-color: #eaf2f5;
+}
+.excursions-page__title {
+  margin-bottom: 5.714rem;
+  width: 35.714rem;
+}
+.excursions-page__top {
+  margin-bottom: 1.714rem;
+}
+.excursions-page__count {
+  display: flex;
+  gap: 0.714rem;
+}
+.excursions-page__count p {
+  color: rgba(32, 32, 32, 0.4);
+  text-transform: uppercase;
+}
+.excursions-page__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.714rem;
+}
+.excursions-page__inner > :nth-child(n+4) {
+  margin-top: 2.857rem;
+}
+
 .gallery-page {
   padding: 12.571rem 0 8.571rem 0;
   background-color: #eaf2f5;
@@ -1071,7 +1136,7 @@ button {
 }
 
 .blog {
-  padding: 12.571rem 0 8.571rem 0;
+  padding: 12.4rem 0 8.571rem 0;
   background-color: #eaf2f5;
 }
 .blog__title {
@@ -1079,7 +1144,7 @@ button {
   text-align: center;
 }
 .blog__category {
-  margin-bottom: 1.714rem;
+  margin-bottom: 1.72rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

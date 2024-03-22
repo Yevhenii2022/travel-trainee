@@ -1,4 +1,4 @@
-.blog {
+.excursions-page {
 	padding: 12.4rem 0
 		8.571rem 0;
 	background-color: $white-bg;
@@ -11,20 +11,11 @@
 
 	&__title {
 		margin-bottom: 5.714rem;
-		text-align: center;
+		width: 35.714rem;
 	}
 
-	&__category {
-		margin-bottom: 1.72rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		text-transform: uppercase;
-
-		ul {
-			display: flex;
-			gap: 2.286rem;
-		}
+	&__top {
+		margin-bottom: 1.714rem;
 	}
 
 	&__count {
@@ -33,6 +24,7 @@
 
 		p {
 			color: $gray-text;
+			text-transform: uppercase;
 		}
 	}
 
@@ -42,6 +34,13 @@
 			3,
 			1fr
 		);
-		gap: 1.071rem;
+		gap: 1.714rem;
+
+		&
+			> :nth-child(
+				n + 4
+			) {
+			margin-top: 2.857rem;
+		}
 	}
 }

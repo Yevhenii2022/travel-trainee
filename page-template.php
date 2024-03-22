@@ -29,6 +29,8 @@ get_header();
         get_template_part('template-parts/blog-page');
       } elseif (get_row_layout() == 'reviews') {
         get_template_part('template-parts/reviews-page');
+      } elseif (get_row_layout() == 'excursions-page') {
+        get_template_part('template-parts/excursions-page');
       } ?>
     <?php endwhile ?>
   <?php } ?>

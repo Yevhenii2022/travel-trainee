@@ -29,7 +29,7 @@ $currency_symbol = get_woocommerce_currency_symbol();
 
     <div class="excursion-card__inner">
       <?php
-      $btn_text = get_sub_field('excursions_btn_card') ?? '';
+      $btn_text = get_field('excursion_card_btn_text', 'options') ?? '';
       ?>
       <a class="button" href="<?php echo esc_url($product->get_permalink()); ?>" aria-label="<?php echo esc_attr($product->get_title()); ?>">
         <?= $btn_text ?>

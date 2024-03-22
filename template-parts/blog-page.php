@@ -10,7 +10,6 @@
         <h2 class="blog__title section__title"><?= $title; ?></h2>
       <?php endif; ?>
 
-
       <div class="blog__category">
         <ul>
           <li>
@@ -45,6 +44,21 @@
         </div>
       </div>
 
+      <?php
+      $popular_posts_query = new WP_Query(array(
+        'posts_per_page' => 1,
+        'orderby' => 'comment_count',
+        'order' => 'DESC'
+      ));
+      if ($popular_posts_query->have_posts()) {
+        while ($popular_posts_query->have_posts()) {
+          $popular_posts_query->the_post();
+          get_template_part('template-parts/blog-banner');
+        }
+        wp_reset_postdata();
+      }
+      ?>
+
       <ul class="blog__inner">
         <?php
         global $post;
@@ -65,7 +79,6 @@
         ?>
       </ul>
 
-
       <?php
       $posts_per_page = 6;
       $total_pages = $query->max_num_pages;
@@ -85,7 +98,6 @@
 
       wp_reset_postdata();
       ?>
-
 
     </div>
   </div>
