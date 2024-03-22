@@ -12,12 +12,12 @@
     </div>
 
     <div class="blog-card__bottom">
-      <span class="blog-card__time"><?php the_time('d.m.y'); ?></span>
+      <span class="blog-card__time"><?php the_time('d.m.Y'); ?></span>
       <h3 class="section__title blog-card__title"><?php the_title(); ?></h3>
       <?php the_excerpt(); ?>
 
       <?php
-      $btn_text = get_sub_field('blog_card_btn_text') ?? '';
+      $btn_text = get_field('blog_card_btn_text', 'options') ?? '';
       ?>
       <a class="button" href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>">
         <?= $btn_text ?>

@@ -290,7 +290,7 @@ button {
   height: 20rem;
 }
 .blog-card__bottom {
-  padding: 1.143rem 1.143rem 1.714rem 1.143rem;
+  padding: 1.05rem 1.143rem 1.714rem 1.143rem;
   display: flex;
   flex-direction: column;
   gap: 0.571rem;
@@ -310,7 +310,7 @@ button {
 }
 .blog-card__title {
   margin: 0;
-  height: 4.571rem;
+  height: 4.7rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -357,7 +357,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 .pagination a:hover {
-  border: 1px solid #262626;
+  border: 0.071rem solid #262626;
 }
 
 .pagination .page-numbers {
@@ -1097,6 +1097,96 @@ button {
   color: rgba(32, 32, 32, 0.4);
 }
 .blog__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.071rem;
+}
+
+.reviews {
+  padding: 12.571rem 0 8.571rem 0;
+  background-color: #eaf2f5;
+}
+.reviews__title {
+  margin: 0 auto;
+  margin-bottom: 5.714rem;
+  width: 40rem;
+  text-align: center;
+}
+.reviews__count {
+  margin-bottom: 1.714rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.714rem;
+  text-transform: uppercase;
+}
+.reviews__count p {
+  color: rgba(32, 32, 32, 0.4);
+}
+.reviews__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.071rem;
+}
+
+.post {
+  padding: 12.4rem 0 8.4rem 0;
+  background-color: #eaf2f5;
+}
+.post__link {
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.286rem;
+  text-transform: uppercase;
+}
+.post__link svg {
+  width: 0.786rem;
+  height: 0.786rem;
+}
+.post__title {
+  margin: 0 auto;
+  margin-bottom: 2.3rem;
+  width: 42.857rem;
+  text-align: center;
+  font-size: 3.929rem;
+  letter-spacing: -0.15rem;
+}
+.post__title--left {
+  margin: 0 0 2.4rem 0;
+  text-align: left;
+}
+.post__time {
+  margin-bottom: 1.3rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0.4;
+  line-height: 1.2;
+}
+.post__image img {
+  height: 43rem;
+}
+.post__content {
+  margin-bottom: 8.35rem;
+  padding: 5.6rem 23rem 8.571rem 23rem;
+  border-bottom: 0.071rem solid #202020;
+}
+.post__content h3 {
+  margin-bottom: 1.714rem;
+  font-family: "Kudryashev";
+  font-size: 2.286rem;
+  line-height: 1;
+  letter-spacing: -0.093rem;
+}
+.post__content p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.post__content img {
+  margin: 5.714rem 0 1.714rem 0;
+  height: 32.286rem;
+}
+.post__inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.071rem;

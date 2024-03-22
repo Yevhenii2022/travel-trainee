@@ -27,6 +27,8 @@ get_header();
         get_template_part('template-parts/gallery-page');
       } elseif (get_row_layout() == 'blog') {
         get_template_part('template-parts/blog-page');
+      } elseif (get_row_layout() == 'reviews') {
+        get_template_part('template-parts/reviews-page');
       } ?>
     <?php endwhile ?>
   <?php } ?>
