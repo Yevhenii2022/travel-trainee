@@ -9,13 +9,26 @@
 		// padding-bottom: 13.333rem;
 	}
 
+	&__wrapper {
+		display: flex;
+	}
+
 	&__title {
-		margin-bottom: 5.714rem;
+		margin: 0 0
+			5.714rem
+			16.643rem;
 		width: 35.714rem;
+	}
+
+	&__filters {
+		width: 45%;
 	}
 
 	&__top {
 		margin-bottom: 1.714rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	&__count {

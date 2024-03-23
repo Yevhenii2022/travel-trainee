@@ -1084,12 +1084,21 @@ button {
   padding: 12.4rem 0 8.571rem 0;
   background-color: #eaf2f5;
 }
+.excursions-page__wrapper {
+  display: flex;
+}
 .excursions-page__title {
-  margin-bottom: 5.714rem;
+  margin: 0 0 5.714rem 16.643rem;
   width: 35.714rem;
+}
+.excursions-page__filters {
+  width: 45%;
 }
 .excursions-page__top {
   margin-bottom: 1.714rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .excursions-page__count {
   display: flex;
