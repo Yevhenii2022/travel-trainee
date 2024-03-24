@@ -20,7 +20,7 @@
     <?php
     $btn_text = get_field('blog_card_btn_text', 'options') ?? '';
     ?>
-    <a class="button" href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>">
+    <a class="btn" href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>">
       <?= $btn_text ?>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />

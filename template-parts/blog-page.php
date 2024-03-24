@@ -47,7 +47,7 @@
       <?php
       $popular_posts_query = new WP_Query(array(
         'posts_per_page' => 1,
-        'orderby' => 'comment_count',
+        'orderby' => 'date',
         'order' => 'DESC'
       ));
       if ($popular_posts_query->have_posts()) {
