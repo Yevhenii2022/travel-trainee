@@ -794,6 +794,9 @@ button {
   border-radius: 50%;
   cursor: pointer;
 }
+.hero__circle--lang {
+  margin: 1.1rem 0 0 31.9rem;
+}
 .hero__circle svg {
   width: 8.241rem;
   height: 8.241rem;
@@ -1086,13 +1089,11 @@ button {
 }
 .excursions-page__wrapper {
   display: flex;
+  justify-content: space-between;
 }
 .excursions-page__title {
   margin: 0 0 5.78rem 16.643rem;
   width: 35.714rem;
-}
-.excursions-page__filters {
-  width: 32.4%;
 }
 .excursions-page__top {
   margin-bottom: 1.714rem;
@@ -1109,6 +1110,7 @@ button {
   text-transform: uppercase;
 }
 .excursions-page__inner {
+  width: 81.643rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.714rem;
@@ -1192,8 +1194,10 @@ button {
 }
 
 .reviews {
-  padding: 12.571rem 0 8.571rem 0;
   background-color: #eaf2f5;
+}
+.reviews__wrapper {
+  padding: 12.571rem 0 8.571rem 0;
 }
 .reviews__title {
   margin: 0 auto;
@@ -1211,10 +1215,59 @@ button {
 .reviews__count p {
   color: rgba(32, 32, 32, 0.4);
 }
+.reviews__nothing {
+  margin: 4rem auto;
+  font-size: 2.5rem;
+  text-align: center;
+}
 .reviews__inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.071rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.143rem;
+  grid-auto-rows: auto;
+  align-items: start;
+}
+.reviews__card {
+  padding: 1.714rem;
+  height: fit-content;
+  background-color: #fff;
+}
+.reviews__box {
+  margin-bottom: 1.714rem;
+  display: flex;
+  align-items: center;
+  gap: 1.143rem;
+  text-transform: uppercase;
+}
+.reviews__box h4 {
+  margin-bottom: 0.286rem;
+}
+.reviews__circle {
+  width: 9.571rem;
+  height: 9.571rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #d2dbdf;
+  background-color: #eaf2f5;
+  font-size: 2.857rem;
+  line-height: 1;
+}
+.reviews__time {
+  margin-bottom: 1.714rem;
+  opacity: 0.4;
+  line-height: 1.2;
+}
+.reviews__content {
+  font-size: 1.429rem;
+  line-height: 1.2;
+}
+.reviews__gallery {
+  margin-top: 1.714rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.571rem;
 }
 
 .post {
@@ -1317,19 +1370,27 @@ button {
 .product__gallery img {
   height: 19.84rem;
 }
+.product__gallery .first img {
+  height: 40.8rem;
+}
 .product__gallery .second {
   display: flex;
   flex-direction: column;
   gap: 1.143rem;
 }
-.product__gallery .third,
-.product__gallery .fourth {
+.product__gallery .third {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.143rem;
 }
+.product__gallery .third > a:nth-child(n+3) {
+  grid-column: 1/-1;
+}
 .product__gallery .fourth {
   height: 40.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.143rem;
   overflow: hidden;
 }
 .product__gallery .fourth + .product__label {

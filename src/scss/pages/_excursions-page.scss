@@ -11,6 +11,7 @@
 
 	&__wrapper {
 		display: flex;
+		justify-content: space-between;
 	}
 
 	&__title {
@@ -21,7 +22,7 @@
 	}
 
 	&__filters {
-		width: 32.4%;
+		// flex-basis: 15%;
 	}
 
 	&__top {
@@ -42,6 +43,7 @@
 	}
 
 	&__inner {
+		width: 81.643rem;
 		display: grid;
 		grid-template-columns: repeat(
 			3,

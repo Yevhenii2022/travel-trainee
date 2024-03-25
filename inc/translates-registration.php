@@ -8,4 +8,5 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Такая страница отсутствует');
     pll_register_string('pointer_theme', 'Назад к главной странице');
     pll_register_string('pointer_theme', 'Показать все фото');
+    pll_register_string('pointer_theme', 'Добавить отзыв');
 }

@@ -22,7 +22,8 @@ $svg_content = file_get_contents($file_path);
       <div class="hero__box">
         <p class="hero__text"><?= $subtitle ?></p>
         <h1 class="main__title"><?php echo $title ?></h1>
-        <a class="hero__circle" href="<?php the_permalink(58); ?>" aria-label="посилання на сторінку екскурсій">
+        <a class="hero__circle <?php echo (pll_current_language() === 'uk') ? 'hero__circle--lang' : ''; ?>" href="<?php the_permalink(58); ?>" aria-label="посилання на сторінку екскурсій">
+
           <?php if ($svg_content !== false) {
             echo $svg_content;
           } ?>

@@ -41,7 +41,7 @@
         <div class="excursions-page__inner">
           <?php
           $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-          $posts_per_page = 5;
+          $posts_per_page = 9;
 
           $products = wc_get_products(array(
             'limit' => $posts_per_page,

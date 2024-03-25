@@ -50,24 +50,43 @@
 			height: 19.84rem;
 		}
 
+		.first {
+			img {
+				height: 40.8rem;
+			}
+		}
+
 		.second {
 			display: flex;
 			flex-direction: column;
 			gap: 1.143rem;
 		}
 
-		.third,
-		.fourth {
+		.third {
 			display: grid;
 			grid-template-columns: repeat(
 				2,
 				1fr
 			);
 			gap: 1.143rem;
+
+			&
+				> a:nth-child(
+					n + 3
+				) {
+				grid-column: 1 /
+					-1;
+			}
 		}
 
 		.fourth {
 			height: 40.8rem;
+			display: grid;
+			grid-template-columns: repeat(
+				2,
+				1fr
+			);
+			gap: 1.143rem;
 			overflow: hidden;
 
 			&
