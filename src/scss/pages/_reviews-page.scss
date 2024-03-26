@@ -45,8 +45,13 @@
 			1fr
 		);
 		grid-gap: 1.143rem;
-		grid-auto-rows: auto;
-		align-items: start;
+	}
+
+	&__column--first,
+	&__column--second {
+		display: flex;
+		flex-direction: column;
+		gap: 1.143rem;
 	}
 
 	&__card {
@@ -99,5 +104,38 @@
 			1fr
 		);
 		gap: 0.571rem;
+
+		img {
+			height: 10.857rem;
+		}
+	}
+
+	&__bottom {
+		height: 53.143rem;
+		display: flex;
+		background-color: $white;
+
+		img {
+			width: 50%;
+			height: 100%;
+		}
+	}
+
+	&__form-wrap {
+		padding: 2.286rem;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		h3 {
+			font-size: 3.929rem;
+		}
+
+		h4 {
+			width: 26rem;
+			font-size: 1.429rem;
+			line-height: 1.2;
+		}
 	}
 }

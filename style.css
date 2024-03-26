@@ -170,6 +170,27 @@ button {
   margin: 0 auto;
 }
 
+.reviews-form__button {
+  margin: 0;
+}
+
+.button__delete {
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23101010' fill-opacity='.4' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12ZM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.button__delete:hover, .button__delete:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23202020' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12ZM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.button__delete:active {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23000' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12ZM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+
 .form__input {
   margin-bottom: 2rem;
 }
@@ -227,6 +248,104 @@ button {
 }
 
 .wpcf7-response-output {
+  display: none;
+}
+
+.reviews-form__input {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.reviews-form__input label {
+  position: relative;
+}
+.reviews-form__input label input,
+.reviews-form__input label textarea {
+  width: 100%;
+  padding-bottom: 0.571rem;
+  border-bottom: 0.071rem solid rgba(32, 32, 32, 0.4);
+  font-size: 0.714rem;
+  line-height: 1.2;
+  color: #202020;
+  transition: all 0.3s ease-in-out;
+}
+.reviews-form__input label input::placeholder,
+.reviews-form__input label textarea::placeholder {
+  color: #202020;
+  text-transform: uppercase;
+}
+.reviews-form__input label input:hover, .reviews-form__input label input:focus, .reviews-form__input label input:active,
+.reviews-form__input label textarea:hover,
+.reviews-form__input label textarea:focus,
+.reviews-form__input label textarea:active {
+  border-color: #202020;
+}
+.reviews-form__input label textarea {
+  height: 6rem;
+  font-size: 0.9rem;
+  resize: none;
+}
+.reviews-form__input label input.wpcf7-not-valid,
+.reviews-form__input label textarea.wpcf7-not-valid {
+  border-color: #ff4040;
+}
+.reviews-form__input:has(.wpcf7-not-valid) .form__icon {
+  display: block;
+}
+.reviews-form__name {
+  display: flex;
+  gap: 1.143rem;
+}
+.reviews-form__icon {
+  top: -5.3rem;
+}
+.reviews-form__rating {
+  margin-bottom: 2.286rem;
+  height: 3.214rem;
+  font-size: 0.714rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.reviews-form__inner {
+  display: flex;
+  gap: 1.143rem;
+}
+.reviews-form__file {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reviews-form__file-text {
+  margin-bottom: 0.7rem;
+  max-width: 34rem;
+  height: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 0.714rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.reviews-form__file-text span {
+  max-width: 21rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.reviews-form__file label {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31 31' fill='none'%3E%3Cpath fill='%23202020' d='m20.355 17.644-1.294 1.322-3.626 3.702a3.594 3.594 0 0 1-5.151 0c-1.42-1.45-1.42-3.81 0-5.26l2.072-2.116 3.386-3.457L18.53 8.99a2.458 2.458 0 0 1 3.523 0 2.585 2.585 0 0 1 0 3.597l-3.973 4.056-1.566 1.599-2.042 2.085c-.51.52-1.338.519-1.846 0a1.355 1.355 0 0 1 0-1.886l2.96-3.022.647-.662 2.768-2.825-.863-.88-2.767 2.825-.648.661-2.96 3.023a2.62 2.62 0 0 0 0 3.646 2.492 2.492 0 0 0 3.571 0l1.862-1.9 1.746-1.784 3.973-4.056c1.447-1.477 1.447-3.88 0-5.358a3.66 3.66 0 0 0-5.248 0l-3.035 3.1-3.028 3.092-2.182 2.228c-1.896 1.935-1.896 5.085 0 7.02a4.797 4.797 0 0 0 6.876 0l3.625-3.701 1.295-1.322 2.406-2.457-.862-.88-2.407 2.456Z'/%3E%3C/svg%3E");
+  background-size: 2.214rem 2.214rem;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.reviews-form__file label p {
+  padding: 0.9rem 0 0.9rem 2.8rem;
+}
+.reviews-form__file input[type=file] {
   display: none;
 }
 
@@ -1224,8 +1343,11 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.143rem;
-  grid-auto-rows: auto;
-  align-items: start;
+}
+.reviews__column--first, .reviews__column--second {
+  display: flex;
+  flex-direction: column;
+  gap: 1.143rem;
 }
 .reviews__card {
   padding: 1.714rem;
@@ -1268,6 +1390,33 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.571rem;
+}
+.reviews__gallery img {
+  height: 10.857rem;
+}
+.reviews__bottom {
+  height: 53.143rem;
+  display: flex;
+  background-color: #fff;
+}
+.reviews__bottom img {
+  width: 50%;
+  height: 100%;
+}
+.reviews__form-wrap {
+  padding: 2.286rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reviews__form-wrap h3 {
+  font-size: 3.929rem;
+}
+.reviews__form-wrap h4 {
+  width: 26rem;
+  font-size: 1.429rem;
+  line-height: 1.2;
 }
 
 .post {

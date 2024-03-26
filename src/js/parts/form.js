@@ -21,24 +21,41 @@ document.addEventListener(
 			document.querySelector(
 				'.popup',
 			);
+		const inputFile =
+			document.querySelector(
+				"input[type='file']",
+			);
+		const fileNameDisplay =
+			document.querySelector(
+				'.reviews-form__file-text',
+			);
+		const inputClear =
+			document.querySelector(
+				'.button__delete',
+			);
+
+		inputFile.setAttribute(
+			'multiple',
+			'multiple',
+		);
 
 		if (wpcf7Elm) {
-			wpcf7Elm.addEventListener(
+			document.addEventListener(
 				'wpcf7beforesubmit',
 				() => {
-					if (
-						submitButton
-					) {
-						submitButton.setAttribute(
-							'disabled',
-							'disabled',
-						);
-					}
+					// if (
+					// 	submitButton
+					// ) {
+					submitButton.setAttribute(
+						'disabled',
+						'disabled',
+					);
+					// }
 				},
 				false,
 			);
 
-			wpcf7Elm.addEventListener(
+			document.addEventListener(
 				'wpcf7mailsent',
 				// "wpcf7mailfailed",
 				// "wpcf7submit",
@@ -47,20 +64,24 @@ document.addEventListener(
 						event.target;
 					form.reset();
 					popover.hidePopover();
+					fileNameDisplay.innerText =
+						'Добавить фото';
+					inputClear.style.display =
+						'none';
 				},
 				false,
 			);
 
-			wpcf7Elm.addEventListener(
+			document.addEventListener(
 				'wpcf7submit',
 				() => {
-					if (
-						submitButton
-					) {
-						submitButton.removeAttribute(
-							'disabled',
-						);
-					}
+					// if (
+					// 	submitButton
+					// ) {
+					submitButton.removeAttribute(
+						'disabled',
+					);
+					// }
 				},
 				false,
 			);
@@ -78,6 +99,68 @@ document.addEventListener(
 					},
 				);
 			}
+		}
+
+		// input file
+		if (inputFile) {
+			inputFile.addEventListener(
+				'change',
+				function () {
+					let files =
+						this
+							.files;
+					let fileNames =
+						[];
+
+					for (
+						let i = 0;
+						i <
+						files.length;
+						i++
+					) {
+						fileNames.push(
+							files[
+								i
+							]
+								.name,
+						);
+					}
+
+					fileNameDisplay.innerHTML =
+						fileNames.length >
+						0
+							? fileNames.join(
+									', ',
+							  )
+							: 'Добавить фото';
+					inputClear.style.display =
+						'block';
+				},
+			);
+		}
+
+		//clear input
+		if (
+			inputClear
+		) {
+			inputClear.addEventListener(
+				'click',
+				function () {
+					if (
+						inputFile
+							.files
+							.length >
+						0
+					) {
+						inputFile.value =
+							'';
+						fileNameDisplay.innerText =
+							'Добавить фото';
+						inputClear.style.display =
+							'none';
+					}
+				},
+			);
 		}
 	},
 );

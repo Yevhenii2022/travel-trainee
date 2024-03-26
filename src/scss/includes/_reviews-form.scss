@@ -1,0 +1,130 @@
+.reviews-form {
+	&__input {
+		margin-bottom: 2rem;
+		width: 100%;
+
+		label {
+			position: relative;
+
+			input,
+			textarea {
+				width: 100%;
+				padding-bottom: 0.571rem;
+				border-bottom: 0.071rem
+					solid
+					rgba(
+						32,
+						32,
+						32,
+						0.4
+					);
+				font-size: 0.714rem;
+				line-height: 1.2;
+				color: $black-text;
+				transition: $transition;
+
+				&::placeholder {
+					color: $black-text;
+					text-transform: uppercase;
+				}
+
+				&:hover,
+				&:focus,
+				&:active {
+					border-color: $black-text;
+				}
+			}
+
+			textarea {
+				height: 6rem;
+				font-size: 0.9rem;
+				resize: none;
+			}
+
+			input.wpcf7-not-valid,
+			textarea.wpcf7-not-valid {
+				border-color: $red-alert;
+			}
+		}
+
+		&:has(
+				.wpcf7-not-valid
+			) {
+			.form__icon {
+				display: block;
+			}
+		}
+	}
+
+	&__name {
+		display: flex;
+		gap: 1.143rem;
+	}
+
+	&__icon {
+		top: -5.3rem;
+	}
+
+	&__rating {
+		margin-bottom: 2.286rem;
+		height: 3.214rem;
+		font-size: 0.714rem;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	&__inner {
+		display: flex;
+		gap: 1.143rem;
+	}
+
+	&__file {
+		width: 100%;
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&-text {
+			margin-bottom: 0.7rem;
+			max-width: 34rem;
+			height: 1rem;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			overflow: hidden;
+			font-size: 0.714rem;
+			line-height: 1.2;
+			text-transform: uppercase;
+
+			span {
+				max-width: 21rem;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 1;
+				overflow: hidden;
+			}
+		}
+
+		label {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31 31' fill='none'%3E%3Cpath fill='%23202020' d='m20.355 17.644-1.294 1.322-3.626 3.702a3.594 3.594 0 0 1-5.151 0c-1.42-1.45-1.42-3.81 0-5.26l2.072-2.116 3.386-3.457L18.53 8.99a2.458 2.458 0 0 1 3.523 0 2.585 2.585 0 0 1 0 3.597l-3.973 4.056-1.566 1.599-2.042 2.085c-.51.52-1.338.519-1.846 0a1.355 1.355 0 0 1 0-1.886l2.96-3.022.647-.662 2.768-2.825-.863-.88-2.767 2.825-.648.661-2.96 3.023a2.62 2.62 0 0 0 0 3.646 2.492 2.492 0 0 0 3.571 0l1.862-1.9 1.746-1.784 3.973-4.056c1.447-1.477 1.447-3.88 0-5.358a3.66 3.66 0 0 0-5.248 0l-3.035 3.1-3.028 3.092-2.182 2.228c-1.896 1.935-1.896 5.085 0 7.02a4.797 4.797 0 0 0 6.876 0l3.625-3.701 1.295-1.322 2.406-2.457-.862-.88-2.407 2.456Z'/%3E%3C/svg%3E");
+			background-size: 2.214rem
+				2.214rem;
+			background-repeat: no-repeat;
+			background-position: 0
+				center;
+			transition: $transition;
+
+			p {
+				padding: 0.9rem
+					0 0.9rem
+					2.8rem;
+			}
+
+			cursor: pointer;
+		}
+
+		input[type='file'] {
+			display: none;
+		}
+	}
+}
