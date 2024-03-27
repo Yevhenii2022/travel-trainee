@@ -4,12 +4,12 @@ html {
 	@include media(
 		tablet
 	) {
-		// font-size: 1.4vw;
+		font-size: 1.4vw;
 	}
 	@include media(
 		mobile
 	) {
-		// font-size: 4vw; // font size 15px
+		font-size: 3.733vw; // font size 14px
 	}
 }
 

@@ -134,6 +134,18 @@
                         <?php echo $number; ?>
                     </a>
                 <?php endif; ?>
+
+
+
+                <?php
+                $copyright = get_field('copyright', 'options') ?? '';
+                ?>
+
+                <p>&copy; holland travel <?php echo date("Y"); ?></p>
+                <!-- <p><?= $copyright; ?></p> -->
+
+
+
             </div>
 
         </div>

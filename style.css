@@ -24,6 +24,17 @@ Version: 1.0.1
 html {
   font-size: 0.972vw;
 }
+@media (max-width: 1025px) {
+  html {
+    font-size: 1.4vw;
+  }
+}
+@media (max-width: 541px) {
+  html {
+    font-size: 3.733vw;
+  }
+}
+
 body {
   color: #202020;
   background-color: #fff;
@@ -871,11 +882,16 @@ button {
   transform: scale(1.13);
 }
 .footer__contacts {
-  margin-right: 1.786rem;
+  margin-right: 0.143rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   line-height: 1;
+  text-transform: uppercase;
+}
+.footer__contacts p {
+  margin-top: 2.2rem;
+  opacity: 0.3;
   text-transform: uppercase;
 }
 

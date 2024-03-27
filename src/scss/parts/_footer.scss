@@ -46,11 +46,17 @@
 	}
 
 	&__contacts {
-		margin-right: 1.786rem;
+		margin-right: 0.143rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		line-height: 1;
 		text-transform: uppercase;
+
+		p {
+			margin-top: 2.2rem;
+			opacity: 0.3;
+			text-transform: uppercase;
+		}
 	}
 }
