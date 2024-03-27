@@ -2,8 +2,8 @@
 	background-color: $white-bg;
 
 	&__wrapper {
-		padding: 12.571rem
-			0 8.571rem 0;
+		padding: 12.25rem
+			0 8.5rem 0;
 
 		@include media(
 			mobile
@@ -14,7 +14,7 @@
 
 	&__title {
 		margin: 0 auto;
-		margin-bottom: 5.714rem;
+		margin-bottom: 5.9rem;
 		width: 40rem;
 		text-align: center;
 	}
@@ -61,14 +61,14 @@
 	}
 
 	&__box {
-		margin-bottom: 1.714rem;
+		margin-bottom: 1.6rem;
 		display: flex;
 		align-items: center;
 		gap: 1.143rem;
 		text-transform: uppercase;
 
 		h4 {
-			margin-bottom: 0.286rem;
+			margin-bottom: 0.2rem;
 		}
 	}
 
@@ -91,13 +91,17 @@
 		line-height: 1.2;
 	}
 
+	&__rating {
+		height: 1.786rem;
+	}
+
 	&__content {
 		font-size: 1.429rem;
 		line-height: 1.2;
 	}
 
 	&__gallery {
-		margin-top: 1.714rem;
+		margin-top: 1.85rem;
 		display: grid;
 		grid-template-columns: repeat(
 			4,
@@ -116,20 +120,22 @@
 		background-color: $white;
 
 		img {
-			width: 50%;
+			width: 50.2%;
 			height: 100%;
 		}
 	}
 
 	&__form-wrap {
-		padding: 2.286rem;
-		width: 50%;
+		padding: 2.2rem;
+		width: 49.8%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 
 		h3 {
+			margin-bottom: 1.03rem;
 			font-size: 3.929rem;
+			letter-spacing: -0.16rem;
 		}
 
 		h4 {

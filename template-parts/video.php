@@ -13,7 +13,7 @@ $video = get_sub_field('video');
       <svg class="video__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 19" fill="none">
         <path fill="#fff" d="M0 0v19l15-9.5L0 0Z" />
       </svg>
-      Смотреть видео
+      <?php pll_e('Смотреть видео') ?>
     </button>
   </section>
 <?php endif; ?>

@@ -9,6 +9,10 @@ document.addEventListener(
 			document.querySelector(
 				'.form__button',
 			);
+		const submitButton2 =
+			document.querySelector(
+				'.reviews-form__button',
+			);
 		const formInput =
 			document.querySelector(
 				'.wpcf7-form-control',
@@ -39,18 +43,40 @@ document.addEventListener(
 			'multiple',
 		);
 
+		const currentLanguage =
+			document
+				.documentElement
+				.lang;
+
+		let inputFileText =
+			'';
+
+		if (
+			currentLanguage ===
+			'ru'
+		) {
+			inputFileText =
+				'Добавить фото';
+		} else if (
+			currentLanguage ===
+			'uk'
+		) {
+			inputFileText =
+				'Додати фото';
+		}
+
 		if (wpcf7Elm) {
 			document.addEventListener(
 				'wpcf7beforesubmit',
 				() => {
-					// if (
-					// 	submitButton
-					// ) {
 					submitButton.setAttribute(
 						'disabled',
 						'disabled',
 					);
-					// }
+					submitButton2.setAttribute(
+						'disabled',
+						'disabled',
+					);
 				},
 				false,
 			);
@@ -65,7 +91,7 @@ document.addEventListener(
 					form.reset();
 					popover.hidePopover();
 					fileNameDisplay.innerText =
-						'Добавить фото';
+						inputFileText;
 					inputClear.style.display =
 						'none';
 				},
@@ -75,13 +101,12 @@ document.addEventListener(
 			document.addEventListener(
 				'wpcf7submit',
 				() => {
-					// if (
-					// 	submitButton
-					// ) {
 					submitButton.removeAttribute(
 						'disabled',
 					);
-					// }
+					submitButton2.removeAttribute(
+						'disabled',
+					);
 				},
 				false,
 			);
@@ -132,7 +157,7 @@ document.addEventListener(
 							? fileNames.join(
 									', ',
 							  )
-							: 'Добавить фото';
+							: inputFileText;
 					inputClear.style.display =
 						'block';
 				},
@@ -155,7 +180,7 @@ document.addEventListener(
 						inputFile.value =
 							'';
 						fileNameDisplay.innerText =
-							'Добавить фото';
+							inputFileText;
 						inputClear.style.display =
 							'none';
 					}

@@ -1,8 +1,6 @@
 <section class="reviews">
   <div class="container">
-
     <div class="reviews__wrapper">
-
       <?php
       $title = get_sub_field('reviews_title');
       ?>
@@ -30,6 +28,40 @@
         if ($reviews_query->have_posts()) :
           $post_count = $reviews_query->post_count;
           $half_post_count = ceil($post_count / 2);
+
+          $news_date = get_the_date();
+          $date_parts = date_parse($news_date);
+          $numeric_month = $date_parts['month'];
+
+          $ukrainian_months = array(
+            1 => 'січень',
+            2 => 'лютий',
+            3 => 'березень',
+            4 => 'квітень',
+            5 => 'травень',
+            6 => 'червень',
+            7 => 'липень',
+            8 => 'серпень',
+            9 => 'вересень',
+            10 => 'жовтень',
+            11 => 'листопад',
+            12 => 'грудень'
+          );
+
+          $russian_months = array(
+            1 => 'январь',
+            2 => 'февраль',
+            3 => 'март',
+            4 => 'апрель',
+            5 => 'май',
+            6 => 'июнь',
+            7 => 'июль',
+            8 => 'август',
+            9 => 'сентябрь',
+            10 => 'октябрь',
+            11 => 'ноябрь',
+            12 => 'декабрь'
+          );
         ?>
 
           <div class="reviews__column--first">
@@ -53,7 +85,18 @@
 
                   <div>
                     <h4><?php the_title(); ?></h4>
-                    <p class="reviews__time"><?php the_time('d.m.Y'); ?></p>
+
+                    <?php
+                    $language = pll_current_language();
+
+                    if ($language === 'uk') {
+                      $ukrainian_month = $ukrainian_months[$numeric_month];
+                      echo '<p class="reviews__time">' . $ukrainian_month . ' ' . $date_parts['year'] . '</p>';
+                    } elseif ($language === 'ru') {
+                      $russian_month = $russian_months[$numeric_month];
+                      echo '<p class="reviews__time">' . $russian_month . ' ' . $date_parts['year'] . '</p>';
+                    }
+                    ?>
 
                     <?php $rating = get_field('reviews_rating'); ?>
                     <p class="reviews__rating">Рейтинг: <?= $rating; ?></p>
@@ -105,7 +148,18 @@
 
                   <div>
                     <h4><?php the_title(); ?></h4>
-                    <p class="reviews__time"><?php the_time('d.m.Y'); ?></p>
+
+                    <?php
+                    $language = pll_current_language();
+
+                    if ($language === 'uk') {
+                      $ukrainian_month = $ukrainian_months[$numeric_month];
+                      echo '<p class="reviews__time">' . $ukrainian_month . ' ' . $date_parts['year'] . '</p>';
+                    } elseif ($language === 'ru') {
+                      $russian_month = $russian_months[$numeric_month];
+                      echo '<p class="reviews__time">' . $russian_month . ' ' . $date_parts['year'] . '</p>';
+                    }
+                    ?>
 
                     <?php $rating = get_field('reviews_rating'); ?>
                     <p class="reviews__rating">Рейтинг: <?= $rating; ?></p>
@@ -145,7 +199,6 @@
       </div>
 
 
-
       <?php
       $posts_per_page = 6;
       $total_pages = $reviews_query->max_num_pages;
@@ -164,13 +217,9 @@
       echo '</div>';
       ?>
 
-
-
-
     </div>
 
   </div>
-
 
   <div class="reviews__bottom">
 
@@ -180,8 +229,6 @@
       echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка секції замовити консультацію']);
     }
     ?>
-
-
 
     <?php
     $title = get_field('reviews_form_title', 'options') ?? '';
@@ -197,10 +244,5 @@
       <?php get_template_part('template-parts/reviews-form'); ?>
 
     </div>
-
   </div>
-
-
-
-
 </section>
