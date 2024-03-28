@@ -1,7 +1,8 @@
 .popup {
 	width: 34.286rem;
-	height: 32.857rem;
-	padding: 2.286rem;
+	padding: 2.286rem
+		2.286rem 2.5rem
+		2.286rem;
 	border: none;
 	top: 50%;
 	left: 50%;
@@ -11,6 +12,14 @@
 	);
 	animation: fade-out
 		0.7s ease-out;
+
+	@include media(
+		mobile
+	) {
+		width: 24.5rem;
+		padding: 1.714rem
+			1.143rem;
+	}
 
 	&::backdrop {
 		background: $white-bg;

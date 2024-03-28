@@ -63,6 +63,23 @@
 			background-color: $white;
 		}
 	}
+
+	&--hidden {
+		@include media(
+			mobile
+		) {
+			display: none;
+		}
+	}
+
+	&--visible {
+		display: none;
+		@include media(
+			mobile
+		) {
+			display: flex;
+		}
+	}
 }
 
 .form__button {

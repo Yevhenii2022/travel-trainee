@@ -1,6 +1,5 @@
 .footer {
-	padding: 3.429rem
-		0;
+	padding: 3.34rem 0;
 	background-color: $white-bg;
 	border-top: 0.071rem
 		solid
@@ -9,11 +8,48 @@
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
+
+		@include media(
+			mobile
+		) {
+			flex-direction: column;
+			gap: 2.85rem;
+		}
 	}
 
 	&__inner {
 		display: flex;
 		gap: 8rem;
+
+		@include media(
+			tablet
+		) {
+			gap: 5rem;
+		}
+
+		@include media(
+			mobile
+		) {
+			gap: 3.607rem;
+		}
+	}
+
+	&__box {
+		display: flex;
+		gap: 25.857rem;
+
+		@include media(
+			tablet
+		) {
+			gap: 9.8rem;
+		}
+
+		@include media(
+			mobile
+		) {
+			flex-direction: column-reverse;
+			gap: 2.857rem;
+		}
 	}
 
 	&__list {
@@ -27,6 +63,12 @@
 		display: flex;
 		gap: 0.571rem;
 		align-items: flex-end;
+
+		@include media(
+			mobile
+		) {
+			justify-content: space-between;
+		}
 	}
 
 	&__icon {
@@ -35,6 +77,13 @@
 			height: 1.786rem;
 			fill: $black-text;
 			transition: $transition;
+
+			@include media(
+				mobile
+			) {
+				width: 2.214rem;
+				height: 2.214rem;
+			}
 
 			&:hover,
 			&:focus {
@@ -46,17 +95,29 @@
 	}
 
 	&__contacts {
-		margin-right: 0.143rem;
+		margin-right: 0.3rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 1.1rem;
 		line-height: 1;
 		text-transform: uppercase;
 
 		p {
-			margin-top: 2.2rem;
+			margin-top: 2rem;
 			opacity: 0.3;
 			text-transform: uppercase;
+		}
+
+		@include media(
+			mobile
+		) {
+			margin: 0
+				2.1rem 0
+				auto;
+
+			p {
+				margin-top: 1.8rem;
+			}
 		}
 	}
 }

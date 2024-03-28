@@ -38,6 +38,12 @@
 		display: flex;
 		gap: 2.34rem;
 		text-transform: uppercase;
+
+		@include media(
+			tablet
+		) {
+			display: none;
+		}
 	}
 
 	&__search {
@@ -185,6 +191,13 @@
 .custom-logo {
 	width: 8.571rem;
 	height: 4.571rem;
+
+	@include media(
+		mobile
+	) {
+		width: 6.714rem;
+		height: 3.571rem;
+	}
 }
 
 .menu-item {

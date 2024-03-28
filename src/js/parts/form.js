@@ -38,11 +38,6 @@ document.addEventListener(
 				'.button__delete',
 			);
 
-		inputFile.setAttribute(
-			'multiple',
-			'multiple',
-		);
-
 		const currentLanguage =
 			document
 				.documentElement
@@ -69,14 +64,29 @@ document.addEventListener(
 			document.addEventListener(
 				'wpcf7beforesubmit',
 				() => {
-					submitButton.setAttribute(
-						'disabled',
-						'disabled',
-					);
-					submitButton2.setAttribute(
-						'disabled',
-						'disabled',
-					);
+					if (
+						submitButton
+					) {
+						submitButton.setAttribute(
+							'disabled',
+							'disabled',
+						);
+					}
+				},
+				false,
+			);
+
+			document.addEventListener(
+				'wpcf7beforesubmit',
+				() => {
+					if (
+						submitButton2
+					) {
+						submitButton2.setAttribute(
+							'disabled',
+							'disabled',
+						);
+					}
 				},
 				false,
 			);
@@ -101,12 +111,20 @@ document.addEventListener(
 			document.addEventListener(
 				'wpcf7submit',
 				() => {
-					submitButton.removeAttribute(
-						'disabled',
-					);
-					submitButton2.removeAttribute(
-						'disabled',
-					);
+					if (
+						submitButton
+					) {
+						submitButton.removeAttribute(
+							'disabled',
+						);
+					}
+					if (
+						submitButton2
+					) {
+						submitButton2.removeAttribute(
+							'disabled',
+						);
+					}
 				},
 				false,
 			);
@@ -128,6 +146,11 @@ document.addEventListener(
 
 		// input file
 		if (inputFile) {
+			inputFile.setAttribute(
+				'multiple',
+				'multiple',
+			);
+
 			inputFile.addEventListener(
 				'change',
 				function () {

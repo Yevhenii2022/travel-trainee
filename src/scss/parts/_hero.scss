@@ -3,7 +3,7 @@
 
 	&__video {
 		width: 100%;
-		height: 100vh;
+		height: 100dvh;
 		position: absolute;
 		object-fit: cover;
 		top: 0;
@@ -13,13 +13,13 @@
 
 	&__wrapper {
 		padding-bottom: 1.6rem;
-		height: 100vh;
+		height: 100dvh;
 		display: flex;
 		flex-direction: column;
 	}
 
 	&__box {
-		height: 100vh;
+		height: 100dvh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -40,9 +40,23 @@
 		border-radius: 50%;
 		cursor: pointer;
 
+		@include media(
+			mobile
+		) {
+			margin-bottom: -3rem;
+			margin-left: 0.1rem;
+		}
+
 		&--lang {
 			margin: 1.1rem
 				0 0 31.9rem;
+
+			@include media(
+				mobile
+			) {
+				margin: 0 0 -3rem
+					0.1rem;
+			}
 		}
 
 		svg {
@@ -52,6 +66,13 @@
 				30deg
 			);
 			transition: $transition;
+
+			@include media(
+				mobile
+			) {
+				width: 6.5rem;
+				height: 6.5rem;
+			}
 		}
 
 		&:hover,
@@ -97,6 +118,13 @@
 			width: 3rem;
 			height: 3rem;
 			transition: $transition;
+
+			@include media(
+				mobile
+			) {
+				width: 2.214rem;
+				height: 2.214rem;
+			}
 
 			&:hover,
 			&:focus {

@@ -7,6 +7,18 @@
 		height: 53.143rem;
 		object-fit: cover;
 		cursor: pointer;
+
+		@include media(
+			tablet
+		) {
+			height: 36rem;
+		}
+
+		@include media(
+			mobile
+		) {
+			height: 13.857rem;
+		}
 	}
 
 	&__play {
@@ -25,6 +37,13 @@
 		font-size: 2.286rem;
 		line-height: 1;
 		cursor: pointer;
+
+		@include media(
+			mobile
+		) {
+			font-size: 1.571rem;
+			letter-spacing: -0.06rem;
+		}
 
 		svg {
 			width: 1.1rem;

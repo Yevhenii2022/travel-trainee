@@ -32,6 +32,7 @@ document.addEventListener(
 				'.excursions__slider',
 				{
 					slidesPerView: 1,
+					spaceBetween: 16,
 					loop: true,
 					speed: 800,
 					centeredSlides: true,
@@ -53,14 +54,12 @@ document.addEventListener(
 						},
 					breakpoints:
 						{
-							541: {
-								spaceBetween: 16,
+							542: {
 								slidesPerView: 2.3,
 								pagination: false,
 							},
-							1024: {
+							1026: {
 								slidesPerView: 3.3,
-								spaceBetween: 16,
 								pagination: false,
 							},
 						},
@@ -71,23 +70,25 @@ document.addEventListener(
 			new Swiper(
 				'.gallery__slider',
 				{
-					slidesPerView: 2.7,
-					spaceBetween: 10,
+					slidesPerView: 1.425,
+					spaceBetween: 8,
 					loop: true,
-					speed: 1000,
-					centeredSlides: true,
+					speed: 800,
 					keyboard:
 						{
 							enabled: true,
 						},
 					breakpoints:
 						{
-							541: {
-								// slidesPerView: 2,
+							542: {
+								spaceBetween: 16,
+								slidesPerView: 2.8,
+								centeredSlides: true,
 							},
-							1024: {
+							1026: {
 								spaceBetween: 16,
 								slidesPerView: 3.7,
+								centeredSlides: true,
 							},
 						},
 				},

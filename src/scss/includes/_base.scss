@@ -4,7 +4,7 @@ html {
 	@include media(
 		tablet
 	) {
-		font-size: 1.4vw;
+		font-size: 1.45vw;
 	}
 	@include media(
 		mobile
@@ -61,6 +61,6 @@ button {
 	) {
 		width: 100%;
 		padding: 0
-			1.067rem;
+			1.143rem;
 	}
 }

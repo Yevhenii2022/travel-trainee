@@ -21,6 +21,9 @@
 }
 
 .swiper__pagination {
+	display: flex;
+	justify-content: center;
+	gap: 0.22rem;
 	width: 1.38rem;
 	line-height: 1.2;
 	span {

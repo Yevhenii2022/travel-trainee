@@ -17,27 +17,29 @@
       <?php endif; ?>
     </div>
 
-    <div class="excursions__slider swiper">
-      <div class="swiper-wrapper">
+    <div class="excursions__inner">
+      <div class="excursions__slider swiper">
+        <div class="swiper-wrapper">
 
-        <?php $excursions_list = get_sub_field('excursions_list');
-        foreach ($excursions_list as $excursion) {
-        ?>
-          <div class="swiper-slide">
-            <?php $excursion_element = $excursion['excursions_product'];
-            if ($excursion_element instanceof WP_Post) {
-              set_query_var('custom_data', $excursion_element);
+          <?php $excursions_list = get_sub_field('excursions_list');
+          foreach ($excursions_list as $excursion) {
+          ?>
+            <div class="swiper-slide">
+              <?php $excursion_element = $excursion['excursions_product'];
+              if ($excursion_element instanceof WP_Post) {
+                set_query_var('custom_data', $excursion_element);
 
-              get_template_part('template-parts/excursion-card');
-            } ?>
-          </div>
-        <?php } ?>
+                get_template_part('template-parts/excursion-card');
+              } ?>
+            </div>
+          <?php } ?>
 
-      </div>
-      <div class="excursions__box">
-        <div class="swiper__nav--prev"></div>
-        <div class="swiper__pagination"></div>
-        <div class="swiper__nav--next"></div>
+        </div>
+        <div class="excursions__box">
+          <div class="swiper__nav--prev"></div>
+          <div class="swiper__pagination"></div>
+          <div class="swiper__nav--next"></div>
+        </div>
       </div>
     </div>
 

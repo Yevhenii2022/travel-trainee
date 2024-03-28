@@ -7,7 +7,7 @@ $image = get_sub_field('advantages_img');
 <section class="аdvantages">
   <div class="аdvantages__wrapper <?php echo ($direction === 'row-reverse') ? 'аdvantages__wrapper--row-reverse' : '' ?>">
     <div class="аdvantages__inner">
-      <h2 class="section__title"><?= $title ?></h2>
+      <h2 class="section__title аdvantages__title"><?= $title ?></h2>
 
       <ul class="аdvantages__list">
         <?php $advantages_list = get_sub_field('advantages_list');
