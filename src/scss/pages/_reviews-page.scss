@@ -8,7 +8,8 @@
 		@include media(
 			mobile
 		) {
-			// padding-bottom: 13.333rem;
+			padding: 8.7rem
+				0 5.7rem 0;
 		}
 	}
 
@@ -17,6 +18,13 @@
 		margin-bottom: 5.9rem;
 		width: 40rem;
 		text-align: center;
+
+		@include media(
+			mobile
+		) {
+			width: 100%;
+			margin-bottom: 2.8rem;
+		}
 	}
 
 	&__count {
@@ -25,6 +33,12 @@
 		justify-content: center;
 		gap: 0.714rem;
 		text-transform: uppercase;
+
+		@include media(
+			mobile
+		) {
+			margin-bottom: 1.1rem;
+		}
 
 		p {
 			color: $gray-text;
@@ -45,6 +59,15 @@
 			1fr
 		);
 		grid-gap: 1.143rem;
+
+		@include media(
+			mobile
+		) {
+			grid-template-columns: repeat(
+				1,
+				1fr
+			);
+		}
 	}
 
 	&__column--first,
@@ -58,6 +81,12 @@
 		padding: 1.714rem;
 		height: fit-content;
 		background-color: $white;
+
+		@include media(
+			mobile
+		) {
+			padding: 1.143rem;
+		}
 	}
 
 	&__box {
@@ -66,6 +95,13 @@
 		align-items: center;
 		gap: 1.143rem;
 		text-transform: uppercase;
+
+		@include media(
+			mobile
+		) {
+			margin-bottom: 1.1rem;
+			gap: 1rem;
+		}
 
 		h4 {
 			margin-bottom: 0.2rem;
@@ -83,21 +119,47 @@
 		background-color: $white-bg;
 		font-size: 2.857rem;
 		line-height: 1;
+
+		@include media(
+			mobile
+		) {
+			width: 5.357rem;
+			height: 5.357rem;
+			font-size: 1.6rem;
+		}
 	}
 
 	&__time {
 		margin-bottom: 1.714rem;
 		opacity: 0.4;
 		line-height: 1.2;
+
+		@include media(
+			mobile
+		) {
+			margin-bottom: 0.714rem;
+		}
 	}
 
 	&__rating {
 		height: 1.786rem;
+
+		@include media(
+			mobile
+		) {
+			height: 1.357rem;
+		}
 	}
 
 	&__content {
 		font-size: 1.429rem;
 		line-height: 1.2;
+
+		@include media(
+			mobile
+		) {
+			font-size: 1rem;
+		}
 	}
 
 	&__gallery {
@@ -109,8 +171,27 @@
 		);
 		gap: 0.571rem;
 
+		@include media(
+			mobile
+		) {
+			margin-top: 1.9rem;
+			gap: 0.286rem;
+		}
+
 		img {
 			height: 10.857rem;
+
+			@include media(
+				tablet
+			) {
+				height: 7.5rem;
+			}
+
+			@include media(
+				mobile
+			) {
+				height: 5.357rem;
+			}
 		}
 	}
 
@@ -119,9 +200,23 @@
 		display: flex;
 		background-color: $white;
 
+		@include media(
+			mobile
+		) {
+			height: auto;
+			flex-direction: column;
+		}
+
 		img {
 			width: 50.2%;
 			height: 100%;
+
+			@include media(
+				mobile
+			) {
+				width: 100%;
+				height: 27.571rem;
+			}
 		}
 	}
 
@@ -132,16 +227,41 @@
 		flex-direction: column;
 		justify-content: space-between;
 
+		@include media(
+			mobile
+		) {
+			padding: 2.7rem
+				1.143rem
+				2.75rem
+				1.143rem;
+			width: 100%;
+		}
+
 		h3 {
 			margin-bottom: 1.03rem;
 			font-size: 3.929rem;
 			letter-spacing: -0.16rem;
+
+			@include media(
+				mobile
+			) {
+				margin-bottom: 0.571rem;
+				font-size: 1.857rem;
+				letter-spacing: -0.08rem;
+			}
 		}
 
 		h4 {
 			width: 26rem;
 			font-size: 1.429rem;
 			line-height: 1.2;
+
+			@include media(
+				mobile
+			) {
+				margin-bottom: 3.29rem;
+				font-size: 1rem;
+			}
 		}
 	}
 }

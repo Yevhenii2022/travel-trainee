@@ -5,13 +5,9 @@ document.addEventListener(
 			document.querySelector(
 				'.wpcf7',
 			);
-		const submitButton =
-			document.querySelector(
+		const submitButtons =
+			document.querySelectorAll(
 				'.form__button',
-			);
-		const submitButton2 =
-			document.querySelector(
-				'.reviews-form__button',
 			);
 		const formInput =
 			document.querySelector(
@@ -61,35 +57,28 @@ document.addEventListener(
 		}
 
 		if (wpcf7Elm) {
-			document.addEventListener(
-				'wpcf7beforesubmit',
-				() => {
-					if (
-						submitButton
-					) {
-						submitButton.setAttribute(
-							'disabled',
-							'disabled',
+			if (
+				submitButtons
+			) {
+				submitButtons.forEach(
+					submitButton => {
+						document.addEventListener(
+							'wpcf7beforesubmit',
+							() => {
+								if (
+									submitButton
+								) {
+									submitButton.setAttribute(
+										'disabled',
+										'disabled',
+									);
+								}
+							},
+							false,
 						);
-					}
-				},
-				false,
-			);
-
-			document.addEventListener(
-				'wpcf7beforesubmit',
-				() => {
-					if (
-						submitButton2
-					) {
-						submitButton2.setAttribute(
-							'disabled',
-							'disabled',
-						);
-					}
-				},
-				false,
-			);
+					},
+				);
+			}
 
 			document.addEventListener(
 				'wpcf7mailsent',
@@ -112,17 +101,14 @@ document.addEventListener(
 				'wpcf7submit',
 				() => {
 					if (
-						submitButton
+						submitButtons
 					) {
-						submitButton.removeAttribute(
-							'disabled',
-						);
-					}
-					if (
-						submitButton2
-					) {
-						submitButton2.removeAttribute(
-							'disabled',
+						submitButtons.forEach(
+							button => {
+								button.removeAttribute(
+									'disabled',
+								);
+							},
 						);
 					}
 				},
