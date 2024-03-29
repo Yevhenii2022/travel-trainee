@@ -99,11 +99,22 @@ document.addEventListener(
 				'.gallery-page__slider',
 				{
 					loop: true,
-					spaceBetween: 16,
-					slidesPerView: 6.5,
+					spaceBetween: 8,
+					slidesPerView: 2.8,
 					centeredSlides: true,
-					freeMode: true,
 					watchSlidesProgress: true,
+
+					breakpoints:
+						{
+							542: {
+								spaceBetween: 12,
+								slidesPerView: 4.8,
+							},
+							1026: {
+								spaceBetween: 16,
+								slidesPerView: 6.29,
+							},
+						},
 				},
 			);
 
@@ -112,7 +123,8 @@ document.addEventListener(
 				'.gallery-page__slider2',
 				{
 					loop: true,
-					spaceBetween: 10,
+					centeredSlides: true,
+					lazy: true,
 					pagination:
 						{
 							el: '.swiper-pagination',
@@ -121,13 +133,13 @@ document.addEventListener(
 					navigation:
 						{
 							nextEl:
-								'.swiper-button-next',
+								'.gallery__nav--next',
 							prevEl:
-								'.swiper-button-prev',
+								'.gallery__nav--prev',
 						},
 					thumbs: {
 						swiper:
-							swiper,
+							galleryPage,
 					},
 				},
 			);

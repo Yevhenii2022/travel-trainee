@@ -10,9 +10,6 @@
         <h2 class="gallery-page__title section__title"><?= $title; ?></h2>
       <?php endif; ?>
 
-
-
-
       <div class="swiper gallery-page__slider2">
         <div class="swiper-wrapper">
           <?php
@@ -26,14 +23,12 @@
           }
           ?>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination">5/9</div>
+        <div class="gallery__nav--prev"></div>
+        <div class="gallery__nav--next"></div>
+        <div class="swiper-pagination"></div>
       </div>
 
     </div>
-
-
 
     <div thumbsSlider="" class="swiper gallery-page__slider">
       <div class="swiper-wrapper">
@@ -49,9 +44,6 @@
         ?>
       </div>
     </div>
-
-
-
 
   </div>
 </section>
