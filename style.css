@@ -801,6 +801,7 @@ button {
   padding: 0.3rem 0 0.3rem 0.3rem;
   color: #202020;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 541px) {
   .select-selected {
@@ -926,6 +927,7 @@ button {
   width: 100%;
   transform: scale(1);
   background-color: #202020;
+  transition: all 0.3s ease-in-out;
 }
 
 .burger::before,
@@ -978,6 +980,24 @@ button {
 .header--hidden {
   opacity: 0;
   transform: translateY(-100%);
+}
+@media (max-width: 541px) {
+  .header:has(.header__overlay.open) {
+    background-color: #eaf2f5;
+  }
+  .header:has(.header__overlay.open) .header__burger::before, .header:has(.header__overlay.open) .header__burger::after {
+    background-color: #202020;
+  }
+  .header:has(.header__overlay.open) .header__search svg {
+    fill: #202020;
+  }
+  .header:has(.header__overlay.open) .header__basket svg {
+    stroke: #202020;
+  }
+  .header:has(.header__overlay.open) .header__logo--filter {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(1%) contrast(101%);
+    transition: all 0.3s ease-in-out;
+  }
 }
 .header:has(.header--white) .header__search.active {
   border-color: #fff;
@@ -1149,6 +1169,7 @@ button {
   height: 1.357rem;
   fill: #202020;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .header__input {
   margin-left: 0.643rem;
@@ -1181,6 +1202,7 @@ button {
   width: 1.357rem;
   height: 1.357rem;
   stroke: #202020;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 541px) {
   .header__basket {

@@ -14,6 +14,63 @@
 	}
 
 	&:has(
+			.header__overlay.open
+		) {
+		@include media(
+			mobile
+		) {
+			background-color: $white-bg;
+
+			.header__burger {
+				&::before,
+				&::after {
+					background-color: $black-text;
+				}
+			}
+
+			.header__search {
+				svg {
+					fill: $black-text;
+				}
+			}
+
+			.header__basket {
+				svg {
+					stroke: $black-text;
+				}
+			}
+
+			.header__logo--filter {
+				filter: brightness(
+						0
+					)
+					saturate(
+						100%
+					)
+					invert(
+						100%
+					)
+					sepia(
+						100%
+					)
+					saturate(
+						0%
+					)
+					hue-rotate(
+						73deg
+					)
+					brightness(
+						1%
+					)
+					contrast(
+						101%
+					);
+				transition: $transition;
+			}
+		}
+	}
+
+	&:has(
 			.header--white
 		) {
 		.header__search.active {
@@ -238,6 +295,7 @@
 			height: 1.357rem;
 			fill: $black-text;
 			cursor: pointer;
+			transition: $transition;
 		}
 	}
 
@@ -274,6 +332,7 @@
 			width: 1.357rem;
 			height: 1.357rem;
 			stroke: $black-text;
+			transition: $transition;
 		}
 
 		@include media(

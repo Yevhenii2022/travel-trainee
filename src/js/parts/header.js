@@ -23,12 +23,41 @@ document.addEventListener(
 document.addEventListener(
 	'DOMContentLoaded',
 	function () {
-		let header =
+		const header =
 			document.querySelector(
 				'.header',
 			);
 		const body =
 			document.body;
+
+		const headerLogo =
+			document.querySelector(
+				'.header__logo',
+			);
+		const headerNav =
+			document.querySelector(
+				'.header__nav',
+			);
+		const customSelect =
+			document.querySelector(
+				'.custom-select',
+			);
+		const headerBtn =
+			document.querySelector(
+				'.header--js',
+			);
+		const headerBurger =
+			document.querySelector(
+				'.header__burger',
+			);
+		const headerSearch =
+			document.querySelector(
+				'.header__search',
+			);
+		const headerBasket =
+			document.querySelector(
+				'.header__basket',
+			);
 
 		let scrollPrev = 0;
 
@@ -43,7 +72,7 @@ document.addEventListener(
 
 				if (
 					scrolled >
-						100 &&
+						80 &&
 					scrolled >
 						scrollPrev
 				) {
@@ -73,32 +102,67 @@ document.addEventListener(
 						scrolled >
 						80
 					) {
-						header.style.backgroundColor =
-							'#547fb8';
+						headerLogo.classList.remove(
+							'header__logo--filter',
+						);
+						headerNav.classList.remove(
+							'header--white',
+						);
+						customSelect.classList.remove(
+							'header--white',
+						);
+						headerBtn.classList.remove(
+							'btn--white',
+						);
+						headerBurger.classList.remove(
+							'burger--white',
+						);
+						headerBasket.classList.remove(
+							'header--stroke',
+						);
+						headerSearch.classList.remove(
+							'header--white',
+							'header--fill',
+						);
 					} else {
-						header.style.backgroundColor =
-							'';
+						headerLogo.classList.add(
+							'header__logo--filter',
+						);
+						headerNav.classList.add(
+							'header--white',
+						);
+						customSelect.classList.add(
+							'header--white',
+						);
+						headerBtn.classList.add(
+							'btn--white',
+						);
+						headerBurger.classList.add(
+							'burger--white',
+						);
+						headerBasket.classList.add(
+							'header--stroke',
+						);
+						headerSearch.classList.add(
+							'header--white',
+							'header--fill',
+						);
 					}
+				}
+
+				if (
+					scrolled >
+					80
+				) {
+					header.style.backgroundColor =
+						'#FFFFFF';
 				} else {
-					if (
-						scrolled >
-						80
-					) {
-						header.style.backgroundColor =
-							'#FFFFFF';
-					} else {
-						header.style.backgroundColor =
-							'';
-					}
+					header.style.backgroundColor =
+						'';
 				}
 			},
 		);
 
-		//input
-		const headerSearch =
-			document.querySelector(
-				'.header__search',
-			);
 		const searchInput =
 			document.querySelector(
 				'.header__input',

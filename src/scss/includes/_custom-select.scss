@@ -19,6 +19,7 @@
 		0.3rem 0.3rem;
 	color: $black-text;
 	text-transform: uppercase;
+	transition: $transition;
 
 	@include media(
 		mobile
