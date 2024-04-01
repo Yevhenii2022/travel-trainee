@@ -4,14 +4,14 @@
 	@include media(
 		mobile
 	) {
-		width: 1.7rem;
-		height: 0.9rem;
+		width: 1.9rem;
+		height: 0.92rem;
 		display: flex;
 		position: relative;
 		z-index: 50;
 		align-items: center;
 		justify-content: flex-end;
-		margin-right: 0.25rem;
+		margin-right: 1.73rem;
 		cursor: pointer;
 	}
 }
