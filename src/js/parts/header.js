@@ -163,6 +163,38 @@ document.addEventListener(
 			},
 		);
 
+		//зміна кольору хедера по кліку на кнопку бургер
+		headerBurger.addEventListener(
+			'click',
+			function () {
+				setTimeout(
+					function () {
+						if (
+							headerBurger.classList.contains(
+								'active',
+							)
+						) {
+							header.style.backgroundColor =
+								'#eaf2f5';
+						} else {
+							if (
+								window.pageYOffset >
+								100
+							) {
+								header.style.backgroundColor =
+									'#FFFFFF';
+							} else {
+								header.style.backgroundColor =
+									'';
+							}
+						}
+					},
+					50,
+				);
+			},
+		);
+		//зміна кольору хедера по кліку на кнопку бургер
+
 		const searchInput =
 			document.querySelector(
 				'.header__input',
