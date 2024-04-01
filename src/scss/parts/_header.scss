@@ -13,6 +13,29 @@
 		);
 	}
 
+	&:has(
+			.header__search.active
+		) {
+		@include media(
+			mobile
+		) {
+			background-color: $white;
+
+			.header__burger,
+			.header__basket {
+				display: none;
+			}
+			.header__menu {
+				width: 100%;
+				display: block;
+			}
+
+			.custom-logo {
+				margin-left: -14.286rem;
+			}
+		}
+	}
+
 	&__wrapper {
 		height: 6.857rem;
 		display: flex;
@@ -20,18 +43,70 @@
 			0;
 		justify-content: space-between;
 		align-items: center;
+
+		@include media(
+			mobile
+		) {
+			height: 5.857rem;
+		}
 	}
 
-	&__inner {
-		width: 60.3rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	&__overlay {
+		&.open {
+			position: fixed;
+			width: 100%;
+			top: 5.857rem;
+			left: 0;
+			height: 100dvh;
+			background: rgba(
+				32,
+				32,
+				32,
+				0.7
+			);
+			transition: all
+				1s ease;
+
+			.header__nav {
+				display: flex;
+				flex-direction: column;
+				background: $white-bg;
+				height: 60dvh;
+				opacity: 1;
+				z-index: 1;
+				top: 5.857rem;
+				pointer-events: inherit;
+			}
+		}
 	}
 
 	&__nav {
+		// width: 60.3rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media(
+			mobile
+		) {
+			padding: 0 0;
+			opacity: 0;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			z-index: 50;
+			overflow: auto;
+			pointer-events: none;
+			transition: all
+				1s ease;
+		}
+	}
+
+	&__menu {
 		display: flex;
 		align-items: center;
+		transition: $transition;
 	}
 
 	&__list {
@@ -40,9 +115,9 @@
 		text-transform: uppercase;
 
 		@include media(
-			tablet
+			mobile
 		) {
-			display: none;
+			flex-direction: column;
 		}
 	}
 
@@ -54,10 +129,23 @@
 		display: flex;
 		transition: $transition;
 
+		@include media(
+			mobile
+		) {
+			margin: 0;
+		}
+
 		&.active
 			.header__input {
 			opacity: 1;
 			width: 11.286rem;
+			transition: $transition;
+
+			@include media(
+				mobile
+			) {
+				width: 100%;
+			}
 		}
 
 		&.active {
@@ -66,6 +154,12 @@
 				solid
 				$black-text;
 			transition: $transition;
+
+			@include media(
+				mobile
+			) {
+				margin-right: 0;
+			}
 		}
 
 		svg {
@@ -191,6 +285,7 @@
 .custom-logo {
 	width: 8.571rem;
 	height: 4.571rem;
+	transition: $transition;
 
 	@include media(
 		mobile

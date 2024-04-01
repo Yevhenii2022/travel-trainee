@@ -27,6 +27,9 @@ document.addEventListener(
 			document.querySelector(
 				'.header',
 			);
+		const body =
+			document.body;
+
 		let scrollPrev = 0;
 
 		window.addEventListener(
@@ -61,10 +64,6 @@ document.addEventListener(
 				scrollPrev =
 					scrolled;
 
-				const body =
-					document.querySelector(
-						'body',
-					);
 				if (
 					body.classList.contains(
 						'home',
@@ -159,5 +158,31 @@ document.addEventListener(
 				}
 			},
 		);
+
+		//burger menu
+		const menu =
+			document.querySelector(
+				'.header__overlay',
+			);
+		const menuButton =
+			document.querySelector(
+				'.burger',
+			);
+
+		menuButton.addEventListener(
+			'click',
+			function () {
+				this.classList.toggle(
+					'active',
+				);
+				menu.classList.toggle(
+					'open',
+				);
+				document.body.classList.toggle(
+					'burger-open',
+				);
+			},
+		);
+		//burger menu
 	},
 );

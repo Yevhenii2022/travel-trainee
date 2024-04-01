@@ -36,49 +36,85 @@
 						<?= the_custom_logo(); ?>
 					</div>
 
-					<div class="header__inner <?= is_front_page() ? 'header--white' : '' ?>">
-						<?php wp_nav_menu([
-							'theme_location'       => 'header_menu',
-							'container'            => false,
-							'menu_class'           => 'header__list',
-							'menu_id'              => false,
-							'echo'                 => true,
-						]);
-						?>
 
-						<div class="header__nav">
+					<div class="header__overlay">
+						<div class="header__nav <?= is_front_page() ? 'header--white' : '' ?>">
+
+
+							<?php wp_nav_menu([
+								'theme_location'       => 'header_menu',
+								'container'            => false,
+								'menu_class'           => 'header__list',
+								'menu_id'              => false,
+								'echo'                 => true,
+							]);
+							?>
 
 							<div class="custom-select <?= is_front_page() ? 'header--white' : '' ?>">
 								<?php pll_the_languages(array('dropdown' => 1)); ?>
 							</div>
 
-							<?php
-							$search_icon = get_field('search_icon', 'options');
-							$file_path = get_attached_file($search_icon);
-							$svg_content = file_get_contents($file_path);
-							?>
-							<div class="header__search <?= is_front_page() ? 'header--white header--fill' : '' ?>">
-								<?php if ($svg_content !== false) {
-									echo $svg_content;
-								} ?>
-								<input type="search" class="header__input">
+
+
+
+							<div class="header__button">
+								<?php
+								$btn_text = get_field('header_btn_contact', 'options') ?? '';
+								?>
+								<button popovertarget="consultation" class="btn <?= is_front_page() ? 'btn--white' : '' ?>">
+									<?= $btn_text ?>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+									</svg>
+								</button>
 							</div>
 
-							<?php
-							$basket_icon = get_field('basket_icon', 'options');
-							$file_path = get_attached_file($basket_icon);
-							$svg_content = file_get_contents($file_path);
-							?>
-							<div class="header__basket <?= is_front_page() ? 'header--stroke' : '' ?>">
-								<?php if ($svg_content !== false) {
-									echo $svg_content;
-								} ?>
-							</div>
 
+
+
+
+						</div>
+					</div>
+
+
+
+					<div class="header__menu">
+
+
+
+						<div class="header__burger burger">
+							<span></span>
+						</div>
+
+						<?php
+						$search_icon = get_field('search_icon', 'options');
+						$file_path = get_attached_file($search_icon);
+						$svg_content = file_get_contents($file_path);
+						?>
+						<div class="header__search <?= is_front_page() ? 'header--white header--fill' : '' ?>">
+							<?php if ($svg_content !== false) {
+								echo $svg_content;
+							} ?>
+							<input type="search" class="header__input">
+						</div>
+
+						<?php
+						$basket_icon = get_field('basket_icon', 'options');
+						$file_path = get_attached_file($basket_icon);
+						$svg_content = file_get_contents($file_path);
+						?>
+						<div class="header__basket <?= is_front_page() ? 'header--stroke' : '' ?>">
+							<?php if ($svg_content !== false) {
+								echo $svg_content;
+							} ?>
+						</div>
+
+
+						<div class="header__button--wrap">
 							<?php
 							$btn_text = get_field('header_btn_contact', 'options') ?? '';
 							?>
-							<button popovertarget="consultation" class="header__button btn <?= is_front_page() ? 'btn--white' : '' ?>">
+							<button popovertarget="consultation" class="btn <?= is_front_page() ? 'btn--white' : '' ?>">
 								<?= $btn_text ?>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
@@ -86,9 +122,18 @@
 							</button>
 						</div>
 
-						<?php get_template_part('template-parts/popup'); ?>
+
 
 					</div>
+
+
+
+
+
+
+					<?php get_template_part('template-parts/popup'); ?>
+
+
 				</div>
 			</div>
 		</header>

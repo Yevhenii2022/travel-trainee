@@ -82,6 +82,26 @@
 	}
 }
 
+.header__button {
+	display: none;
+
+	@include media(
+		mobile
+	) {
+		display: block;
+	}
+
+	&--wrap {
+		display: block;
+
+		@include media(
+			mobile
+		) {
+			display: none;
+		}
+	}
+}
+
 .form__button {
 	margin-top: 0.45rem;
 	width: fit-content;

@@ -1,0 +1,94 @@
+.burger {
+	display: none;
+
+	@include media(
+		mobile
+	) {
+		width: 1.7rem;
+		height: 0.9rem;
+		display: flex;
+		position: relative;
+		z-index: 50;
+		align-items: center;
+		justify-content: flex-end;
+		margin-right: 0.25rem;
+		cursor: pointer;
+	}
+}
+
+.burger span {
+	height: 0.071rem;
+	width: 100%;
+	transform: scale(
+		1
+	);
+	background-color: $black-text;
+}
+
+.burger::before,
+.burger::after {
+	content: '';
+	position: absolute;
+	height: 0.071rem;
+	width: 100%;
+	background-color: $black-text;
+	transition: $transition;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	bottom: 0;
+}
+
+.burger.active
+	span {
+	transform: scale(
+		0
+	);
+}
+
+.burger.active::before {
+	top: 50%;
+	transform: rotate(
+			-45deg
+		)
+		translate(
+			0,
+			-50%
+		);
+}
+
+.burger.active::after {
+	bottom: 50%;
+	transform: rotate(
+			45deg
+		)
+		translate(
+			0,
+			50%
+		);
+}
+
+@keyframes burgerAnimation {
+	from {
+		opasity: 0;
+	}
+	to {
+		opasity: 1;
+	}
+}
+
+// body.page-id-14
+// 	.burger {
+// 	span {
+// 		background-color: $main-white;
+// 	}
+
+// 	&::before,
+// 	&::after {
+// 		background-color: $main-white;
+// 	}
+// }

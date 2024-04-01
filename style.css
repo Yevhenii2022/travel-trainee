@@ -44,6 +44,9 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+body.burger-open {
+  overflow: hidden;
+}
 body::-webkit-scrollbar {
   width: 0.786rem;
 }
@@ -179,6 +182,23 @@ button {
 @media (max-width: 541px) {
   .btn--visible {
     display: flex;
+  }
+}
+
+.header__button {
+  display: none;
+}
+@media (max-width: 541px) {
+  .header__button {
+    display: block;
+  }
+}
+.header__button--wrap {
+  display: block;
+}
+@media (max-width: 541px) {
+  .header__button--wrap {
+    display: none;
   }
 }
 
@@ -856,6 +876,70 @@ button {
   padding-bottom: 0;
 }
 
+.burger {
+  display: none;
+}
+@media (max-width: 541px) {
+  .burger {
+    width: 1.7rem;
+    height: 0.9rem;
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 0.25rem;
+    cursor: pointer;
+  }
+}
+
+.burger span {
+  height: 0.071rem;
+  width: 100%;
+  transform: scale(1);
+  background-color: #202020;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  height: 0.071rem;
+  width: 100%;
+  background-color: #202020;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger.active span {
+  transform: scale(0);
+}
+
+.burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+@keyframes burgerAnimation {
+  from {
+    opasity: 0;
+  }
+  to {
+    opasity: 1;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -867,6 +951,22 @@ button {
   opacity: 0;
   transform: translateY(-100%);
 }
+@media (max-width: 541px) {
+  .header:has(.header__search.active) {
+    background-color: #fff;
+  }
+  .header:has(.header__search.active) .header__burger,
+  .header:has(.header__search.active) .header__basket {
+    display: none;
+  }
+  .header:has(.header__search.active) .header__menu {
+    width: 100%;
+    display: block;
+  }
+  .header:has(.header__search.active) .custom-logo {
+    margin-left: -14.286rem;
+  }
+}
 .header__wrapper {
   height: 6.857rem;
   display: flex;
@@ -874,24 +974,62 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-.header__inner {
-  width: 60.3rem;
+@media (max-width: 541px) {
+  .header__wrapper {
+    height: 5.857rem;
+  }
+}
+.header__overlay.open {
+  position: fixed;
+  width: 100%;
+  top: 5.857rem;
+  left: 0;
+  height: 100dvh;
+  background: rgba(32, 32, 32, 0.7);
+  transition: all 1s ease;
+}
+.header__overlay.open .header__nav {
+  display: flex;
+  flex-direction: column;
+  background: #eaf2f5;
+  height: 60dvh;
+  opacity: 1;
+  z-index: 1;
+  top: 5.857rem;
+  pointer-events: inherit;
+}
+.header__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__nav {
+@media (max-width: 541px) {
+  .header__nav {
+    padding: 0 0;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    overflow: auto;
+    pointer-events: none;
+    transition: all 1s ease;
+  }
+}
+.header__menu {
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 .header__list {
   display: flex;
   gap: 2.34rem;
   text-transform: uppercase;
 }
-@media (max-width: 1025px) {
+@media (max-width: 541px) {
   .header__list {
-    display: none;
+    flex-direction: column;
   }
 }
 .header__search {
@@ -900,14 +1038,30 @@ button {
   display: flex;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 541px) {
+  .header__search {
+    margin: 0;
+  }
+}
 .header__search.active .header__input {
   opacity: 1;
   width: 11.286rem;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 541px) {
+  .header__search.active .header__input {
+    width: 100%;
+  }
 }
 .header__search.active {
   margin-right: 1.143rem;
   border-bottom: 0.071rem solid #202020;
   transition: all 0.3s ease-in-out;
+}
+@media (max-width: 541px) {
+  .header__search.active {
+    margin-right: 0;
+  }
 }
 .header__search svg {
   width: 1.357rem;
@@ -992,6 +1146,7 @@ button {
 .custom-logo {
   width: 8.571rem;
   height: 4.571rem;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 541px) {
   .custom-logo {
