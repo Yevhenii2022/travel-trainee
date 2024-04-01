@@ -53,14 +53,16 @@
 	}
 
 	&--white {
-		color: $black-text;
-		background-color: $white;
-		svg {
-			stroke: $black-text;
-		}
-
-		&:active {
+		@media screen and (min-width: 542px) {
+			color: $black-text;
 			background-color: $white;
+			svg {
+				stroke: $black-text;
+			}
+
+			&:active {
+				background-color: $white;
+			}
 		}
 	}
 
@@ -88,7 +90,12 @@
 	@include media(
 		mobile
 	) {
+		width: 100%;
 		display: block;
+
+		button {
+			width: 100%;
+		}
 	}
 
 	&--wrap {

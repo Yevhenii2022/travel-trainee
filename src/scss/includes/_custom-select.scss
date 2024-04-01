@@ -1,6 +1,12 @@
 .custom-select {
 	position: relative;
 	min-width: 3.757rem;
+
+	@include media(
+		mobile
+	) {
+		min-width: 4.7rem;
+	}
 }
 
 .custom-select
@@ -13,6 +19,12 @@
 		0.3rem 0.3rem;
 	color: $black-text;
 	text-transform: uppercase;
+
+	@include media(
+		mobile
+	) {
+		font-size: 1.286rem;
+	}
 
 	&:after {
 		content: '';
@@ -39,10 +51,15 @@
 		-o-transition: 0.35s
 			ease-in-out;
 		background-repeat: no-repeat;
+
+		@include media(
+			mobile
+		) {
+			right: 0.3rem;
+		}
 	}
 
 	&.select-arrow-active {
-		// background-color: $white;
 		&:after {
 			transform: translateY(
 					-50%
