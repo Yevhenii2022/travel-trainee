@@ -16,6 +16,16 @@
 	}
 }
 
+.burger.burger--white {
+	span {
+		background-color: $white;
+	}
+	&::before,
+	&::after {
+		background-color: $white;
+	}
+}
+
 .burger span {
 	height: 0.071rem;
 	width: 100%;
@@ -80,15 +90,3 @@
 		opasity: 1;
 	}
 }
-
-// body.page-id-14
-// 	.burger {
-// 	span {
-// 		background-color: $main-white;
-// 	}
-
-// 	&::before,
-// 	&::after {
-// 		background-color: $main-white;
-// 	}
-// }

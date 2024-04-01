@@ -70,7 +70,7 @@
 						</div>
 
 						<div class="header__menu">
-							<div class="header__burger burger">
+							<div class="header__burger burger <?= is_front_page() ? 'burger--white' : '' ?>">
 								<span></span>
 							</div>
 
