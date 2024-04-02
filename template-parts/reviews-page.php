@@ -223,12 +223,14 @@
 
   <div class="reviews__bottom">
 
-    <?php
-    $image = get_sub_field('reviews_image');
-    if ($image) {
-      echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка секції замовити консультацію']);
-    }
-    ?>
+    <div class="reviews__image">
+      <?php
+      $image = get_sub_field('reviews_image');
+      if ($image) {
+        echo wp_get_attachment_image($image, "full", '', ['alt' => 'картинка секції замовити консультацію']);
+      }
+      ?>
+    </div>
 
     <?php
     $title = get_field('reviews_form_title', 'options') ?? '';

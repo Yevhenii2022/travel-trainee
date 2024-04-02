@@ -6,7 +6,8 @@
 	@include media(
 		mobile
 	) {
-		// padding-bottom: 13.333rem;
+		padding: 8.6rem
+			0 8.4rem 0;
 	}
 
 	&__link {
@@ -29,16 +30,45 @@
 		width: 65rem;
 		font-size: 3.929rem;
 		letter-spacing: -0.15rem;
+
+		@include media(
+			mobile
+		) {
+			width: 100%;
+			margin-bottom: 1.8rem;
+			font-size: 2.571rem;
+			letter-spacing: -0.1rem;
+		}
 	}
 
 	&__banner {
 		display: flex;
+
+		@include media(
+			mobile
+		) {
+			display: none;
+		}
 	}
 
 	&__image {
 		width: 100%;
+
+		@include media(
+			mobile
+		) {
+			width: auto;
+			margin: 0 -1.143rem;
+		}
+
 		img {
 			height: 40.8rem;
+
+			@include media(
+				mobile
+			) {
+				height: 16.714rem;
+			}
 		}
 	}
 
@@ -46,6 +76,7 @@
 		position: relative;
 		margin-left: 1.143rem;
 		width: 48.4rem;
+
 		img {
 			height: 19.84rem;
 		}
@@ -121,11 +152,66 @@
 		}
 	}
 
+	&__slider-wrap {
+		display: none;
+
+		@include media(
+			mobile
+		) {
+			display: block;
+			margin: 0 -1.143rem;
+			position: relative;
+
+			img {
+				height: 16.714rem;
+			}
+
+			&:has(
+					.excursions__slider
+				) {
+				.swiper__nav--prev {
+					position: absolute;
+					top: 40%;
+					left: 1.143rem;
+					z-index: 1;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff' transform='rotate(-180 12.5 12.5)'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='M12.151 8.863 8.515 12.5m0 0 3.636 3.637M8.515 12.5H17'/%3E%3C/svg%3E");
+				}
+
+				.swiper__nav--next {
+					position: absolute;
+					top: 40%;
+					right: 1.143rem;
+					z-index: 1;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='m12.849 16.137 3.636-3.637m0 0L12.85 8.863m3.636 3.637H8'/%3E%3C/svg%3E");
+				}
+
+				.swiper__pagination {
+					width: 2.857rem;
+					height: 1.357rem;
+					position: absolute;
+					bottom: 1.15rem;
+					left: 22.8rem;
+					align-items: center;
+					background-color: $white;
+					z-index: 1;
+				}
+			}
+		}
+	}
+
 	&__box {
 		padding: 2.286rem
 			0 8.571rem 0;
 		display: flex;
 		justify-content: space-between;
+
+		@include media(
+			mobile
+		) {
+			padding: 1.6rem
+				0 8.571rem 0;
+			flex-direction: column;
+		}
 	}
 
 	&__content {
@@ -133,11 +219,26 @@
 		font-size: 1.429rem;
 		line-height: 1.2;
 
+		@include media(
+			mobile
+		) {
+			width: 100%;
+			font-size: 1rem;
+			letter-spacing: 0.01rem;
+		}
+
 		h3 {
 			font-family: $kudryashev;
 			font-size: 2.286rem;
 			line-height: 1;
 			letter-spacing: -0.093rem;
+
+			@include media(
+				mobile
+			) {
+				font-size: 1.571rem;
+				letter-spacing: -0.06rem;
+			}
 		}
 
 		strong {
@@ -159,6 +260,12 @@
 		padding: 1.714rem;
 		background-color: $white;
 
+		@include media(
+			mobile
+		) {
+			width: 100%;
+		}
+
 		h3 {
 			margin-bottom: 0.286rem;
 			font-size: 1.429rem;
@@ -179,6 +286,15 @@
 			1fr
 		);
 		gap: 1.071rem;
+
+		@include media(
+			mobile
+		) {
+			grid-template-columns: repeat(
+				1,
+				1fr
+			);
+		}
 
 		&:has(
 				.excursion-card

@@ -201,15 +201,28 @@
 		background-color: $white;
 
 		@include media(
+			tablet
+		) {
+			height: 46.1rem;
+		}
+
+		@include media(
 			mobile
 		) {
 			height: auto;
 			flex-direction: column;
 		}
+	}
 
+	&__image {
 		img {
-			width: 50.2%;
 			height: 100%;
+
+			@include media(
+				tablet
+			) {
+				width: 34.5rem;
+			}
 
 			@include media(
 				mobile
@@ -260,6 +273,7 @@
 				mobile
 			) {
 				margin-bottom: 3.29rem;
+				width: 100%;
 				font-size: 1rem;
 			}
 		}

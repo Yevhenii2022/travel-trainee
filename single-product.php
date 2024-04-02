@@ -32,7 +32,7 @@ get_header();
             $image_url = get_the_post_thumbnail_url($product_id, 'full');
             if ($image_url) :
             ?>
-              <img src="<?php echo esc_url($image_url); ?>" alt="дефолтне зображення">
+              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
             <?php
             else :
               $upload_dir = wp_upload_dir();
@@ -93,6 +93,59 @@ get_header();
           }
           ?>
         </div>
+
+
+
+        <?php if (!empty($product_gallery)) : ?>
+
+          <div class="product__slider-wrap">
+            <div class="excursions__slider swiper">
+              <div class="swiper-wrapper">
+
+
+
+                <?php
+                if ($product_gallery) {
+                  foreach ($product_gallery as $gallery_image_id) {
+                    $gallery_image_url = wp_get_attachment_image_url($gallery_image_id, 'full');
+                    if ($gallery_image_url) {
+                      echo '<div class="swiper-slide">';
+                      echo '<img src="' . esc_url($gallery_image_url) . '" alt="Зображення з галереї">';
+                      echo '</div>';
+                    }
+                  }
+                }
+                ?>
+
+
+              </div>
+
+              <div class="swiper__nav--prev"></div>
+              <div class="swiper__pagination"></div>
+              <div class="swiper__nav--next"></div>
+
+            </div>
+          </div>
+
+
+        <?php else : ?>
+
+          <div class="product__image">
+            <?php
+            if ($image_url) :
+            ?>
+              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
+
+            <?php endif; ?>
+          </div>
+
+
+        <?php endif; ?>
+
+
+
+
+
 
         <div class="product__box">
 
