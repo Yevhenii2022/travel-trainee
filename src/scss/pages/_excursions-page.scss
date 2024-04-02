@@ -6,12 +6,19 @@
 	@include media(
 		mobile
 	) {
-		// padding-bottom: 13.333rem;
+		padding: 8.714rem
+			0 5.6rem 0;
 	}
 
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
+
+		@include media(
+			tablet
+		) {
+			flex-direction: column;
+		}
 	}
 
 	&__title {
@@ -19,6 +26,22 @@
 			5.78rem
 			16.643rem;
 		width: 35.714rem;
+
+		@include media(
+			tablet
+		) {
+			margin: 0 0
+				2.857rem 0;
+			width: 46rem;
+			font-size: 4.7rem;
+		}
+
+		@include media(
+			mobile
+		) {
+			width: 100%;
+			font-size: 2.571rem;
+		}
 	}
 
 	&__filters {
@@ -56,6 +79,32 @@
 				n + 4
 			) {
 			margin-top: 2.7rem;
+
+			@include media(
+				tablet
+			) {
+				margin-top: 0;
+			}
+		}
+
+		@include media(
+			tablet
+		) {
+			width: 100%;
+			grid-template-columns: repeat(
+				2,
+				1fr
+			);
+			gap: 1.06rem;
+		}
+
+		@include media(
+			mobile
+		) {
+			grid-template-columns: repeat(
+				1,
+				1fr
+			);
 		}
 
 		&:has(
@@ -64,6 +113,12 @@
 			.excursion-card__image {
 				img {
 					height: 16.286rem;
+
+					@include media(
+						mobile
+					) {
+						height: 20rem;
+					}
 				}
 			}
 			.excursion-card__wrapper {
@@ -74,10 +129,23 @@
 				height: 3.2rem;
 				font-size: 1.5rem;
 				letter-spacing: -0.059rem;
+
+				@include media(
+					mobile
+				) {
+					margin-bottom: 0.5rem;
+					letter-spacing: -0.025rem;
+				}
 			}
 			.excursion-card__price
 				p {
 				margin-right: 0.38rem;
+
+				@include media(
+					mobile
+				) {
+					margin-right: 0;
+				}
 			}
 		}
 	}
