@@ -151,7 +151,7 @@ get_header();
           </div>
 
 
-          <div>
+          <div class="product__flex">
 
             <?php get_template_part('template-parts/order-card'); ?>
 
@@ -173,7 +173,7 @@ get_header();
 
         </div>
 
-        <h2 class="section__title product__title"><?php pll_e('Подобные экскурсии') ?></h2>
+        <h2 class="section__title product__subtitle"><?php pll_e('Подобные экскурсии') ?></h2>
 
         <ul class="product__inner">
           <?php

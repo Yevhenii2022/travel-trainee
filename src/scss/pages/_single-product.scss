@@ -7,7 +7,7 @@
 		mobile
 	) {
 		padding: 8.6rem
-			0 8.4rem 0;
+			0 5.75rem 0;
 	}
 
 	&__link {
@@ -206,10 +206,10 @@
 		justify-content: space-between;
 
 		@include media(
-			mobile
+			tablet
 		) {
 			padding: 1.6rem
-				0 8.571rem 0;
+				0 5.6rem 0;
 			flex-direction: column;
 		}
 	}
@@ -220,11 +220,17 @@
 		line-height: 1.2;
 
 		@include media(
-			mobile
+			tablet
 		) {
 			width: 100%;
+			margin-bottom: 5.8rem;
+		}
+
+		@include media(
+			mobile
+		) {
 			font-size: 1rem;
-			letter-spacing: 0.01rem;
+			letter-spacing: 0.001rem;
 		}
 
 		h3 {
@@ -247,10 +253,26 @@
 
 		ul {
 			padding-left: 2.1rem;
+
+			@include media(
+				mobile
+			) {
+				padding-left: 1.5rem;
+			}
 		}
 
 		li {
 			list-style: disc;
+		}
+	}
+
+	&__flex {
+		@include media(
+			tablet
+		) {
+			display: flex;
+			justify-content: space-between;
+			gap: 2rem;
 		}
 	}
 
@@ -264,6 +286,18 @@
 			mobile
 		) {
 			width: 100%;
+			padding: 1.6rem
+				1.143rem;
+		}
+
+		&:has(
+				.form__input
+			) {
+			.form__input
+				label
+				textarea {
+				height: 6.4rem;
+			}
 		}
 
 		h3 {
@@ -271,11 +305,31 @@
 			font-size: 1.429rem;
 			font-weight: 600;
 			line-height: 1.2;
+
+			@include media(
+				mobile
+			) {
+				letter-spacing: 0.02rem;
+			}
 		}
 
 		p {
 			margin-bottom: 2rem;
 			line-height: 1.2;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 2.3rem;
+		font-size: 3.929rem;
+		letter-spacing: -0.15rem;
+
+		@include media(
+			mobile
+		) {
+			margin-bottom: 2.4rem;
+			font-size: 1.857rem;
+			letter-spacing: -0.08rem;
 		}
 	}
 
@@ -302,6 +356,12 @@
 			.excursion-card__image {
 				img {
 					height: 18.2rem;
+
+					@include media(
+						mobile
+					) {
+						height: 20rem;
+					}
 				}
 			}
 			.excursion-card__wrapper {
@@ -312,10 +372,30 @@
 				height: 3.2rem;
 				font-size: 1.5rem;
 				letter-spacing: -0.059rem;
+
+				@include media(
+					mobile
+				) {
+					margin-bottom: 0.4rem;
+					letter-spacing: -0.025rem;
+				}
 			}
-			.excursion-card__price
+			.excursion-card__price {
+				@include media(
+					mobile
+				) {
+					margin-right: 0;
+				}
+
 				p {
-				margin-right: 0.38rem;
+					margin-right: 0.38rem;
+
+					@include media(
+						mobile
+					) {
+						margin-right: 0.22rem;
+					}
+				}
 			}
 		}
 	}

@@ -114,8 +114,9 @@
                   echo '<div class="reviews__gallery">';
                   foreach ($images as $image) {
                     $image_url = wp_get_attachment_url($image);
-
+                    echo '<a href="' . esc_url($image_url) . '" data-fancybox="gallery">';
                     echo wp_get_attachment_image($image, "thumbnail", '', ['alt' => 'картинка відгуку']);
+                    echo '</a>';
                   }
                   echo '</div>';
                 }
@@ -177,8 +178,9 @@
                   echo '<div class="reviews__gallery">';
                   foreach ($images as $image) {
                     $image_url = wp_get_attachment_url($image);
-
+                    echo '<a href="' . esc_url($image_url) . '" data-fancybox="gallery">';
                     echo wp_get_attachment_image($image, "thumbnail", '', ['alt' => 'картинка відгуку']);
+                    echo '</a>';
                   }
                   echo '</div>';
                 }
