@@ -1,0 +1,11 @@
+.order-card {
+	margin-bottom: 0.571rem;
+	padding: 1.714rem;
+	background-color: $white;
+
+	&__box {
+		margin-bottom: 1.714rem;
+		display: flex;
+		gap: 1.143rem;
+	}
+}

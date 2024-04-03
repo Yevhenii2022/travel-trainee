@@ -144,27 +144,33 @@ get_header();
 
 
 
-
-
-
         <div class="product__box">
 
           <div class="product__content">
             <?php the_content(); ?>
           </div>
 
-          <?php
-          $title = get_field('form_title', 'options') ?? '';
-          $subtitle = get_field('form_subtitle', 'options') ?? '';
-          ?>
-          <div class="product__form">
 
-            <h3><?= $title ?></h3>
-            <p><?= $subtitle ?></p>
+          <div>
 
-            <?php get_template_part('template-parts/form'); ?>
+            <?php get_template_part('template-parts/order-card'); ?>
+
+
+            <?php
+            $title = get_field('form_title', 'options') ?? '';
+            $subtitle = get_field('form_subtitle', 'options') ?? '';
+            ?>
+            <div class="product__form">
+              <h3><?= $title ?></h3>
+              <p><?= $subtitle ?></p>
+
+              <?php get_template_part('template-parts/form'); ?>
+
+            </div>
 
           </div>
+
+
         </div>
 
         <h2 class="section__title product__title"><?php pll_e('Подобные экскурсии') ?></h2>

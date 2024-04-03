@@ -1024,6 +1024,17 @@ button {
     opasity: 1;
   }
 }
+.order-card {
+  margin-bottom: 0.571rem;
+  padding: 1.714rem;
+  background-color: #fff;
+}
+.order-card__box {
+  margin-bottom: 1.714rem;
+  display: flex;
+  gap: 1.143rem;
+}
+
 .header {
   position: fixed;
   top: 0;
