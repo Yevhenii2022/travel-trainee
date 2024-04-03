@@ -338,3 +338,34 @@ function remove_tabs($tabs)
 	unset($tabs['shipping']);
 	return $tabs;
 }
+
+// ajax
+require get_template_directory() . '/inc/custom-sort-blogs.php';
+
+function add_post_popularity_meta_field()
+{
+	register_post_meta(
+		'post',
+		'post_popularity',
+		array(
+			'type' => 'integer',
+			'single' => true,
+			'show_in_rest' => true,
+		)
+	);
+}
+add_action('init', 'add_post_popularity_meta_field');
+
+function set_initial_post_popularity()
+{
+	$posts = get_posts(
+		array(
+			'post_type' => 'post',
+			'posts_per_page' => -1,
+		)
+	);
+	foreach ($posts as $post) {
+		update_post_meta($post->ID, 'post_popularity', 0);
+	}
+}
+add_action('init', 'set_initial_post_popularity');

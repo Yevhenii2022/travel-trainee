@@ -246,5 +246,97 @@
       <?php get_template_part('template-parts/reviews-form'); ?>
 
     </div>
+
+
+
   </div>
+
+
+
+
+
+  <!-- <?php if ($rating) : ?>
+    <div class="reviews__item-rating">
+      <span>
+        <?php echo $rating . "/5" ?>
+      </span>
+
+      <div class="reviews__item-stars">
+        <meter class="reviews__item-avarage" min="0" max="5" value="<?php echo $rating ?>" title="<?php echo $rating ?> out of 5 stars">
+          <?php echo $rating ?> out of 5
+        </meter>
+
+        <div class="reviews__item-star" style="--percent: calc(<?php echo $rating ?>/ 5 * 100%);">
+          ★★★★★
+        </div>
+      </div>
+    </div>
+  <?php endif ?> -->
+
+
+
+
+  <div class="review-modal__right">
+    <p>
+      <?= $review_modal_text_2 ?>
+    </p>
+
+    <div class="review-modal__rate">
+      <!-- <div class="review-modal__rate-img">
+        <img src="<?= get_template_directory_uri() . '/src/img/google.svg' ?>" alt="<?= $review_modal_title ?>">
+      </div> -->
+
+      <div class="review-modal__rate-number">
+        <?= $review_modal_rate ?>
+      </div>
+
+      <?php
+      if (!function_exists('convert_to_percentage')) {
+        function convert_to_percentage($rating)
+        {
+          if ($rating < 0 || $rating > 5) {
+            return "Ошибка: Недопустимое значение оценки!";
+          }
+
+          $percentage = $rating * 20 + 1;
+
+          return $percentage . "%";
+        }
+      }
+      ?>
+
+      <div class="review-modal__rate-stars">
+        <span class="score">
+          <div class="score-wrap">
+            <span class="stars-active" style="width:<?= convert_to_percentage($review_modal_rate); ?>">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </span>
+            <span class="stars-inactive">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </span>
+          </div>
+        </span>
+      </div>
+
+      <div class="review-modal__rate-ammount">
+        <?= $review_modal_ammount ?>
+      </div>
+    </div>
+
+    <div class="review-modal__img">
+      <img src="<?= $review_modal_img ?>" alt="<?= $review_modal_title ?>">
+    </div>
+  </div>
+
+
+
+
 </section>
