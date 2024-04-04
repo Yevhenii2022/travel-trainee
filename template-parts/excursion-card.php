@@ -11,7 +11,7 @@ $excursion_price = $product->get_meta('_excursion_price', true) ?? '';
 $currency_symbol = get_woocommerce_currency_symbol();
 ?>
 
-<a href="<?php echo esc_url($product->get_permalink()); ?>" aria-label="<?php echo esc_attr($product->get_title()); ?>">
+<a href="<?php echo esc_url($product->get_permalink($data_id)); ?>" aria-label="<?php echo esc_attr($product->get_title()); ?>">
   <article class="excursion-card">
     <div class="excursion-card__image">
       <?php if ($image) : ?>

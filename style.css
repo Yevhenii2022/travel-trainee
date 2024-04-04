@@ -634,7 +634,7 @@ button {
 }
 .blog-card__title {
   margin: 0 0 0.03rem 0;
-  height: 4.67rem;
+  height: 4.68rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -863,6 +863,10 @@ button {
   .excursions-select span {
     display: none;
   }
+}
+
+.blog-select span {
+  color: rgba(32, 32, 32, 0.4);
 }
 
 .select-selected {
@@ -2256,20 +2260,34 @@ button {
   padding: 12.4rem 0 8.571rem 0;
   background-color: #eaf2f5;
 }
+.blog:has(.pagination) {
+  padding: 12.4rem 0 15.929rem 0;
+}
+@media (max-width: 541px) {
+  .blog:has(.pagination) {
+    padding: 8.68rem 0 5.61rem 0;
+  }
+}
 @media (max-width: 541px) {
   .blog {
     padding: 8.68rem 0 5.61rem 0;
   }
 }
 .blog__title {
-  margin-bottom: 5.714rem;
+  margin-bottom: 5.45rem;
   text-align: center;
+}
+@media (max-width: 541px) {
+  .blog__title {
+    margin-bottom: 2.9rem;
+  }
 }
 .blog .archive-blogs__select {
   display: none;
 }
 @media (max-width: 541px) {
   .blog .archive-blogs__select {
+    padding: 0.457rem 0 0.457rem 0.457rem;
     display: block;
     grid-area: 1/1/2/2;
     border-top: 0.0171rem solid #000;
@@ -2291,6 +2309,7 @@ button {
 }
 @media (max-width: 541px) {
   .blog__select {
+    padding: 0.457rem 0 0.457rem 0.457rem;
     grid-area: 1/2/2/3;
     border-top: 0.0171rem solid #000;
     border-right: 0.0171rem solid #000;
@@ -2298,7 +2317,7 @@ button {
   }
 }
 .blog__category {
-  margin-bottom: 1.72rem;
+  margin-bottom: 1.42rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2306,12 +2325,14 @@ button {
 }
 @media (max-width: 541px) {
   .blog__category {
+    margin-bottom: 1.05rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 2.86rem;
+    row-gap: 2.7rem;
   }
 }
 .blog__category ul {
+  margin-right: 22.15rem;
   display: flex;
   gap: 2.286rem;
 }
@@ -2349,46 +2370,56 @@ button {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.blog__inner a:first-child {
-  grid-area: 1/1/2/4;
+@media screen and (min-width: 542px) {
+  .blog__inner a:first-child {
+    grid-area: 1/1/2/4;
+  }
 }
-.blog__inner a:first-child .blog-card {
-  display: flex;
-  background-color: #fff;
-  height: 37.79rem;
+@media screen and (min-width: 542px) and (max-width: 1025px) {
+  .blog__inner a:first-child {
+    grid-area: 1/1/2/3;
+  }
 }
-.blog__inner a:first-child .blog-card__image {
-  width: 51%;
-  height: 100%;
-}
-.blog__inner a:first-child .blog-card__image img {
-  height: 100%;
-}
-.blog__inner a:first-child .blog-card__wrapper {
-  width: 50%;
-  padding: 2.286rem 12.143rem 2.286rem 3.3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.blog__inner a:first-child .blog-card__wrapper p {
-  margin-bottom: 0.7rem;
-  height: 5rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  line-height: 1.2;
-}
-.blog__inner a:first-child .blog-card__time {
-  opacity: 0.4;
-  line-height: 1.2;
-}
-.blog__inner a:first-child .blog-card__title {
-  margin: 1.143rem 0;
-  font-size: 3.929rem;
-  letter-spacing: -0.16rem;
-  height: auto !important;
+@media screen and (min-width: 542px) {
+  .blog__inner a:first-child .blog-card {
+    margin-bottom: 4rem;
+    display: flex;
+    background-color: #fff;
+    height: 37.79rem;
+  }
+  .blog__inner a:first-child .blog-card__image {
+    width: 51%;
+    height: 100%;
+  }
+  .blog__inner a:first-child .blog-card__image img {
+    height: 100%;
+  }
+  .blog__inner a:first-child .blog-card__bottom {
+    width: 50%;
+    padding: 2.286rem 12.143rem 2.286rem 3.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .blog__inner a:first-child .blog-card__bottom p {
+    margin-bottom: 13.95rem;
+    height: 5.02rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    line-height: 1.2;
+  }
+  .blog__inner a:first-child .blog-card__time {
+    opacity: 0.4;
+    line-height: 1.2;
+  }
+  .blog__inner a:first-child .blog-card__title {
+    margin: 1.1rem 0;
+    font-size: 3.929rem;
+    letter-spacing: -0.16rem;
+    height: 7.97rem;
+  }
 }
 .blog .pagination {
   position: absolute;
@@ -2430,6 +2461,11 @@ button {
   color: #202020;
   text-transform: uppercase;
   padding-right: 2rem;
+}
+@media (max-width: 541px) {
+  .blog .select-selected {
+    font-size: 1rem;
+  }
 }
 .blog .select-selected:after {
   content: "";
