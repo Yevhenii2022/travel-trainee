@@ -32,7 +32,10 @@ get_header();
             $image_url = get_the_post_thumbnail_url($product_id, 'full');
             if ($image_url) :
             ?>
-              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
+
+              <a href="<?php echo esc_url($image_url); ?>" data-fancybox="gallery">
+                <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
+              </a>;
             <?php
             else :
               $upload_dir = wp_upload_dir();
@@ -129,14 +132,15 @@ get_header();
 
 
         <?php else : ?>
+          <div class="product__image--hide">
+            <div class="product__image">
+              <?php
+              if ($image_url) :
+              ?>
+                <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
 
-          <div class="product__image">
-            <?php
-            if ($image_url) :
-            ?>
-              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
-
-            <?php endif; ?>
+              <?php endif; ?>
+            </div>
           </div>
 
 

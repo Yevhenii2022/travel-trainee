@@ -850,9 +850,7 @@ button {
   }
 }
 
-.custom-select,
-.blog-select,
-.excursions-select select {
+.custom-select select {
   display: none;
 }
 
@@ -2986,6 +2984,14 @@ button {
 @media (max-width: 541px) {
   .product__image img {
     height: 16.714rem;
+  }
+}
+.product__image--hide {
+  display: none;
+}
+@media (max-width: 541px) {
+  .product__image--hide {
+    display: block;
   }
 }
 .product__gallery {

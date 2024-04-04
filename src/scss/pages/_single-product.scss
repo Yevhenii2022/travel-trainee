@@ -70,6 +70,16 @@
 				height: 16.714rem;
 			}
 		}
+
+		&--hide {
+			display: none;
+
+			@include media(
+				mobile
+			) {
+				display: block;
+			}
+		}
 	}
 
 	&__gallery {
