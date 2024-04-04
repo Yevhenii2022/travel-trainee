@@ -10,10 +10,17 @@
 			0 15.929rem 0;
 
 		@include media(
+			tablet
+		) {
+			padding: 12.4rem
+				0;
+		}
+
+		@include media(
 			mobile
 		) {
 			padding: 8.68rem
-				0 5.61rem 0;
+				0 12.5rem 0;
 		}
 	}
 
@@ -58,6 +65,11 @@
 		display: none;
 	}
 	#category-filter {
+		.active {
+			border-bottom: 0.0171rem
+				solid
+				$gray-text;
+		}
 		@include media(
 			mobile
 		) {
@@ -82,6 +94,28 @@
 				solid $black;
 			border-bottom: 0.0171rem
 				solid $black;
+		}
+
+		&:has(
+				.select-arrow-active
+			) {
+			.select-items {
+				border-left: 0.0171rem
+					solid
+					$black-text;
+				border-right: 0.0171rem
+					solid
+					$black-text;
+				border-bottom: 0.0171rem
+					solid
+					$black-text;
+
+				@include media(
+					mobile
+				) {
+					border: none;
+				}
+			}
 		}
 	}
 	&__category {
@@ -110,11 +144,11 @@
 			display: flex;
 			gap: 2.286rem;
 
-			// @include media(
-			// 	mobile
-			// ) {
-			// 	display: none;
-			// }
+			@include media(
+				tablet
+			) {
+				margin-right: 0;
+			}
 
 			li {
 				cursor: pointer;
@@ -186,6 +220,13 @@
 					background-color: $white;
 					height: 37.79rem;
 
+					@include media(
+						tablet
+					) {
+						margin-bottom: 2.5rem;
+						height: 30.79rem;
+					}
+
 					&__image {
 						width: 51%;
 						height: 100%;
@@ -204,6 +245,12 @@
 						flex-direction: column;
 						gap: 0;
 
+						@include media(
+							tablet
+						) {
+							padding: 2.2rem;
+						}
+
 						p {
 							margin-bottom: 13.95rem;
 							height: 5.02rem;
@@ -212,6 +259,12 @@
 							-webkit-line-clamp: 4;
 							overflow: hidden;
 							line-height: 1.2;
+
+							@include media(
+								tablet
+							) {
+								margin-bottom: 3rem;
+							}
 						}
 					}
 
@@ -226,6 +279,13 @@
 						font-size: 3.929rem;
 						letter-spacing: -0.16rem;
 						height: 7.97rem;
+
+						@include media(
+							tablet
+						) {
+							font-size: 2.4rem;
+							height: 4.9rem;
+						}
 					}
 				}
 			}
@@ -234,8 +294,9 @@
 
 	.pagination {
 		position: absolute;
-		bottom: -5.14rem;
+		bottom: -7.35rem;
 		left: 50%;
+		gap: 0.9rem;
 		transform: translateX(
 			-50%
 		);
@@ -251,17 +312,34 @@
 		-o-transform: translateX(
 			-50%
 		);
+		@include media(
+			mobile
+		) {
+			bottom: -6.8rem;
+		}
+
 		span {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 2.21rem;
-			height: 2.21rem;
+			width: 2.214rem;
+			height: 2.214rem;
+			border-radius: 50%;
 			cursor: pointer;
+			transition: $transition;
+
+			&:hover {
+				border: 0.071rem
+					solid
+					#262626;
+			}
 
 			&.pagination_active {
 				background-color: #262626;
 				border-radius: 50%;
+				border: 0.071rem
+					solid
+					#262626;
 				-webkit-border-radius: 50%;
 				-moz-border-radius: 50%;
 				-ms-border-radius: 50%;
