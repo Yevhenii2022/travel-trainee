@@ -11,9 +11,9 @@
 	}
 }
 
-.custom-select,
-.blog-select,
-.excursions-select
+.custom-select
+// .blog-select,
+// .excursions-select
 	select {
 	display: none;
 }
@@ -29,6 +29,11 @@
 		) {
 			display: none;
 		}
+	}
+}
+.blog-select {
+	span {
+		color: $gray-text;
 	}
 }
 .select-selected {

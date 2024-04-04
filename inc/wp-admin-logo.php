@@ -2,9 +2,14 @@
 // Add actually link in background-image: url
 { ?>
 
+    <?php
+    $upload_dir = wp_get_upload_dir();
+    $attachment_url = $upload_dir['baseurl'] . '/2024/03/logo.svg';
+    ?>
+
     <style type="text/css">
         #login h1 a {
-            background-image: url(https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+            background-image: url(<?php echo esc_url($attachment_url); ?>);
             display: block;
             width: 272px;
             height: 92px;

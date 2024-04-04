@@ -32,7 +32,10 @@ get_header();
             $image_url = get_the_post_thumbnail_url($product_id, 'full');
             if ($image_url) :
             ?>
-              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
+
+              <a href="<?php echo esc_url($image_url); ?>" data-fancybox="gallery">
+                <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
+              </a>;
             <?php
             else :
               $upload_dir = wp_upload_dir();
@@ -94,15 +97,10 @@ get_header();
           ?>
         </div>
 
-
-
         <?php if (!empty($product_gallery)) : ?>
-
           <div class="product__slider-wrap">
             <div class="excursions__slider swiper">
               <div class="swiper-wrapper">
-
-
 
                 <?php
                 if ($product_gallery) {
@@ -116,8 +114,6 @@ get_header();
                   }
                 }
                 ?>
-
-
               </div>
 
               <div class="swiper__nav--prev"></div>
@@ -127,25 +123,19 @@ get_header();
             </div>
           </div>
 
-
         <?php else : ?>
+          <div class="product__image--hide">
+            <div class="product__image">
+              <?php
+              if ($image_url) :
+              ?>
+                <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
 
-          <div class="product__image">
-            <?php
-            if ($image_url) :
-            ?>
-              <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
-
-            <?php endif; ?>
+              <?php endif; ?>
+            </div>
           </div>
 
-
         <?php endif; ?>
-
-
-
-
-
 
         <div class="product__box">
 
@@ -153,45 +143,78 @@ get_header();
             <?php the_content(); ?>
           </div>
 
-          <?php
-          $title = get_field('form_title', 'options') ?? '';
-          $subtitle = get_field('form_subtitle', 'options') ?? '';
-          ?>
-          <div class="product__form">
+          <div class="product__flex">
 
-            <h3><?= $title ?></h3>
-            <p><?= $subtitle ?></p>
+            <?php get_template_part('template-parts/order-card'); ?>
 
-            <?php get_template_part('template-parts/form'); ?>
+            <?php
+            $title = get_field('form_title', 'options') ?? '';
+            $subtitle = get_field('form_subtitle', 'options') ?? '';
+            ?>
+            <div class="product__form">
+              <h3><?= $title ?></h3>
+              <p><?= $subtitle ?></p>
 
+              <?php get_template_part('template-parts/form'); ?>
+
+            </div>
           </div>
         </div>
 
-        <h2 class="section__title product__title"><?php pll_e('Подобные экскурсии') ?></h2>
+        <h2 class="section__title product__subtitle"><?php pll_e('Подобные экскурсии') ?></h2>
 
         <ul class="product__inner">
           <?php
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-          $posts_per_page = 3;
           $current_product_id = get_the_ID();
+          $posts_per_page = 3;
+          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-          $products = wc_get_products(array(
-            'limit' => $posts_per_page,
-            'paged' => $paged,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post__not_in' => array($current_product_id),
-          ));
+          // Отримати супутні товари
+          $related_products_meta = get_post_meta($current_product_id, '_crosssell_ids', true);
+          $related_products = is_array($related_products_meta) ? $related_products_meta : array();
 
-          if ($products && !empty($products)) {
-            foreach ($products as $product) {
-              $product_id = $product->get_id();
+          // Додати товари, якщо кількість менше трьох
+          $missing_products = 3 - count($related_products);
+          if ($missing_products > 0) {
+            $additional_products = wc_get_products(array(
+              'limit' => $missing_products,
+              'exclude' => array_merge(array($current_product_id), $related_products),
+              'orderby' => 'date',
+              'order' => 'DESC',
+            ));
+            foreach ($additional_products as $product) {
+              $related_products[] = $product->get_id();
+            }
+          }
+
+          if (!empty($related_products)) {
+            foreach ($related_products as $related_product_id) {
               $custom_data = (object) array(
-                'ID' => $product_id
+                'ID' => $related_product_id
               );
               set_query_var('custom_data', $custom_data);
 
               get_template_part('template-parts/excursion-card');
+            }
+          } else {
+            $products = wc_get_products(array(
+              'limit' => $posts_per_page,
+              'paged' => $paged,
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'post__not_in' => array($current_product_id),
+            ));
+
+            if ($products && !empty($products)) {
+              foreach ($products as $product) {
+                $product_id = $product->get_id();
+                $custom_data = (object) array(
+                  'ID' => $product_id
+                );
+                set_query_var('custom_data', $custom_data);
+
+                get_template_part('template-parts/excursion-card');
+              }
             }
           }
           ?>

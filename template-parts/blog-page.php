@@ -11,13 +11,14 @@
           <?= $title; ?>
         </h2>
       <?php endif; ?>
+
       <div class="blog__category">
         <ul id="category-filter">
           <li data-category="all" class="active">
             <?php pll_e('Все'); ?>
           </li>
-          <?php
 
+          <?php
           $categories = get_terms(
             array(
               'taxonomy' => 'category',
@@ -32,13 +33,10 @@
               echo '<li data-category="' . $category_slug . '">' . esc_html($category->name) . '</li>';
             }
           }
-
-
-
           ?>
         </ul>
-        <div class="archive-blogs__select custom-select">
 
+        <div class="archive-blogs__select custom-select">
           <select id="archive-blogs__select-category" class="tabs-select" style="display: none;">
             <option value="all">
               <?php pll_e('Все'); ?>
@@ -60,6 +58,7 @@
             ?>
           </select>
         </div>
+
         <div class="blog__count">
           <?php
           $count_text = get_sub_field('blog_count') ?? '';
@@ -73,7 +72,7 @@
         </div>
         <div class="blog__select blog-select">
           <span>
-            <?php pll_e('Сортировать:') ?>
+            <?php pll_e('Сортировать') ?>
           </span>
           <select id="blogs__select" class="tabs-select">
             <option value="popular">

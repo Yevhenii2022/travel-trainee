@@ -1,0 +1,28 @@
+.order-card {
+	margin-bottom: 0.571rem;
+	padding: 1.714rem;
+	background-color: $white;
+
+	@include media(
+		tablet
+	) {
+		height: 14rem;
+	}
+
+	@include media(
+		mobile
+	) {
+		margin: 0 -1.143rem
+			0 -1.143rem;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	&__box {
+		margin-bottom: 1.714rem;
+		display: flex;
+		gap: 1.143rem;
+	}
+}
