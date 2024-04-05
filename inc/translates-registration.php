@@ -20,7 +20,7 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Корзина пустая');
     pll_register_string('pointer_theme', 'Екскурсії не знайдені');
     pll_register_string('pointer_theme', 'Статті не знайдені');
-    pll_register_string('pointer_theme', 'ФИЛЬТРЫ:');
+    pll_register_string('pointer_theme', 'ФИЛЬТРЫ');
     pll_register_string('pointer_theme', 'Тип экскурсии');
     pll_register_string('pointer_theme', 'Очистить');
     pll_register_string('pointer_theme', 'По цене');

@@ -2448,6 +2448,7 @@ input[type=range]::-ms-thumb {
     padding: 0.3rem 0 0.3rem 0.3rem;
     display: block;
     grid-area: 1/1/2/2;
+    cursor: pointer;
     border-top: 0.0171rem solid #000;
     border-left: 0.0171rem solid #000;
     border-bottom: 0.0171rem solid #000;
@@ -2487,19 +2488,31 @@ input[type=range]::-ms-thumb {
   position: absolute;
   bottom: -5.14rem;
   left: 50%;
+  gap: 0.9rem;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+@media (max-width: 541px) {
+  .excursions-page .pagination {
+    gap: 0.5rem;
+  }
+}
 .excursions-page .pagination span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.21rem;
-  height: 2.21rem;
+  width: 2.214rem;
+  height: 2.214rem;
   cursor: pointer;
+  border-radius: 50%;
+  border: 0.071rem solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.excursions-page .pagination span:hover {
+  border: 0.071rem solid #262626;
 }
 .excursions-page .pagination span.pagination_active {
   background-color: #262626;
@@ -2664,6 +2677,7 @@ input[type=range]::-ms-thumb {
 }
 @media (max-width: 541px) {
   .excursions__select {
+    min-height: 2.16rem;
     grid-area: 1/2/2/3;
     border-top: 0.0171rem solid #000;
     border-right: 0.0171rem solid #000;
@@ -2999,6 +3013,7 @@ input[type=range]::-ms-thumb {
 @media (max-width: 541px) {
   .blog .pagination {
     bottom: -6.8rem;
+    gap: 0.5rem;
   }
 }
 .blog .pagination span {

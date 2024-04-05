@@ -98,6 +98,7 @@
 				display: block;
 				grid-area: 1 /
 					1 / 2 / 2;
+				cursor: pointer;
 				border-top: 0.0171rem
 					solid #000;
 				border-left: 0.0171rem
@@ -151,6 +152,7 @@
 		position: absolute;
 		bottom: -5.14rem;
 		left: 50%;
+		gap: 0.9rem;
 		transform: translateX(
 			-50%
 		);
@@ -166,13 +168,30 @@
 		-o-transform: translateX(
 			-50%
 		);
+		@include media(
+			mobile
+		) {
+			gap: 0.5rem;
+		}
+
 		span {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 2.21rem;
-			height: 2.21rem;
+			width: 2.214rem;
+			height: 2.214rem;
 			cursor: pointer;
+			border-radius: 50%;
+			border: 0.071rem
+				solid
+				transparent;
+			transition: $transition;
+
+			&:hover {
+				border: 0.071rem
+					solid
+					#262626;
+			}
 
 			&.pagination_active {
 				background-color: #262626;
@@ -427,6 +446,7 @@
 	@include media(
 		mobile
 	) {
+		min-height: 2.16rem;
 		grid-area: 1 / 2 /
 			2 / 3;
 		border-top: 0.0171rem
