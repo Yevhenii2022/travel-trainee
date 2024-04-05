@@ -5,7 +5,7 @@ $currency_symbol = get_woocommerce_currency_symbol();
 $min_price = $wpdb->get_var("
     SELECT MIN(meta_value+0) as min_price
     FROM {$wpdb->prefix}postmeta
-    WHERE meta_key = '_excursion_price'
+    WHERE meta_key = '_regular_price'
     AND post_id IN ( SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product' AND post_status = 'publish' )
 ");
 
@@ -13,7 +13,7 @@ $min_price = $wpdb->get_var("
 $max_price = $wpdb->get_var("
     SELECT MAX(meta_value+0) as max_price
     FROM {$wpdb->prefix}postmeta
-    WHERE meta_key = '_excursion_price'
+    WHERE meta_key = '_regular_price'
     AND post_id IN ( SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product' AND post_status = 'publish' )
 ");
 $title = get_sub_field('excursions-page_title');

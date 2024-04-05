@@ -229,13 +229,13 @@ function add_excursion_fields()
 		// Вывод поля для дат экскурсии
 		woocommerce_wp_text_input(
 			array(
-				'id'          => '_excursion_dates',
-				'label'       => __('Disabled Dates', 'vicodemedia'),
-				'value'       => $excursion_dates,
-				'default'     => '',
+				'id' => '_excursion_dates',
+				'label' => __('Disabled Dates', 'vicodemedia'),
+				'value' => $excursion_dates,
+				'default' => '',
 				'placeholder' => 'Enter Disabled Dates',
-				'type'        => 'text', // Изменено на тип text
-				'desc_tip'    => true, // Добавляем подсказку в виде тултипа
+				'type' => 'text', // Изменено на тип text
+				'desc_tip' => true, // Добавляем подсказку в виде тултипа
 				'description' => __('Выберите даты в которые экскурсия будет не доступна', 'vicodemedia'), // Текст подсказки
 			)
 		);
@@ -244,21 +244,21 @@ function add_excursion_fields()
 		// Вывод поля для базовой цены
 		woocommerce_wp_text_input(
 			array(
-				'id'          => '_regular_price',
-				'label'       => __('Regular Price', 'vicodemedia'),
-				'value'       => $product_object->get_regular_price(), // Получение цены до дисконта
+				'id' => '_regular_price',
+				'label' => __('Regular Price', 'vicodemedia'),
+				'value' => $product_object->get_regular_price(), // Получение цены до дисконта
 				'placeholder' => 'Введіть ціну до знижки (якщо потрібно)',
-				'data_type'   => 'price',
+				'data_type' => 'price',
 			)
 		);
 
 		// Вывод поля для цены экскурсии
 		woocommerce_wp_text_input(
 			array(
-				'id'          => '_excursion_price',
-				'label'       => __('Excursion Price', 'vicodemedia'),
-				'value'       => $product_object->get_meta('_excursion_price', true),
-				'default'     => '',
+				'id' => '_excursion_price',
+				'label' => __('Excursion Price', 'vicodemedia'),
+				'value' => $product_object->get_meta('_excursion_price', true),
+				'default' => '',
 				'placeholder' => 'Введіть кінцеву ціну продажу',
 				'data_type' => 'price',
 			)
@@ -371,3 +371,118 @@ function set_initial_post_popularity()
 	}
 }
 add_action('init', 'set_initial_post_popularity');
+
+// Функция для подключения скриптов
+function enqueue_multidatespicker_script()
+{
+	// Регистрация скрипта
+	wp_register_script('jquery-ui-multidatespicker', get_template_directory_uri() . '/src/js/libraries/jquery-ui.multidatespicker.js', array('jquery', 'jquery-ui-datepicker'), '1.6.6', true);
+
+	// Подключение скрипта на фронтенде
+	wp_enqueue_script('jquery-ui-multidatespicker');
+	wp_enqueue_style('jquery-ui', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
+}
+
+// Подключение скрипта на фронтенде
+add_action('wp_enqueue_scripts', 'enqueue_multidatespicker_script');
+
+function enqueue_multidatespicker_script_for_admin()
+{
+	// Подключаем jQuery UI Multidatepicker
+	wp_enqueue_script('jquery-ui-multidatespicker', get_template_directory_uri() . '/src/js/libraries/jquery-ui.multidatespicker.js', array('jquery', 'jquery-ui-datepicker'), false, true);
+
+	// Также стоит проверить, необходимо ли подключить стили для datepicker, если они не встроены в админку по умолчанию
+	wp_enqueue_style('jquery-ui', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_multidatespicker_script_for_admin');
+
+
+
+// AJAX CART
+
+add_action('wp_ajax_custom_add_to_cart', 'custom_add_to_cart');
+add_action('wp_ajax_nopriv_custom_add_to_cart', 'custom_add_to_cart');
+
+function custom_add_to_cart()
+{
+	$product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
+	$quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+	$excursion_date = !empty($_POST['excursion_date']) ? sanitize_text_field($_POST['excursion_date']) : '';
+	$guests = !empty($_POST['guests']) ? sanitize_text_field($_POST['guests']) : '';
+
+	$unique_key = md5(microtime() . rand()); // Создаем уникальный ключ
+
+	// Добавляем товар в корзину с уникальным ключом
+	$cart_item_key = WC()->cart->add_to_cart($product_id, $quantity, 0, array(), array('unique_key' => $unique_key));
+
+	if ($cart_item_key) {
+		// Обновляем фрагменты корзины и возвращаем их в качестве ответа на AJAX-запрос
+		ob_start();
+		woocommerce_mini_cart();
+		$mini_cart = ob_get_clean();
+
+		$response = array(
+			'fragments' => apply_filters(
+				'woocommerce_add_to_cart_fragments',
+				array(
+					'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>',
+				)
+			),
+			'cart_hash' => WC()->cart->get_cart_hash(),
+		);
+
+		wp_send_json($response);
+	} else {
+		// Если товар не был добавлен в корзину, возвращаем ошибку
+		wp_send_json_error(__('Failed to add the product to the cart.', 'your-text-domain'));
+	}
+
+	wp_die();
+}
+
+
+
+// LOAD CONTENT
+
+add_action('wp_ajax_load_cart_contents', 'load_cart_contents');
+add_action('wp_ajax_nopriv_load_cart_contents', 'load_cart_contents');
+function load_cart_contents()
+{
+	// Путь к вашему собственному шаблону корзины WooCommerce
+	$template_path = get_stylesheet_directory() . '/woocommerce/cart/mini-cart.php';
+
+	// Проверяем существование файла шаблона
+	if (file_exists($template_path)) {
+		// Включаем ваш собственный шаблон корзины WooCommerce
+		include($template_path);
+	} else {
+		// Выводим сообщение об ошибке, если шаблон не найден
+		echo 'Собственный шаблон корзины WooCommerce не найден';
+	}
+
+	// Завершаем выполнение скрипта
+	wp_die();
+}
+
+
+// REMOVE CART
+add_action('wp_ajax_remove_cart_item', 'remove_cart_item_callback');
+add_action('wp_ajax_nopriv_remove_cart_item', 'remove_cart_item_callback');
+
+function remove_cart_item_callback()
+{
+	// Получаем ID товара и ключ элемента корзины из AJAX запроса
+	$product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
+	$cart_item_key = isset($_POST['cart_item_key']) ? sanitize_text_field($_POST['cart_item_key']) : '';
+
+	// Проверяем наличие товара и ключа элемента корзины
+	if ($product_id && $cart_item_key) {
+		// Удаляем товар из корзины
+		WC()->cart->remove_cart_item($cart_item_key);
+
+		// Выводим обновленный мини-корзину и итоговую сумму
+		woocommerce_mini_cart();
+		die();
+	}
+}

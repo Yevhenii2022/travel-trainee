@@ -60,12 +60,15 @@ function load_more_blogs()
         );
     }
 
-    if ($query->have_posts()):
-        while ($query->have_posts()):
+    $total_posts = $query->found_posts;
+    echo '<script>document.getElementById("blog_count").innerText = ' . $total_posts . ';</script>';
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
             $query->the_post();
             get_template_part('template-parts/blog-card');
         endwhile;
-    else:
+    else :
         error_log('No posts found');
         echo '<span>' . pll_e('Статті не знайдені') . '</span>';
     endif;
@@ -115,6 +118,3 @@ function load_more_blogs()
 
 add_action('wp_ajax_load_more_blogs', 'load_more_blogs');
 add_action('wp_ajax_nopriv_load_more_blogs', 'load_more_blogs');
-
-
-

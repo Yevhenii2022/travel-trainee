@@ -188,7 +188,7 @@
 
 	&__count {
 		display: flex;
-		gap: 0.714rem;
+		gap: 0.22rem;
 		@include media(
 			mobile
 		) {
@@ -232,7 +232,7 @@
 		}
 
 		@media screen and (min-width: 542px) {
-			a:first-child {
+			a:first-of-type {
 				grid-area: 1 /
 					1 / 2 / 4;
 

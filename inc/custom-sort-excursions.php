@@ -44,7 +44,7 @@ function load_more_excursions()
     $meta_query = array(
         'relation' => 'AND',
         array(
-            'key' => '_excursion_price',
+            'key' => '_regular_price',
             'value' => array($min_price, $max_price),
             'type' => 'numeric',
             'compare' => 'BETWEEN',
@@ -52,7 +52,7 @@ function load_more_excursions()
     );
 
 
-    
+
 
     $args = array(
         'post_type' => 'product',
@@ -93,7 +93,7 @@ function load_more_excursions()
         echo '<div class="not-fount-tour">' . pll_e('Екскурсії не знайдені') . '</div>';
     }
 
-    
+
     $paginate_args = array(
         'base' => '%_%',
         'format' => '?page=%#%',

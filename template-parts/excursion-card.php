@@ -53,15 +53,18 @@ $currency_symbol = get_woocommerce_currency_symbol();
           </svg>
         </div>
 
+
         <div class="excursion-card__price">
-
-
-          <p><?= $currency_symbol; ?><?= $excursion_price; ?></p>
           <?php if ($regular_price) : ?>
-            <?= $currency_symbol; ?>
-            <span><?= $regular_price; ?></span>
+            <p><?= $currency_symbol; ?><?= $regular_price; ?></p>
+            <?php if ($excursion_price) : ?>
+              <?= $currency_symbol; ?>
+              <span><?= $excursion_price; ?></span>
+            <?php endif; ?>
           <?php endif; ?>
         </div>
+
+
       </div>
 
     </div>
