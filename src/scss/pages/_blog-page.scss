@@ -68,7 +68,7 @@
 		.active {
 			border-bottom: 0.0171rem
 				solid
-				$gray-text;
+				$black-text;
 		}
 		@include media(
 			mobile
@@ -77,12 +77,19 @@
 		}
 	}
 	&__select {
+		padding: 0.3rem
+			0;
+		min-width: 16.643rem;
 		display: flex;
 		align-items: center;
+		justify-content: flex-start;
 
 		@include media(
 			mobile
 		) {
+			display: flex;
+			min-width: auto;
+			min-height: 2.786rem;
 			padding: 0.457rem
 				0 0.457rem
 				0.457rem;
@@ -127,9 +134,6 @@
 		@include media(
 			mobile
 		) {
-			// margin-bottom: 1.1rem;
-			// flex-direction: column;
-			// align-items: flex-start;
 			margin-bottom: 1.05rem;
 			display: grid;
 			grid-template-columns: repeat(
@@ -141,6 +145,7 @@
 
 		ul {
 			margin-right: 22.15rem;
+
 			display: flex;
 			gap: 2.286rem;
 
@@ -151,7 +156,32 @@
 			}
 
 			li {
+				position: relative;
 				cursor: pointer;
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					right: 0;
+					width: 0;
+					height: 0.071rem;
+					background-color: $black-text;
+					transition: width
+						0.5s;
+				}
+
+				&:hover:after {
+					content: '';
+					width: 100%;
+					display: block;
+					position: absolute;
+					left: 0;
+					height: 0.071rem;
+					background-color: $black-text;
+					transition: width
+						0.5s;
+				}
 			}
 		}
 	}
@@ -326,6 +356,9 @@
 			height: 2.214rem;
 			border-radius: 50%;
 			cursor: pointer;
+			border: 0.071rem
+				solid
+				transparent;
 			transition: $transition;
 
 			&:hover {
@@ -350,8 +383,10 @@
 		}
 	}
 	.custom-select {
+		display: flex;
 		position: relative;
 		min-width: 3.757rem;
+		min-height: 2.786rem;
 	}
 
 	.custom-select
@@ -360,9 +395,10 @@
 	}
 
 	.select-selected {
-		padding: 0.3rem
-			0 0.3rem
+		width: 100%;
+		padding: 0 0 0
 			0.3rem;
+		align-self: center;
 		color: $black-text;
 		text-transform: uppercase;
 		padding-right: 2rem;
@@ -571,6 +607,7 @@
 		top: 0;
 	}
 }
+
 @keyframes rotate {
 	0% {
 		transform: rotate(

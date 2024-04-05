@@ -278,16 +278,16 @@
 
 
 
-  <div class="review-modal__right">
+  <!-- <div class="review-modal__right">
     <p>
       <?= $review_modal_text_2 ?>
     </p>
 
-    <div class="review-modal__rate">
-      <!-- <div class="review-modal__rate-img">
+    <div class="review-modal__rate"> -->
+  <!-- <div class="review-modal__rate-img">
         <img src="<?= get_template_directory_uri() . '/src/img/google.svg' ?>" alt="<?= $review_modal_title ?>">
       </div> -->
-
+  <!-- 
       <div class="review-modal__rate-number">
         <?= $review_modal_rate ?>
       </div>
@@ -336,7 +336,7 @@
     <div class="review-modal__img">
       <img src="<?= $review_modal_img ?>" alt="<?= $review_modal_title ?>">
     </div>
-  </div>
+  </div> -->
 
 
 

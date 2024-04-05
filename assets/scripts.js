@@ -47,7 +47,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _add
   \****************************************/
 /***/ (() => {
 
-eval("document.addEventListener(\"DOMContentLoaded\", function () {\n  var phoneInputs = document.querySelectorAll('input[type=\"tel\"]');\n\n  if (phoneInputs) {\n    phoneInputs.forEach(function (phoneInput) {\n      var phoneMask = IMask(phoneInput, {\n        mask: \"+38(000)000-00-00\",\n      });\n    });\n  }\n});\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/libraries/phone-mask.js?");
+eval("// document.addEventListener(\"DOMContentLoaded\", function () {\n//   var phoneInputs = document.querySelectorAll('input[type=\"tel\"]');\n\n//   if (phoneInputs) {\n//     phoneInputs.forEach(function (phoneInput) {\n//       var phoneMask = IMask(phoneInput, {\n//         mask: \"+38(000)000-00-00\",\n//       });\n//     });\n//   }\n// });\n\ndocument.addEventListener(\n\t'DOMContentLoaded',\n\tfunction () {\n\t\tvar phoneInputs =\n\t\t\tdocument.querySelectorAll(\n\t\t\t\t'input[type=\"tel\"]',\n\t\t\t);\n\n\t\tif (\n\t\t\tphoneInputs\n\t\t) {\n\t\t\tphoneInputs.forEach(\n\t\t\t\tfunction (\n\t\t\t\t\tphoneInput,\n\t\t\t\t) {\n\t\t\t\t\tphoneInput.addEventListener(\n\t\t\t\t\t\t'input',\n\t\t\t\t\t\tfunction () {\n\t\t\t\t\t\t\tthis.value =\n\t\t\t\t\t\t\t\tthis.value.replace(\n\t\t\t\t\t\t\t\t\t/[^\\d+()\\-]/g,\n\t\t\t\t\t\t\t\t\t'',\n\t\t\t\t\t\t\t\t);\n\t\t\t\t\t\t},\n\t\t\t\t\t);\n\t\t\t\t},\n\t\t\t);\n\t\t}\n\t},\n);\n\n\n//# sourceURL=webpack://webpack_theme/./src/js/libraries/phone-mask.js?");
 
 /***/ }),
 

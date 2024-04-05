@@ -35,7 +35,7 @@ get_header();
 
               <a href="<?php echo esc_url($image_url); ?>" data-fancybox="gallery">
                 <img src="<?php echo esc_url($image_url); ?>" alt="зображення продукту">
-              </a>;
+              </a>
             <?php
             else :
               $upload_dir = wp_upload_dir();

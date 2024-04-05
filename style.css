@@ -293,7 +293,7 @@ button {
 }
 .form__input label textarea {
   height: 6rem;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   resize: none;
 }
 .form__input label input.wpcf7-not-valid {
@@ -774,16 +774,21 @@ button {
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 1.429rem;
 }
 .pagination a {
   width: 2.214rem;
   height: 2.214rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
+  border: 0.071rem solid transparent;
   transition: all 0.3s ease-in-out;
 }
 .pagination a:hover {
-  border: 0.071rem solid #262626;
+  border: 0.071rem solid #202020;
 }
 
 .pagination .page-numbers {
@@ -805,6 +810,9 @@ button {
 .pagination .page-numbers.current {
   width: 2.214rem;
   height: 2.214rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   color: #fff;
   background-color: #262626;
@@ -2304,7 +2312,7 @@ button {
   display: none;
 }
 .blog #category-filter .active {
-  border-bottom: 0.0171rem solid rgba(32, 32, 32, 0.4);
+  border-bottom: 0.0171rem solid #202020;
 }
 @media (max-width: 541px) {
   .blog #category-filter {
@@ -2312,11 +2320,17 @@ button {
   }
 }
 .blog__select {
+  padding: 0.3rem 0;
+  min-width: 16.643rem;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 @media (max-width: 541px) {
   .blog__select {
+    display: flex;
+    min-width: auto;
+    min-height: 2.786rem;
     padding: 0.457rem 0 0.457rem 0.457rem;
     grid-area: 1/2/2/3;
     border-top: 0.0171rem solid #000;
@@ -2360,7 +2374,28 @@ button {
   }
 }
 .blog__category ul li {
+  position: relative;
   cursor: pointer;
+}
+.blog__category ul li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0.071rem;
+  background-color: #202020;
+  transition: width 0.5s;
+}
+.blog__category ul li:hover:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 0.071rem;
+  background-color: #202020;
+  transition: width 0.5s;
 }
 .blog__count {
   display: flex;
@@ -2496,6 +2531,7 @@ button {
   height: 2.214rem;
   border-radius: 50%;
   cursor: pointer;
+  border: 0.071rem solid transparent;
   transition: all 0.3s ease-in-out;
 }
 .blog .pagination span:hover {
@@ -2513,14 +2549,18 @@ button {
   color: #fff;
 }
 .blog .custom-select {
+  display: flex;
   position: relative;
   min-width: 3.757rem;
+  min-height: 2.786rem;
 }
 .blog .custom-select select {
   display: none;
 }
 .blog .select-selected {
-  padding: 0.3rem 0 0.3rem 0.3rem;
+  width: 100%;
+  padding: 0 0 0 0.3rem;
+  align-self: center;
   color: #202020;
   text-transform: uppercase;
   padding-right: 2rem;
@@ -2884,6 +2924,10 @@ button {
     width: 100%;
     font-size: 1rem;
   }
+}
+
+.page-id-86 .footer {
+  border-top: none;
 }
 
 .post {

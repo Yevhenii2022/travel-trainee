@@ -1,18 +1,25 @@
 .pagination {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	font-size: 1.429rem;
 
 	a {
 		width: 2.214rem;
 		height: 2.214rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-radius: 50%;
+		border: 0.071rem
+			solid
+			transparent;
 		transition: $transition;
 
 		&:hover {
 			border: 0.071rem
 				solid
-				#262626;
+				$black-text;
 		}
 	}
 }
@@ -42,6 +49,9 @@
 	.page-numbers.current {
 	width: 2.214rem;
 	height: 2.214rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 50%;
 	color: $white;
 	background-color: #262626;
