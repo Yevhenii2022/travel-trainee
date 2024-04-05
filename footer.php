@@ -105,7 +105,8 @@
                     $svg_content = file_get_contents($file_path);
                     ?>
                     <?php if ($viber) : ?>
-                        <a href="viber://chat?number=+<?php echo $cleanedNumber ?>" class="footer__icon" target="_blank">
+                        <a href="viber://chat?number=%2B<?php echo $cleanedNumber ?>" class="footer__icon" target="_blank">
+
                             <?php if ($svg_content !== false) {
                                 echo $svg_content;
                             } ?>
