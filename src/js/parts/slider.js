@@ -73,7 +73,12 @@ document.addEventListener(
 					slidesPerView: 1.425,
 					spaceBetween: 8,
 					loop: true,
-					speed: 800,
+					speed: 500,
+					autoplay:
+						{
+							delay: 3000,
+							disableOnInteraction: false,
+						},
 					keyboard:
 						{
 							enabled: true,

@@ -1,5 +1,4 @@
 .about {
-	padding-bottom: 8.571rem;
 	background-color: $white-bg;
 
 	@include media(
@@ -34,10 +33,12 @@
 
 	&__inner {
 		width: 49%;
+		padding: 1rem 0;
 
 		@include media(
 			mobile
 		) {
+			padding: 0;
 			width: 100%;
 		}
 
