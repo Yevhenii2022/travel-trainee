@@ -383,10 +383,15 @@
 		}
 	}
 	.custom-select {
-		display: flex;
 		position: relative;
 		min-width: 3.757rem;
 		min-height: 2.786rem;
+
+		@include media(
+			mobile
+		) {
+			display: flex;
+		}
 	}
 
 	.custom-select

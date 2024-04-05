@@ -198,3 +198,33 @@ document.addEventListener(
 		}
 	},
 );
+
+document.addEventListener(
+	'DOMContentLoaded',
+	function () {
+		const icons =
+			document.querySelectorAll(
+				'.form__icon',
+			);
+
+		icons.forEach(
+			icon => {
+				icon.addEventListener(
+					'click',
+					function () {
+						const input =
+							this.parentElement.querySelector(
+								'input',
+							);
+						if (
+							input
+						) {
+							input.value =
+								'';
+						}
+					},
+				);
+			},
+		);
+	},
+);
