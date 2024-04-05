@@ -3,4 +3,5 @@ import './header';
 import './video';
 import './form';
 import './custom-select';
-import './load-more-blogs';
+import './filters';
+// import './load-more-blogs';

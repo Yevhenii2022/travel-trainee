@@ -22,6 +22,20 @@ $currency_symbol = get_woocommerce_currency_symbol();
       ?>
         <img src="<?php echo esc_url($image_url); ?>" alt="дефолтне зображення">
       <?php endif; ?>
+
+      <div class="excursion-card__categories">
+        <?php
+        $categories = get_the_terms($data_id, 'product_cat');
+        if ($categories && !is_wp_error($categories)) {
+          foreach ($categories as $category) {
+            $translated_category = get_term($category->term_id, 'product_cat');
+            if ($translated_category && !is_wp_error($translated_category)) {
+              echo '<span class="blog-card__category">' . esc_html($translated_category->name) . '</span>';
+            }
+          }
+        }
+        ?>
+      </div>
     </div>
 
     <div class="excursion-card__wrapper">
