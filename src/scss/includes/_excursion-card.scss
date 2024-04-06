@@ -23,6 +23,17 @@
 				1.1
 			);
 		}
+
+		.btn--top-text {
+			transform: translateY(
+				-200%
+			);
+		}
+		.btn--bottom-text {
+			transform: translateY(
+				-100%
+			);
+		}
 	}
 
 	&__image {

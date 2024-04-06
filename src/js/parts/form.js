@@ -98,6 +98,56 @@ document.addEventListener(
 			);
 
 			document.addEventListener(
+				'wpcf7mailsent',
+				function (
+					event,
+				) {
+					var inputs =
+						event
+							.detail
+							.inputs;
+					var ratingInput =
+						null;
+
+					// Знайдіть введення зірок відгуку
+					for (
+						var i = 0;
+						i <
+						inputs.length;
+						i++
+					) {
+						if (
+							'rating' ===
+							inputs[
+								i
+							].name
+						) {
+							ratingInput =
+								inputs[
+									i
+								];
+							break;
+						}
+					}
+
+					// Якщо знайдено поле зірок, змініть його значення на найближче значення кроку 0.5
+					if (
+						ratingInput &&
+						ratingInput.value %
+							0.5 !==
+							0
+					) {
+						ratingInput.value =
+							Math.round(
+								ratingInput.value *
+									2,
+							) / 2;
+					}
+				},
+				false,
+			);
+
+			document.addEventListener(
 				'wpcf7submit',
 				() => {
 					if (

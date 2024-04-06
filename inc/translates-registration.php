@@ -28,4 +28,8 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Очистить');
     pll_register_string('pointer_theme', 'По цене');
     pll_register_string('pointer_theme', 'Выбор города');
+    pll_register_string('pointer_theme', 'Ваш заказ');
+    pll_register_string('pointer_theme', 'Данные покупателя');
+    pll_register_string('pointer_theme', 'Дополнительная информация');
+    pll_register_string('pointer_theme', 'Отправить заказ');
 }

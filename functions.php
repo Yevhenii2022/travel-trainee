@@ -486,3 +486,25 @@ function remove_cart_item_callback()
 		die();
 	}
 }
+
+// Checkout
+function custom_override_checkout_fields($fields)
+{
+	// Удаляем необходимые поля
+	unset($fields['billing']['billing_company']); // Название компании
+	unset($fields['billing']['billing_address_1']); // Адрес
+	unset($fields['billing']['billing_address_2']); // Номер дома и название улицы
+	unset($fields['billing']['billing_city']); // Город
+	unset($fields['billing']['billing_postcode']); // Почтовый индекс
+	unset($fields['billing']['billing_state']); // Страна/регион
+	unset($fields['billing']['billing_country']); // Страна/регион
+
+	// Оставляем только электронную почту, телефон, имя и фамилию
+	$fields['billing']['billing_email']['required'] = true;
+	$fields['billing']['billing_phone']['required'] = true;
+	$fields['billing']['billing_first_name']['required'] = true;
+	$fields['billing']['billing_last_name']['required'] = true;
+
+	return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');

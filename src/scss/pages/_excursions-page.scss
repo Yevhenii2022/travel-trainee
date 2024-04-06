@@ -4,6 +4,8 @@
 	background-color: $white-bg;
 
 	.not-fount-tour {
+		font-size: 1.9rem;
+		text-transform: uppercase;
 	}
 	@include media(
 		mobile
@@ -442,6 +444,12 @@
 .excursions__select {
 	display: flex;
 	align-items: center;
+	gap: 0.643rem;
+
+	span {
+		color: $gray-text;
+		text-transform: uppercase;
+	}
 
 	@include media(
 		mobile

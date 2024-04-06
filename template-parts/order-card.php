@@ -57,7 +57,11 @@ $currency_symbol = get_woocommerce_currency_symbol();
 
         <!-- Кнопка "Добавить в корзину" -->
         <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="btn btn--cart">
-            <?php pll_e('Заказать тур'); ?>
+            <span class="btn--top-text"><?php pll_e('Заказать тур'); ?></span>
+            <span class="btn--bottom-text"><?php pll_e('Заказать тур'); ?></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+            </svg>
         </button>
 
         <?php

@@ -1,0 +1,93 @@
+.checkout {
+	padding: 7rem 0
+		4rem 0;
+	background-color: $white-bg;
+
+	@include media(
+		mobile
+	) {
+		padding: 6rem 0
+			2rem 0;
+	}
+
+	h3 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+}
+
+.woocommerce-billing-fields {
+	margin-bottom: 1rem;
+
+	input {
+		border-bottom: 0.071rem
+			solid
+			rgba(
+				32,
+				32,
+				32,
+				0.4
+			);
+		background-color: transparent;
+		line-height: 1.2;
+		transition: $transition;
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $black-text;
+		}
+	}
+}
+
+.woocommerce
+	form
+	.form-row
+	textarea {
+	margin-bottom: 1rem;
+	border-bottom: 0.071rem
+		solid
+		rgba(
+			32,
+			32,
+			32,
+			0.4
+		);
+	line-height: 1.2;
+	color: $black-text;
+	background-color: transparent;
+	transition: $transition;
+	height: 5.1rem;
+	resize: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: $black-text;
+	}
+}
+
+.woocommerce
+	#payment
+	#place_order,
+.woocommerce-page
+	#payment
+	#place_order {
+	font-size: 1rem;
+	line-height: 1;
+	font-weight: 400;
+	background-color: $black-text;
+	text-transform: uppercase;
+	border-radius: 0;
+	transition: $transition;
+
+	&:hover,
+	&:focus {
+		border-radius: 0.5rem;
+	}
+
+	&:active {
+		background-color: $black;
+	}
+}

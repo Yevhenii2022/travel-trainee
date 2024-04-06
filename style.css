@@ -116,12 +116,11 @@ button {
 }
 
 .btn {
+  position: relative;
+  height: 2.786rem;
+  overflow: hidden;
   width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0.82rem 1.1rem;
+  padding: 0.82rem 2.35rem 0.82rem 1.1rem;
   font-family: inherit;
   font-size: 1rem;
   color: #fff;
@@ -138,12 +137,38 @@ button {
   user-select: none;
 }
 .btn svg {
+  position: absolute;
+  top: 37%;
+  right: 1.143rem;
   width: 0.786rem;
   height: 0.786rem;
   stroke: #fff;
 }
+.btn--top-text, .btn--bottom-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.btn--top-text {
+  padding-top: 0.1rem;
+}
+.btn--top-text {
+  transform: translateY(0);
+}
+.btn--bottom-text {
+  transform: translateY(100%);
+}
 .btn:hover, .btn:focus {
   outline: none !important;
+}
+.btn:hover .btn--top-text, .btn:focus .btn--top-text {
+  transform: translateY(-200%);
+}
+.btn:hover .btn--bottom-text, .btn:focus .btn--bottom-text {
+  transform: translateY(-100%);
 }
 .btn:active {
   background-color: #000;
@@ -183,7 +208,7 @@ button {
 }
 @media (max-width: 541px) {
   .btn--visible {
-    display: flex;
+    display: block;
   }
 }
 
@@ -206,6 +231,9 @@ button {
   .header__button--wrap {
     display: none;
   }
+}
+.header__button svg {
+  right: 8.4rem;
 }
 
 .form__button {
@@ -404,9 +432,19 @@ button {
 .reviews-form__rating {
   margin-bottom: 2.4rem;
   height: 3.214rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.571rem;
   font-size: 0.714rem;
   line-height: 1.2;
   text-transform: uppercase;
+}
+.reviews-form__rating img {
+  width: 1.786rem;
+  height: 1.786rem;
+}
+.reviews-form__rating img:first-of-type {
+  display: none;
 }
 @media (max-width: 541px) {
   .reviews-form__rating {
@@ -468,6 +506,11 @@ button {
   display: none;
 }
 
+.star_rating_class {
+  width: fit-content;
+  display: flex;
+}
+
 .excursion-card {
   position: relative;
   display: flex;
@@ -480,6 +523,12 @@ button {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+.excursion-card:hover .btn--top-text {
+  transform: translateY(-200%);
+}
+.excursion-card:hover .btn--bottom-text {
+  transform: translateY(-100%);
 }
 .excursion-card__image {
   overflow: hidden;
@@ -613,6 +662,12 @@ button {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+.blog-card:hover .btn--top-text {
+  transform: translateY(-200%);
+}
+.blog-card:hover .btn--bottom-text {
+  transform: translateY(-100%);
 }
 .blog-card__categories {
   display: flex;
@@ -1343,7 +1398,7 @@ button {
   top: 0;
   width: 100%;
   z-index: 9;
-  transition: all 1s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .header--hidden {
   opacity: 0;
@@ -1435,7 +1490,7 @@ button {
   left: 0;
   height: 100dvh;
   background: rgba(32, 32, 32, 0.7);
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 .header__overlay.open .header__nav {
   background: #eaf2f5;
@@ -1471,7 +1526,7 @@ button {
     z-index: 50;
     overflow: auto;
     pointer-events: none;
-    transition: all 1s ease;
+    transition: all 0.6s ease;
   }
 }
 .header__menu {
@@ -1539,6 +1594,9 @@ button {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.header__search svg:hover {
+  scale: 1.3;
+}
 .header__input {
   margin-left: 0.643rem;
   opacity: 0;
@@ -1571,6 +1629,9 @@ button {
   height: 1.357rem;
   stroke: #202020;
   transition: all 0.3s ease-in-out;
+}
+.header__basket svg:hover {
+  scale: 1.3;
 }
 @media (max-width: 541px) {
   .header__basket {
@@ -2618,6 +2679,10 @@ input[type=range]::-ms-thumb {
   padding: 12.35rem 0 8.46rem 0;
   background-color: #eaf2f5;
 }
+.excursions-page .not-fount-tour {
+  font-size: 1.9rem;
+  text-transform: uppercase;
+}
 .excursions-page__wrapper {
   display: flex;
   justify-content: space-between;
@@ -2914,6 +2979,11 @@ input[type=range]::-ms-thumb {
 .excursions__select {
   display: flex;
   align-items: center;
+  gap: 0.643rem;
+}
+.excursions__select span {
+  color: rgba(32, 32, 32, 0.4);
+  text-transform: uppercase;
 }
 @media (max-width: 541px) {
   .excursions__select {
@@ -3057,6 +3127,7 @@ input[type=range]::-ms-thumb {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 0.643rem;
 }
 @media (max-width: 541px) {
   .blog__select {
@@ -4114,4 +4185,66 @@ input[type=range]::-ms-thumb {
   .product__inner:has(.excursion-card) .excursion-card__price p {
     margin-right: 0.22rem;
   }
+}
+
+.checkout {
+  padding: 7rem 0 4rem 0;
+  background-color: #eaf2f5;
+}
+@media (max-width: 541px) {
+  .checkout {
+    padding: 6rem 0 2rem 0;
+  }
+}
+.checkout h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.woocommerce-billing-fields {
+  margin-bottom: 1rem;
+}
+.woocommerce-billing-fields input {
+  border-bottom: 0.071rem solid rgba(32, 32, 32, 0.4);
+  background-color: transparent;
+  line-height: 1.2;
+  transition: all 0.3s ease-in-out;
+}
+.woocommerce-billing-fields input:hover, .woocommerce-billing-fields input:focus, .woocommerce-billing-fields input:active {
+  border-color: #202020;
+}
+
+.woocommerce form .form-row textarea {
+  margin-bottom: 1rem;
+  border-bottom: 0.071rem solid rgba(32, 32, 32, 0.4);
+  line-height: 1.2;
+  color: #202020;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  height: 5.1rem;
+  resize: none;
+}
+.woocommerce form .form-row textarea:hover, .woocommerce form .form-row textarea:focus, .woocommerce form .form-row textarea:active {
+  border-color: #202020;
+}
+
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  background-color: #202020;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+.woocommerce #payment #place_order:hover, .woocommerce #payment #place_order:focus,
+.woocommerce-page #payment #place_order:hover,
+.woocommerce-page #payment #place_order:focus {
+  border-radius: 0.5rem;
+}
+.woocommerce #payment #place_order:active,
+.woocommerce-page #payment #place_order:active {
+  background-color: #000;
 }

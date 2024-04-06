@@ -156,7 +156,7 @@ $title = get_sub_field('excursions-page_title');
 
           <div class="excursions__select excursions-select">
             <span>
-              <?php pll_e('Сортировать:') ?>
+              <?php pll_e('Сортировать') ?>
             </span>
             <select id="excursions__select" class="tabs-select">
               <option value="popular">

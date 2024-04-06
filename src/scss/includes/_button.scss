@@ -1,10 +1,10 @@
 .btn {
+	position: relative;
+	height: 2.786rem;
+	overflow: hidden;
 	width: fit-content;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.7rem;
 	padding: 0.82rem
+		2.35rem 0.82rem
 		1.1rem;
 	font-family: inherit;
 	font-size: 1rem;
@@ -22,14 +22,55 @@
 	user-select: none;
 
 	svg {
+		position: absolute;
+		top: 37%;
+		right: 1.143rem;
 		width: 0.786rem;
 		height: 0.786rem;
 		stroke: $white;
 	}
 
+	&--top-text,
+	&--bottom-text {
+		// padding-top: 0.1rem;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: $transition;
+	}
+
+	&--top-text {
+		padding-top: 0.1rem;
+	}
+
+	&--top-text {
+		transform: translateY(
+			0
+		);
+	}
+
+	&--bottom-text {
+		transform: translateY(
+			100%
+		);
+	}
+
 	&:hover,
 	&:focus {
 		outline: none !important;
+
+		.btn--top-text {
+			transform: translateY(
+				-200%
+			);
+		}
+		.btn--bottom-text {
+			transform: translateY(
+				-100%
+			);
+		}
 	}
 
 	&:active {
@@ -79,7 +120,7 @@
 		@include media(
 			mobile
 		) {
-			display: flex;
+			display: block;
 		}
 	}
 }
@@ -105,6 +146,12 @@
 			mobile
 		) {
 			display: none;
+		}
+	}
+
+	& {
+		svg {
+			right: 8.4rem;
 		}
 	}
 }

@@ -101,9 +101,21 @@
 	&__rating {
 		margin-bottom: 2.4rem;
 		height: 3.214rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.571rem;
 		font-size: 0.714rem;
 		line-height: 1.2;
 		text-transform: uppercase;
+
+		img {
+			width: 1.786rem;
+			height: 1.786rem;
+		}
+
+		img:first-of-type {
+			display: none;
+		}
 
 		@include media(
 			mobile
@@ -179,4 +191,9 @@
 			display: none;
 		}
 	}
+}
+
+.star_rating_class {
+	width: fit-content;
+	display: flex;
 }

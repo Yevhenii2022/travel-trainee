@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Mini-cart
  *
@@ -22,7 +21,7 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_mini_cart'); ?>
 
-<?php if (!WC()->cart->is_empty()) : ?>
+<?php if (!WC()->cart->is_empty()): ?>
 
 	<div class="sidebar-cart__wrapper">
 
@@ -35,11 +34,12 @@ do_action('woocommerce_before_mini_cart'); ?>
 			</div>
 		</div>
 
-		<ul class="sidebar-cart__list woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+		<ul
+			class="sidebar-cart__list woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
 
 			<script>
-				jQuery(document).ready(function($) {
-					$('.sidebar-cart__close').on('click', function() {
+				jQuery(document).ready(function ($) {
+					$('.sidebar-cart__close').on('click', function () {
 						$('.sidebar-cart').removeClass('active');
 					});
 				});
@@ -64,8 +64,9 @@ do_action('woocommerce_before_mini_cart'); ?>
 					$product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
 					$excursion_date = $cart_item['excursion_date'];
 					$excursion_guest = $cart_item['guests'];
-			?>
-					<li class="sidebar-cart__item woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
+					?>
+					<li
+						class="sidebar-cart__item woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
 						<?php
 						echo apply_filters(
 							'woocommerce_cart_item_remove_link',
@@ -80,7 +81,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 						);
 						?>
 
-						<?php if (empty($product_permalink)) : ?>
+						<?php if (empty($product_permalink)): ?>
 							<div class="sidebar-cart__item-wrapper">
 								<div class="sidebar-cart__item-img">
 									<?php echo $thumbnail ?>
@@ -90,7 +91,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 									<?php echo wp_kses_post($product_name); ?>
 								</div>
 							</div>
-						<?php else : ?>
+						<?php else: ?>
 							<a class="sidebar-cart__item-wrapper" href="<?php echo esc_url($product_permalink); ?>">
 								<div class="sidebar-cart__item-img">
 									<?php echo $thumbnail ?>
@@ -107,7 +108,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 						<?= $excursion_date ?>
 						<?= $excursion_guest ?>
 					</li>
-			<?php
+					<?php
 				}
 			}
 
@@ -128,26 +129,28 @@ do_action('woocommerce_before_mini_cart'); ?>
 			</p>
 
 			<div class="sidebar-cart__buttons">
-				<a href='/checkout' class="sidebar-cart__button btn">
+				<a href="<?= get_home_url() . '/checkout' ?>" class="sidebar-cart__button btn">
 					<?php pll_e("Оформить заказ"); ?>
 
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 					</svg>
 				</a>
 
-				<a href='/excursions' class="sidebar-cart__button btn btn--white">
+				<a href="<?= get_home_url() . '/excursions' ?>" class="sidebar-cart__button btn btn--white">
 					<?php pll_e("Продолжить покупки"); ?>
 
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 					</svg>
 				</a>
 			</div>
 		</div>
 	</div>
 
-<?php else : ?>
+<?php else: ?>
 
 	<div class="sidebar-cart__wrapper">
 
@@ -162,8 +165,8 @@ do_action('woocommerce_before_mini_cart'); ?>
 
 
 		<script>
-			jQuery(document).ready(function($) {
-				$('.sidebar-cart__close').on('click', function() {
+			jQuery(document).ready(function ($) {
+				$('.sidebar-cart__close').on('click', function () {
 					$('.sidebar-cart').removeClass('active');
 				});
 			});
@@ -174,11 +177,12 @@ do_action('woocommerce_before_mini_cart'); ?>
 		</p>
 
 		<div class="sidebar-cart__bottom">
-			<a href="/excursions/" class="sidebar-cart__button btn">
+			<a href="<?= get_home_url() . '/excursions/' ?>" class="sidebar-cart__button btn">
 				<?php pll_e('Найти экскурсию'); ?>
 
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 				</svg>
 			</a>
 		</div>
