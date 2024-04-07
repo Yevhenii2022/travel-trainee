@@ -26,9 +26,10 @@
         </svg>
      </label>
    </div>
-
-  <div class="reviews-form__rating">{Оценка}</div>
-
+  <div class="reviews-form__rating">
+    {Оценка}
+    [star_rating star_rating-511 class:reviews-form-img max:5]
+  </div>
   <div class="reviews-form__inner">
     [submit class:form__button class:reviews-form__button "{Отправить}"]
 

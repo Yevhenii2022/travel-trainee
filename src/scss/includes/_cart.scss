@@ -1,0 +1,144 @@
+.sidebar-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 26rem;
+    background: $white;
+    padding: 2.929rem 2.286rem 1rem;
+    transform: translateX(100%);
+    transition: $transition;
+    z-index: 1100;
+
+    &.active {
+        transform: translateX(0%);
+    }
+
+    &__head {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-bottom: 1.643rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 1rem;
+        display: block;
+    }
+
+    &__close {
+        z-index: 100000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' fill='none'%3E%3Cpath stroke='%23202020' stroke-linecap='round' d='m5.242 13.243 8.485-8.486M5.242 4.757l8.485 8.486'/%3E%3C/svg%3E");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        width: 1.188rem;
+        height: 1.188rem;
+        cursor: pointer;
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__item {
+        position: relative;
+
+        &-img {
+            width: 100%;
+            height: 15.857rem;
+            margin-bottom: 1.143rem;
+
+            img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                float: none !important;
+                margin: 0 !important;
+            }
+        }
+
+        &-name {
+            font-family: $helvetica;
+            text-transform: uppercase;
+            margin-bottom: 1.714rem;
+        }
+    }
+
+    &__remove {
+        position: absolute;
+        top: 0.571rem;
+        right: 0.571rem;
+        display: block;
+        width: 1.786rem;
+        height: 1.786rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23202020'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' d='M8 9h9M11.6 7.2h1.8M11.6 11.7v3.6M13.4 11.7v3.6M8.9 10.8l.9 7.2h5.4l.9-7.2'/%3E%3C/svg%3E");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: $transition;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding-top: 1.375rem;
+        background: $white;
+    }
+
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1.571rem;
+
+        strong {
+            font-size: 1rem;
+        }
+
+        .amount {
+            font-size: 1.714rem;
+        }
+    }
+
+    &__error {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12.625rem;
+        text-align: center;
+        font-family: $kudryashev;
+        font-size: 1.313rem;
+        line-height: 100%;
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__list {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 87vh;
+        padding-top: 4.875rem;
+    }
+}
+
+.added_to_cart {
+    display: none !important;
+}

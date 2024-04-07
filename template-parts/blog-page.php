@@ -62,9 +62,8 @@
         <div class="blog__count">
           <?php
           $count_text = get_sub_field('blog_count') ?? '';
-          $current_language = pll_current_language();
-          $total_posts = pll_count_posts($current_language);
-          echo '(' . $total_posts . ')';
+
+          echo '(<span id="blog_count">0</span>)';
           ?>
           <p>
             <?= $count_text ?>

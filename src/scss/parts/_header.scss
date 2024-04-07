@@ -3,8 +3,8 @@
 	top: 0;
 	width: 100%;
 	z-index: 9;
-	transition: all 1s
-		ease-in-out;
+	transition: all
+		0.6s ease-in-out;
 
 	&--hidden {
 		opacity: 0;
@@ -165,7 +165,7 @@
 				0.7
 			);
 			transition: all
-				1s ease;
+				0.6s ease;
 
 			.header__nav {
 				background: $white-bg;
@@ -210,7 +210,7 @@
 			overflow: auto;
 			pointer-events: none;
 			transition: all
-				1s ease;
+				0.6s ease;
 		}
 	}
 
@@ -296,6 +296,10 @@
 			fill: $black-text;
 			cursor: pointer;
 			transition: $transition;
+
+			&:hover {
+				scale: 1.3;
+			}
 		}
 	}
 
@@ -328,11 +332,16 @@
 	&__basket {
 		margin-right: 2.2rem;
 		cursor: pointer;
+
 		svg {
 			width: 1.357rem;
 			height: 1.357rem;
 			stroke: $black-text;
 			transition: $transition;
+
+			&:hover {
+				scale: 1.3;
+			}
 		}
 
 		@include media(

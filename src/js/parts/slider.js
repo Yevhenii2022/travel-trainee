@@ -73,7 +73,12 @@ document.addEventListener(
 					slidesPerView: 1.425,
 					spaceBetween: 8,
 					loop: true,
-					speed: 800,
+					speed: 500,
+					autoplay:
+						{
+							delay: 3000,
+							disableOnInteraction: false,
+						},
 					keyboard:
 						{
 							enabled: true,
@@ -123,6 +128,7 @@ document.addEventListener(
 				'.gallery-page__slider2',
 				{
 					loop: true,
+					spaceBetween: 12,
 					centeredSlides: true,
 					lazy: true,
 					pagination:

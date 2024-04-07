@@ -59,6 +59,32 @@ document.addEventListener(
 				'.header__basket',
 			);
 
+		let scrollPosition =
+			window.pageYOffset;
+
+		if (
+			scrollPosition >
+			80
+		) {
+			header.style.backgroundColor =
+				'#FFFFFF';
+			header.classList.add(
+				'header--hidden',
+			);
+		} else {
+			if (
+				header.classList.contains(
+					'header--hidden',
+				)
+			) {
+				header.classList.remove(
+					'header--hidden',
+				);
+				header.style.backgroundColor =
+					'';
+			}
+		}
+
 		let scrollPrev = 0;
 
 		window.addEventListener(

@@ -17,12 +17,19 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'От А-Я');
     pll_register_string('pointer_theme', 'Дата');
     pll_register_string('pointer_theme', 'Твоя Корзина');
+    pll_register_string('pointer_theme', 'Оформить заказ');
+    pll_register_string('pointer_theme', 'Продолжить покупки');
     pll_register_string('pointer_theme', 'Корзина пустая');
+    pll_register_string('pointer_theme', 'Найти экскурсию');
     pll_register_string('pointer_theme', 'Екскурсії не знайдені');
     pll_register_string('pointer_theme', 'Статті не знайдені');
-    pll_register_string('pointer_theme', 'ФИЛЬТРЫ:');
+    pll_register_string('pointer_theme', 'ФИЛЬТРЫ');
     pll_register_string('pointer_theme', 'Тип экскурсии');
     pll_register_string('pointer_theme', 'Очистить');
     pll_register_string('pointer_theme', 'По цене');
     pll_register_string('pointer_theme', 'Выбор города');
+    pll_register_string('pointer_theme', 'Ваш заказ');
+    pll_register_string('pointer_theme', 'Данные покупателя');
+    pll_register_string('pointer_theme', 'Дополнительная информация');
+    pll_register_string('pointer_theme', 'Отправить заказ');
 }

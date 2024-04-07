@@ -39,7 +39,8 @@ $image = get_sub_field('order_img');
       $btn_text = get_sub_field('order_btn_text') ?? '';
       ?>
       <button popovertarget="consultation" class="order__button btn">
-        <?= $btn_text ?>
+        <span class="btn--top-text"><?= $btn_text ?></span>
+        <span class="btn--bottom-text"><?= $btn_text ?></span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
         </svg>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -16,7 +17,7 @@ get_header();
 ?>
 
 <main>
-	<h1>DEFAULT TEMPLATE</h1>
+  <h1>DEFAULT TEMPLATE</h1>
 </main>
 
 <?php

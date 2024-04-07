@@ -23,13 +23,24 @@
 				1.1
 			);
 		}
+
+		.btn--top-text {
+			transform: translateY(
+				-200%
+			);
+		}
+		.btn--bottom-text {
+			transform: translateY(
+				-100%
+			);
+		}
 	}
 
 	&__image {
 		overflow: hidden;
+
 		img {
 			height: 20rem;
-
 			transition: 0.3s
 				ease-in-out;
 			-webkit-transition: 0.3s
@@ -120,11 +131,35 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		&:has(
+				.excursion-card__price
+			) {
+			.excursion-card__price {
+				margin-bottom: 0;
+				color: $gray-text;
+
+				p {
+					color: $black-text;
+					font-family: $kudryashev;
+					font-size: 2.286rem;
+					letter-spacing: -0.12rem;
+				}
+
+				span {
+					text-decoration: line-through;
+					text-decoration-color: inherit;
+					text-decoration-thickness: 0.071rem;
+					text-decoration-skip-ink: none;
+					line-height: 1.2;
+				}
+			}
+		}
 	}
 
 	&__price {
 		display: flex;
-		color: $gray-text;
+		margin-bottom: 1.714rem;
 
 		@include media(
 			mobile
@@ -132,19 +167,22 @@
 			margin-right: 0.2rem;
 		}
 
-		p {
+		.amount {
 			color: $black-text;
 			font-family: $kudryashev;
 			font-size: 2.286rem;
 			letter-spacing: -0.12rem;
 		}
 
-		span {
+		&-old {
 			text-decoration: line-through;
 			text-decoration-color: inherit;
 			text-decoration-thickness: 0.071rem;
 			text-decoration-skip-ink: none;
 			line-height: 1.2;
+			margin-left: 0.5rem;
+			font-family: $kudryashev;
+			color: $gray-text;
 		}
 	}
 }
