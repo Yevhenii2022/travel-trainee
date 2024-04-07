@@ -7,68 +7,75 @@ $currency_symbol = get_woocommerce_currency_symbol();
 ?>
 
 <div class="order-card">
-    <?php
-    $excursion_price = get_post_meta(get_the_ID(), '_excursion_price', true);
-    if ($regular_price) {
-        echo '<div class="excursion-card__price">';
-        echo '<p>' . wc_price($regular_price) . '</p>';
-        if ($excursion_price) {
-            echo '<p class="excursion-card__price-old">' . $currency_symbol . $excursion_price . '</p>';
+
+    <div>
+        <?php
+        $excursion_price = get_post_meta(get_the_ID(), '_excursion_price', true);
+        if ($regular_price) {
+            echo '<div class="excursion-card__price">';
+            echo '<p>' . wc_price($regular_price) . '</p>';
+            if ($excursion_price) {
+                echo '<p class="excursion-card__price-old">' . $currency_symbol . $excursion_price . '</p>';
+            }
+            echo '</div>';
         }
-        echo '</div>';
-    }
-    ?>
-
-    <?php
-    $excursion_dates = get_post_meta(get_the_ID(), '_excursion_dates', true);
-    $excursion_dates_array = explode(',', $excursion_dates);
-    ?>
-
-    <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
-        <?php
-        do_action('woocommerce_before_add_to_cart_button');
         ?>
 
-        <div class="order-card__inputs">
-            <!-- Дата пикер -->
-            <div class="order-card__input-date">
-                <input type="text" id="excursion_date" name="excursion_date" readonly required placeholder="<?php pll_e('Дата') ?>">
-            </div>
+        <?php
+        $excursion_dates = get_post_meta(get_the_ID(), '_excursion_dates', true);
+        $excursion_dates_array = explode(',', $excursion_dates);
+        ?>
 
-            <!-- Поле выбора количества людей -->
-            <div class="order-card__input-people">
-                <input type="hidden" name="guests" value="1" id="quantity_hidden">
+        <div class="order-card__box">
 
-                <div class="custom-select">
-                    <select id="guests">
-                        <?php
-                        // Генерируем опции для количества людей от 1 до 5
-                        for ($i = 1; $i <= 5; $i++) {
-                            echo '<option value="' . $i . '">' . $i . '</option>';
-                        }
-                        ?>
-                    </select>
+            <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+                <?php
+                do_action('woocommerce_before_add_to_cart_button');
+                ?>
+
+                <div class="order-card__inputs">
+                    <!-- Дата пикер -->
+                    <div class="order-card__input-date">
+                        <input type="text" id="excursion_date" name="excursion_date" readonly required placeholder="<?php pll_e('Дата') ?>">
+                    </div>
+
+                    <!-- Поле выбора количества людей -->
+                    <div class="order-card__input-people">
+                        <input type="hidden" name="guests" value="1" id="quantity_hidden">
+
+                        <div class="custom-select">
+                            <select id="guests">
+                                <?php
+                                // Генерируем опции для количества людей от 1 до 5
+                                for ($i = 1; $i <= 5; $i++) {
+                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Скрытое поле с количеством продукта -->
+                <input type="hidden" name="quantity" value="1">
+
+                <!-- Кнопка "Добавить в корзину" -->
+                <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="btn btn--cart">
+                    <span class="btn--top-text"><?php pll_e('Заказать тур'); ?></span>
+                    <span class="btn--bottom-text"><?php pll_e('Заказать тур'); ?></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+                    </svg>
+                </button>
+
+                <?php
+                // Добавляем дополнительные поля, если они есть
+                do_action('woocommerce_after_add_to_cart_button');
+                ?>
+            </form>
+
         </div>
-
-        <!-- Скрытое поле с количеством продукта -->
-        <input type="hidden" name="quantity" value="1">
-
-        <!-- Кнопка "Добавить в корзину" -->
-        <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="btn btn--cart">
-            <span class="btn--top-text"><?php pll_e('Заказать тур'); ?></span>
-            <span class="btn--bottom-text"><?php pll_e('Заказать тур'); ?></span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
-            </svg>
-        </button>
-
-        <?php
-        // Добавляем дополнительные поля, если они есть
-        do_action('woocommerce_after_add_to_cart_button');
-        ?>
-    </form>
+    </div>
 
     <script>
         jQuery(document).ready(function($) {

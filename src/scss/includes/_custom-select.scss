@@ -1,6 +1,7 @@
 .custom-select,
 .blog-select,
-.excursions-select {
+.excursions-select,
+.custom-select-search {
 	position: relative;
 	min-width: 3.757rem;
 
@@ -13,14 +14,16 @@
 
 .custom-select,
 .blog-select,
-.excursions-select {
+.excursions-select,
+.custom-select-search {
 	select {
 		display: none;
 	}
 }
 
 .blog-select,
-.excursions-select {
+.excursions-select,
+.custom-select-search {
 	.same-as-selected {
 		display: none;
 	}
