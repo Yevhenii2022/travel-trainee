@@ -48,7 +48,7 @@ body.burger-open {
   overflow: hidden;
 }
 body::-webkit-scrollbar {
-  width: 0.643rem;
+  width: 0.5rem;
 }
 body::-webkit-scrollbar-thumb {
   background-color: #badae7;
@@ -145,15 +145,13 @@ button {
   stroke: #fff;
 }
 .btn--top-text, .btn--bottom-text {
+  padding-top: 0.2rem;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
-}
-.btn--top-text {
-  padding-top: 0.1rem;
 }
 .btn--top-text {
   transform: translateY(0);
@@ -2714,6 +2712,7 @@ input[type=range]::-ms-thumb {
   transform: translate(-50%, -50%);
 }
 .excursions-page__filters {
+  margin-top: 0.5rem;
   padding: 0 2.29rem;
   position: sticky;
   top: 2.29rem;
@@ -2749,16 +2748,17 @@ input[type=range]::-ms-thumb {
 }
 @media (max-width: 541px) {
   .excursions-page__filters-button {
-    display: inline-block;
+    min-width: 3.757rem;
+    min-height: 2.16rem;
+    display: flex;
+    align-items: center;
+    position: relative;
     padding: 0.3rem 0 0.3rem 0.3rem;
-    display: block;
     grid-area: 1/1/2/2;
     cursor: pointer;
     border-top: 0.0171rem solid #000;
     border-left: 0.0171rem solid #000;
     border-bottom: 0.0171rem solid #000;
-    position: relative;
-    min-width: 3.757rem;
     font-size: 1.286rem;
   }
 }
@@ -2872,6 +2872,8 @@ input[type=range]::-ms-thumb {
 }
 .excursions-page .select-selected {
   padding: 0.3rem 0 0.3rem 0.3rem;
+  display: flex;
+  align-items: center;
   color: #202020;
   text-transform: uppercase;
   padding-right: 2rem;
@@ -3625,12 +3627,12 @@ input[type=range]::-ms-thumb {
   }
 }
 .reviews__rating {
-  height: 1.786rem;
+  display: flex;
+  gap: 0.071rem;
 }
-@media (max-width: 541px) {
-  .reviews__rating {
-    height: 1.357rem;
-  }
+.reviews__rating svg {
+  width: 1.786rem;
+  height: 1.786rem;
 }
 .reviews__content {
   font-size: 1.429rem;

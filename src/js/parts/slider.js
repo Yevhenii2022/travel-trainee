@@ -128,6 +128,7 @@ document.addEventListener(
 				'.gallery-page__slider2',
 				{
 					loop: true,
+					spaceBetween: 12,
 					centeredSlides: true,
 					lazy: true,
 					pagination:
