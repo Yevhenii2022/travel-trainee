@@ -32,4 +32,11 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Данные покупателя');
     pll_register_string('pointer_theme', 'Дополнительная информация');
     pll_register_string('pointer_theme', 'Отправить заказ');
+    pll_register_string('pointer_theme', 'Все результаты');
+    pll_register_string('pointer_theme', 'Результатов');
+    pll_register_string('pointer_theme', 'Экскурсии');
+    pll_register_string('pointer_theme', 'Экскурсия');
+    pll_register_string('pointer_theme', 'Блог');
+    pll_register_string('pointer_theme', 'Заголовок удачного поиска');
+    pll_register_string('pointer_theme', 'Заголовок не удачного поиска');
 }

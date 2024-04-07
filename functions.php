@@ -343,7 +343,7 @@ function remove_tabs($tabs)
 require get_template_directory() . '/inc/custom-sort-blogs.php';
 
 require get_template_directory() . '/inc/custom-sort-excursions.php';
-
+require get_template_directory() . '/inc/search-ajax.php';
 function add_post_popularity_meta_field()
 {
 	register_post_meta(

@@ -42,11 +42,11 @@
 							<div class="header__nav <?= is_front_page() ? 'header--white' : '' ?>">
 
 								<?php wp_nav_menu([
-									'theme_location'       => 'header_menu',
-									'container'            => false,
-									'menu_class'           => 'header__list',
-									'menu_id'              => false,
-									'echo'                 => true,
+									'theme_location' => 'header_menu',
+									'container' => false,
+									'menu_class' => 'header__list',
+									'menu_id' => false,
+									'echo' => true,
 								]);
 								?>
 
@@ -84,7 +84,8 @@
 								<?php if ($svg_content !== false) {
 									echo $svg_content;
 								} ?>
-								<input type="search" class="header__input">
+								<input id="search__input" type="search" class="header__input">
+								<div id="search__results" class="search__results "></div>
 							</div>
 
 							<?php
