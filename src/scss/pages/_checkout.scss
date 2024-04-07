@@ -29,6 +29,7 @@
 				32,
 				0.4
 			);
+		border-radius: 0;
 		background-color: transparent;
 		line-height: 1.2;
 		transition: $transition;
@@ -54,6 +55,7 @@
 			32,
 			0.4
 		);
+	border-radius: 0;
 	line-height: 1.2;
 	color: $black-text;
 	background-color: transparent;
@@ -90,4 +92,9 @@
 	&:active {
 		background-color: $black;
 	}
+}
+
+.woocommerce-checkout
+	#payment {
+	background-color: transparent;
 }
