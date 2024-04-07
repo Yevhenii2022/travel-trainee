@@ -630,7 +630,7 @@ button {
 }
 @media (max-width: 541px) {
   .excursion-card__price {
-    margin-right: 0.2rem;
+    margin: 0 0 0.2rem 0;
   }
 }
 .excursion-card__price .amount {
@@ -638,6 +638,11 @@ button {
   font-family: "Kudryashev";
   font-size: 2.286rem;
   letter-spacing: -0.12rem;
+}
+@media (max-width: 541px) {
+  .excursion-card__price .amount {
+    font-size: 1.571rem;
+  }
 }
 .excursion-card__price-old {
   text-decoration: line-through;
@@ -648,6 +653,12 @@ button {
   margin-left: 0.5rem;
   font-family: "Kudryashev";
   color: rgba(32, 32, 32, 0.4);
+}
+@media (max-width: 541px) {
+  .excursion-card__price-old {
+    font-size: 0.643rem;
+    line-height: 1.6;
+  }
 }
 
 .blog-card {
@@ -1174,16 +1185,32 @@ button {
 }
 @media (max-width: 1025px) {
   .order-card {
-    height: 14rem;
+    height: 16rem;
   }
 }
 @media (max-width: 541px) {
   .order-card {
     margin: 0 -1.143rem 0 -1.143rem;
+    padding: 0.8rem 1.143rem 1.3rem 1.143rem;
     width: 100%;
+    height: auto;
     position: fixed;
     bottom: 0;
     z-index: 1;
+  }
+}
+.order-card__box {
+  display: flex;
+  gap: 1.143rem;
+}
+@media (max-width: 541px) {
+  .order-card__box {
+    display: block;
+  }
+  .order-card__box form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 .order-card__inputs {
@@ -1191,9 +1218,19 @@ button {
   display: flex;
   gap: 1.143rem;
 }
+@media (max-width: 541px) {
+  .order-card__inputs {
+    margin-bottom: 0;
+  }
+}
 .order-card__input-date {
   width: 13.714rem;
   position: relative;
+}
+@media (max-width: 541px) {
+  .order-card__input-date {
+    width: 5.4rem;
+  }
 }
 .order-card__input-date input {
   border-bottom: 0.071rem solid #000;
@@ -1206,6 +1243,11 @@ button {
   color: #202020;
   font-family: "Helvetica";
   font-weight: 400;
+}
+@media (max-width: 541px) {
+  .order-card__input-date input {
+    border-bottom: none;
+  }
 }
 .order-card__input-date input::placeholder {
   color: #202020;
@@ -1229,8 +1271,18 @@ button {
   top: -0.1rem;
   left: 0;
 }
+@media (max-width: 541px) {
+  .order-card__input-date:before {
+    top: 0;
+  }
+}
 .order-card__input-people {
   width: 13.714rem;
+}
+@media (max-width: 541px) {
+  .order-card__input-people {
+    width: 4.5rem;
+  }
 }
 .order-card__input-people .custom-select {
   width: 100%;
@@ -1254,19 +1306,46 @@ button {
   top: -0.1rem;
   left: 0;
 }
+@media (max-width: 541px) {
+  .order-card__input-people .custom-select:before {
+    top: 0;
+  }
+}
 .order-card__input-people .custom-select .select-selected {
   width: 100%;
-  padding-left: 1.7rem;
+  padding-left: 1.78rem;
   border-bottom: 0.071rem solid #000;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.38rem;
+}
+@media (max-width: 541px) {
+  .order-card__input-people .custom-select .select-selected {
+    border-bottom: none;
+    padding: 0.22rem 0 0 1.78rem;
+    font-size: 0.714rem;
+    line-height: 1.2;
+  }
+  .order-card__input-people .custom-select .select-selected:after {
+    right: 0.8rem;
+    top: 60.5%;
+  }
 }
 .order-card__input-people .custom-select .select-items {
-  left: 1.5rem;
+  left: 1.45rem;
   color: #202020;
   font-family: "Helvetica";
   font-weight: 400;
   font-size: 0.714rem;
   line-height: 0.857rem;
+  background-color: #fff;
+}
+@media (max-width: 541px) {
+  .order-card__input-people .custom-select .select-items {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    bottom: 100%;
+    left: 0.77rem;
+    top: auto;
+    flex-direction: column-reverse;
+  }
 }
 
 .sidebar-cart {
@@ -1394,6 +1473,17 @@ button {
 
 .added_to_cart {
   display: none !important;
+}
+
+@media (max-width: 1025px) {
+  .btn--cart {
+    margin-top: 1.7rem;
+  }
+}
+@media (max-width: 541px) {
+  .btn--cart {
+    margin-top: -1.7rem;
+  }
 }
 
 .header {
