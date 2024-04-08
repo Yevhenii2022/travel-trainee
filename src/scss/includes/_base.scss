@@ -1,70 +1,61 @@
 html {
-	font-size: 0.972vw; // font size 14px
+  font-size: 0.972vw; // font size 14px
 
-	@include media(
-		tablet
-	) {
-		font-size: 1.45vw;
-	}
-	@include media(
-		mobile
-	) {
-		font-size: 3.733vw; // font size 14px
-	}
+  @include media(tablet) {
+    font-size: 1.45vw;
+  }
+  @include media(mobile) {
+    font-size: 3.733vw; // font size 14px
+  }
 }
 
 body {
-	color: $black-text;
-	background-color: $white;
-	font-family: $helvetica;
-	font-size: 1rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  color: $black-text;
+  background-color: $white;
+  font-family: $helvetica;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 
-	&.burger-open {
-		overflow: hidden;
-	}
+  &.burger-open {
+    overflow: hidden;
+  }
 
-	&::-webkit-scrollbar {
-		width: 0.5rem;
-	}
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: #badae7;
-		border-radius: 0.571rem;
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: #badae7;
+    border-radius: 0.571rem;
+  }
 
-	&::-webkit-scrollbar-thumb:hover {
-		background-color: #9ec7d6;
-	}
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #9ec7d6;
+  }
 }
 button {
-	background-color: transparent;
-	border: none;
+  background-color: transparent;
+  border: none;
 }
 .body {
-	&--popup {
-		overflow: hidden;
-	}
+  &--popup {
+    overflow: hidden;
+  }
 }
 
 .container {
-	max-width: 102.857rem;
-	margin: 0 auto;
-	padding: 0
-		2.286rem;
+  max-width: 102.857rem;
+  margin: 0 auto;
+  padding: 0 2.286rem;
 
-	&--right {
-		padding: 0 0 0
-			2.286rem;
-	}
+  &--right {
+    padding: 0 0 0 2.286rem;
+  }
 
-	@include media(
-		mobile
-	) {
-		width: 100%;
-		padding: 0
-			1.143rem;
-	}
+  @include media(mobile) {
+    width: 100%;
+    padding: 0 1.143rem;
+  }
 }
