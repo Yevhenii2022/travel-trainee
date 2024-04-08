@@ -39,5 +39,13 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Блог');
     pll_register_string('pointer_theme', 'Заголовок удачного поиска');
     pll_register_string('pointer_theme', 'Заголовок не удачного поиска');
-    pll_register_string('pointer_theme', 'Гость');
+    pll_register_string('pointer_theme', 'Почта ВК');
+    pll_register_string('pointer_theme', 'Телефон ВК');
+    pll_register_string('pointer_theme', 'Имя ВК');
+    pll_register_string('pointer_theme', 'Фамилия ВК');
+    pll_register_string('pointer_theme', 'Примечания к заказу');
+    pll_register_string('pointer_theme', 'Введите ваши заметки здесь');
+    pll_register_string('pointer_theme', 'Всего:');
+    pll_register_string('pointer_theme', 'Цены');
+    pll_register_string('pointer_theme', 'обязательное для заполнения.');
 }

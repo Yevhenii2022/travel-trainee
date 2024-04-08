@@ -4421,13 +4421,8 @@ input[type=range]::-ms-thumb {
 }
 
 .checkout {
-  padding: 7rem 0 4rem 0;
+  padding: 5.3rem 0 2rem 0;
   background-color: #eaf2f5;
-}
-@media (max-width: 541px) {
-  .checkout {
-    padding: 6rem 0 2rem 0;
-  }
 }
 .checkout h3 {
   margin-bottom: 1rem;
@@ -4486,6 +4481,13 @@ input[type=range]::-ms-thumb {
 
 .woocommerce-checkout #payment {
   background-color: transparent;
+}
+
+.woocommerce-checkout .optional,
+.woocommerce-checkout .cart-subtotal,
+.woocommerce-privacy-policy-text,
+.wc_payment_methods {
+  display: none;
 }
 
 .search {
