@@ -39,4 +39,5 @@ if (function_exists('pll_register_string')) {
     pll_register_string('pointer_theme', 'Блог');
     pll_register_string('pointer_theme', 'Заголовок удачного поиска');
     pll_register_string('pointer_theme', 'Заголовок не удачного поиска');
+    pll_register_string('pointer_theme', 'Гость');
 }
