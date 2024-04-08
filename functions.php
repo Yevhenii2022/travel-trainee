@@ -508,3 +508,52 @@ function custom_override_checkout_fields($fields)
 	return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
+
+//Перевод полей checkout
+function change_checkout_field_label($fields)
+{
+	$fields['billing']['billing_email']['label'] = pll__('Почта', 'woocommerce');
+	$fields['billing']['billing_phone']['label'] = pll__('Телефон', 'woocommerce');
+	$fields['billing']['billing_first_name']['label'] = pll__('Имя', 'woocommerce');
+	$fields['billing']['billing_last_name']['label'] = pll__('Фамилия', 'woocommerce');
+	$fields['order']['order_comments']['label'] = pll__('Примечания к заказу', 'woocommerce');
+	$fields['order']['order_comments']['placeholder'] = pll__('Введите ваши заметки здесь', 'woocommerce');
+
+	return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'change_checkout_field_label');
+
+function custom_checkout_order_review_translation($translated, $original, $domain)
+{
+	if ($domain === 'woocommerce') {
+		if ($original === 'Total') {
+			return pll__('Всего:', 'woocommerce');
+		} elseif ($original === 'Subtotal') {
+			return pll__('Цены', 'woocommerce');
+		} elseif ($original === 'Product') {
+			return pll__('Экскурсии', 'woocommerce');
+		}
+	}
+	return $translated;
+}
+
+add_filter('gettext', 'custom_checkout_order_review_translation', 10, 3);
+
+
+function custom_change_error_messages($sprintf, $field_label, $key)
+{
+	$fields_labels = array(
+		'billing_first_name' => pll__('Имя ВК', 'woocommerce'),
+		'billing_last_name' => pll__('Фамилия ВК', 'woocommerce'),
+		'billing_phone' => pll__('Телефон ВК', 'woocommerce'),
+		'billing_email' => pll__('Почта ВК', 'woocommerce')
+	);
+
+	if ($field_label && isset($fields_labels[$key])) {
+		$error_message = 'Поле "' . $fields_labels[$key] . '" ' . pll__('обязательное для заполнения.', 'woocommerce');
+		return $error_message;
+	}
+	return $sprintf;
+}
+
+add_filter('woocommerce_checkout_required_field_notice', 'custom_change_error_messages', 10, 3);

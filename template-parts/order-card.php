@@ -45,14 +45,19 @@ $currency_symbol = get_woocommerce_currency_symbol();
 
                         <div class="custom-select">
                             <select id="guests">
+                                <option value="0"><?php echo pll__('Для кого'); ?></option>
                                 <?php
-                                // Генерируем опции для количества людей от 1 до 5
-                                for ($i = 1; $i <= 5; $i++) {
-                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                $words = array(pll__('Гость'), 'Гостя', 'Гостя', 'Гостя', 'Гостей', 'Гостей', 'Гостей', 'Гостей');
+
+                                // Генерируем опции для количества людей от 1 до 8
+                                for ($i = 1; $i <= 8; $i++) {
+                                    $word = $words[$i - 1];
+                                    echo '<option value="' . $i . '">' . $i . ' ' . $word . '</option>';
                                 }
                                 ?>
                             </select>
                         </div>
+
                     </div>
                 </div>
 

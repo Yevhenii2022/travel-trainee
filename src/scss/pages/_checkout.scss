@@ -1,14 +1,7 @@
 .checkout {
-	padding: 7rem 0
-		4rem 0;
+	padding: 5.3rem 0
+		2rem 0;
 	background-color: $white-bg;
-
-	@include media(
-		mobile
-	) {
-		padding: 6rem 0
-			2rem 0;
-	}
 
 	h3 {
 		margin-bottom: 1rem;
@@ -29,6 +22,7 @@
 				32,
 				0.4
 			);
+		border-radius: 0;
 		background-color: transparent;
 		line-height: 1.2;
 		transition: $transition;
@@ -54,6 +48,7 @@
 			32,
 			0.4
 		);
+	border-radius: 0;
 	line-height: 1.2;
 	color: $black-text;
 	background-color: transparent;
@@ -90,4 +85,18 @@
 	&:active {
 		background-color: $black;
 	}
+}
+
+.woocommerce-checkout
+	#payment {
+	background-color: transparent;
+}
+
+.woocommerce-checkout
+	.optional,
+.woocommerce-checkout
+	.cart-subtotal,
+.woocommerce-privacy-policy-text,
+.wc_payment_methods {
+	display: none;
 }
