@@ -13,7 +13,7 @@
 ?>
 <div id="sidebar-cart" class="sidebar-cart">
 </div>
-
+<?php get_template_part('template-parts/popup-thank-you'); ?>
 <footer class="footer">
 
     <div class="container">
@@ -164,6 +164,7 @@
                     success: function (response) {
                         $('#sidebar-cart').html(response);
                         $('#sidebar-cart').addClass('active');
+                        $('body').addClass('overflow-hidden');
 
                     }
                 });

@@ -70,7 +70,9 @@ function load_more_blogs()
         endwhile;
     else :
         error_log('No posts found');
-        echo '<span>' . pll_e('Статті не знайдені') . '</span>';
+        echo '<span class="blog__nothing">';
+         pll_e('Статті не знайдені');
+         echo'</span>';
     endif;
 
     $paginate_args = array(

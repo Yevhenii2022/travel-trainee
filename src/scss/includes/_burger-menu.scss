@@ -1,93 +1,78 @@
 .burger {
-	display: none;
+  display: none;
 
-	@include media(
-		mobile
-	) {
-		width: 1.9rem;
-		height: 0.92rem;
-		display: flex;
-		position: relative;
-		z-index: 50;
-		align-items: center;
-		justify-content: flex-end;
-		margin-right: 1.73rem;
-		cursor: pointer;
-	}
+  @include media(mobile) {
+    width: 1.9rem;
+    height: 1rem;
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.73rem;
+    cursor: pointer;
+    transition: $transition;
+  }
 }
 
 .burger.burger--white {
-	span {
-		background-color: $white;
-	}
-	&::before,
-	&::after {
-		background-color: $white;
-	}
+  span {
+    background-color: $white;
+  }
+  &::before,
+  &::after {
+    background-color: $white;
+  }
 }
 
 .burger span {
-	height: 0.071rem;
-	width: 100%;
-	transform: scale(
-		1
-	);
-	background-color: $black-text;
-	transition: $transition;
+  height: 0.071rem;
+  width: 100%;
+  transform: scale(1);
+  background-color: $black-text;
+  transition: $transition;
 }
 
 .burger::before,
 .burger::after {
-	content: '';
-	position: absolute;
-	height: 0.071rem;
-	width: 100%;
-	background-color: $black-text;
-	transition: $transition;
+  content: "";
+  position: absolute;
+  height: 0.071rem;
+  
+  overflow: hidden;
+  width: 100%;
+  background-color: $black-text;
+  transition: $transition;
 }
 
 .burger::before {
-	top: 0;
+  top: -0.01rem;
 }
 
 .burger::after {
-	bottom: 0;
+  bottom: 0.01rem;
 }
 
-.burger.active
-	span {
-	transform: scale(
-		0
-	);
+.burger.active span {
+  transform: scale(0);
+  
 }
 
 .burger.active::before {
-	top: 50%;
-	transform: rotate(
-			-45deg
-		)
-		translate(
-			0,
-			-50%
-		);
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
 }
 
 .burger.active::after {
-	bottom: 50%;
-	transform: rotate(
-			45deg
-		)
-		translate(
-			0,
-			50%
-		);
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
 }
 
 @keyframes burgerAnimation {
-	from {
-		opasity: 0;
-	}
-	to {
-		opasity: 1;
-	}
+  from {
+    opasity: 0;
+  }
+  to {
+    opasity: 1;
+  }
 }

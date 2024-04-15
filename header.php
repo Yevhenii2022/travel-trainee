@@ -21,7 +21,7 @@
 	<script src="https://unpkg.com/imask"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-
+	
 	<?php wp_head(); ?>
 </head>
 
@@ -58,11 +58,20 @@
 									<?php
 									$btn_text = get_field('header_btn_contact', 'options') ?? '';
 									?>
-									<button popovertarget="consultation" class="btn <?= is_front_page() ? 'btn--white' : '' ?>">
-										<span class="btn--top-text"><?= $btn_text ?></span>
-										<span class="btn--bottom-text"><?= $btn_text ?></span>
+									<button popovertarget="consultation"
+										class="btn ">
+										<div class="btn__text">
+											<span>
+												<?= $btn_text ?>
+											</span>
+											<span>
+												<?= $btn_text ?>
+											</span>
+										</div>
+
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 										</svg>
 									</button>
 								</div>
@@ -103,11 +112,20 @@
 								<?php
 								$btn_text = get_field('header_btn_contact', 'options') ?? '';
 								?>
-								<button popovertarget="consultation" class="header--js btn <?= is_front_page() ? 'btn--white' : '' ?>">
-									<span class="btn--top-text"><?= $btn_text ?></span>
-									<span class="btn--bottom-text"><?= $btn_text ?></span>
+								<button popovertarget="consultation"
+									class="header--js btn <?= is_front_page() ? 'btn--white' : '' ?>">
+									<div class="btn__text">
+											<span>
+												<?= $btn_text ?>
+											</span>
+											<span>
+												<?= $btn_text ?>
+											</span>
+										</div>
+									
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 									</svg>
 								</button>
 							</div>

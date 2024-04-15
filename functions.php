@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.0');
+	define('_S_VERSION', '1.0.1');
 }
 
 /**
@@ -341,8 +341,8 @@ function remove_tabs($tabs)
 
 // ajax
 require get_template_directory() . '/inc/custom-sort-blogs.php';
-
 require get_template_directory() . '/inc/custom-sort-excursions.php';
+require get_template_directory() . '/inc/custom-sort-reviews.php';
 require get_template_directory() . '/inc/search-ajax.php';
 function add_post_popularity_meta_field()
 {
@@ -509,51 +509,110 @@ function custom_override_checkout_fields($fields)
 }
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 
+
 //Перевод полей checkout
 function change_checkout_field_label($fields)
 {
-	$fields['billing']['billing_email']['label'] = pll__('Почта', 'woocommerce');
-	$fields['billing']['billing_phone']['label'] = pll__('Телефон', 'woocommerce');
-	$fields['billing']['billing_first_name']['label'] = pll__('Имя', 'woocommerce');
-	$fields['billing']['billing_last_name']['label'] = pll__('Фамилия', 'woocommerce');
-	$fields['order']['order_comments']['label'] = pll__('Примечания к заказу', 'woocommerce');
-	$fields['order']['order_comments']['placeholder'] = pll__('Введите ваши заметки здесь', 'woocommerce');
-
-	return $fields;
+  $fields['billing']['billing_email']['label'] = pll__('Почта', 'woocommerce');
+  $fields['billing']['billing_phone']['label'] = pll__('Телефон', 'woocommerce');
+  $fields['billing']['billing_first_name']['label'] = pll__('Имя', 'woocommerce');
+  $fields['billing']['billing_last_name']['label'] = pll__('Фамилия', 'woocommerce');
+  $fields['order']['order_comments']['label'] = pll__('Примечания к заказу', 'woocommerce');
+  $fields['order']['order_comments']['placeholder'] = pll__('Введите ваши заметки здесь', 'woocommerce');
+  return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'change_checkout_field_label');
 
 function custom_checkout_order_review_translation($translated, $original, $domain)
 {
-	if ($domain === 'woocommerce') {
-		if ($original === 'Total') {
-			return pll__('Всего:', 'woocommerce');
-		} elseif ($original === 'Subtotal') {
-			return pll__('Цены', 'woocommerce');
-		} elseif ($original === 'Product') {
-			return pll__('Экскурсии', 'woocommerce');
-		}
-	}
-	return $translated;
+  if ($domain === 'woocommerce') {
+    if ($original === 'Total') {
+      return pll__('Всего:', 'woocommerce');
+    } elseif ($original === 'Subtotal') {
+      return pll__('Цены', 'woocommerce');
+    } elseif ($original === 'Product') {
+      return pll__('Экскурсии', 'woocommerce');
+    }
+  }
+  return $translated;
 }
-
 add_filter('gettext', 'custom_checkout_order_review_translation', 10, 3);
 
-
-function custom_change_error_messages($sprintf, $field_label, $key)
-{
-	$fields_labels = array(
-		'billing_first_name' => pll__('Имя ВК', 'woocommerce'),
-		'billing_last_name' => pll__('Фамилия ВК', 'woocommerce'),
-		'billing_phone' => pll__('Телефон ВК', 'woocommerce'),
-		'billing_email' => pll__('Почта ВК', 'woocommerce')
-	);
-
-	if ($field_label && isset($fields_labels[$key])) {
-		$error_message = 'Поле "' . $fields_labels[$key] . '" ' . pll__('обязательное для заполнения.', 'woocommerce');
-		return $error_message;
-	}
-	return $sprintf;
+add_filter('woocommerce_cart_subtotal', 'custom_cart_subtotal_text');
+function custom_cart_subtotal_text($subtotal){
+    $new_subtotal_text = pll__('Всего:', 'woocommerce'); // Новый текст
+    $subtotal = str_replace('Subtotal', $new_subtotal_text, $subtotal);
+    return $subtotal;
 }
 
-add_filter('woocommerce_checkout_required_field_notice', 'custom_change_error_messages', 10, 3);
+
+// add_action('template_redirect', 'custom_disable_pagination_redirect');
+
+// function custom_disable_pagination_redirect() {
+//     if (is_paged() && is_singular('reviews')) {
+//         remove_filter('template_redirect', 'redirect_canonical');
+//     }
+// }
+
+
+
+function custom_search_template( $template ) {
+    $request_uri = $_SERVER['REQUEST_URI'];
+    if ( strpos( $request_uri, '/uk/search' ) !== false ) {
+        $new_template = locate_template( array( 'search.php' ) );
+        if ( !empty( $new_template ) ) {
+            add_filter( 'body_class', 'remove_custom_body_classes', 10 );
+            add_filter( 'body_class', 'add_custom_body_classes', 99 );
+			add_filter( 'pre_get_document_title', 'replace_page_title_with_search_title' );
+            return $new_template;
+        }
+    }
+	if ( strpos( $request_uri, '/en/search' ) !== false ) {
+        $new_template = locate_template( array( 'search.php' ) );
+        if ( !empty( $new_template ) ) {
+            add_filter( 'body_class', 'remove_custom_body_classes', 10 );
+            add_filter( 'body_class', 'add_custom_body_classes', 99 );
+			add_filter( 'pre_get_document_title', 'replace_page_title_with_search_title' );
+            return $new_template;
+        }
+    }
+	
+    return $template;
+}
+add_filter( 'template_include', 'custom_search_template', 99 );
+
+// Remove custom body classes
+function remove_custom_body_classes( $classes ) {
+    $classes_to_remove = array(
+        'error404',
+        'logged-in',
+        'wp-custom-logo',
+        'theme-pointer-theme',
+        'woocommerce-js'
+    );
+    return array_diff( $classes, $classes_to_remove );
+}
+add_filter( 'body_class', 'remove_custom_body_classes' );
+
+// Replace the title of the page with pll_e('Search Title');
+function replace_page_title_with_search_title( $title ) {
+    if ( is_search() ) {
+        return pll_e('Search Title');
+    }
+    return $title;
+}
+
+
+function add_custom_body_classes( $classes ) {
+    $additional_classes = array(
+        'archive',
+        'search',
+        'search-no-results',
+        'category',
+        'logged-in',
+        'wp-custom-logo',
+        'theme-pointer-theme',
+        'woocommerce-js'
+    );
+    return array_merge( $classes, $additional_classes );
+}

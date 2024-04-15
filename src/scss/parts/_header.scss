@@ -13,7 +13,12 @@
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
   }
-
+  &__logo{
+    width: fit-content;
+    a{
+      width: fit-content;
+    }
+  }
   &:has(.header__overlay.open) {
     @include media(mobile) {
       background-color: $white-bg;
@@ -77,10 +82,10 @@
       }
       .header__menu {
         width: 100%;
-        display: block;
+        
       }
       .header__inner {
-        width: 100%;
+        width: 100vw;
       }
       .custom-logo {
         margin-left: -14.286rem;
@@ -103,7 +108,7 @@
   &__inner {
     display: flex;
     align-items: center;
-
+    transition: $transition;
     @include media(mobile) {
       justify-content: flex-end;
     }
@@ -114,8 +119,8 @@
       position: fixed;
       width: 100%;
       top: 5.857rem;
-      left: 0;
-      height: 100dvh;
+      right: 0;
+      height: 100vh;
       background: rgba(32, 32, 32, 0.7);
       transition: all 1s ease;
 
@@ -124,7 +129,7 @@
         opacity: 1;
         z-index: 1;
         top: 5.857rem;
-        font-size: 1.286rem;
+        right: 0;
         pointer-events: inherit;
       }
     }
@@ -135,6 +140,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15.25rem;
+
     transition: $transition;
 
     @include media(tablet) {
@@ -147,7 +153,8 @@
       position: fixed;
       width: 100%;
       top: 5.857rem;
-      left: 0;
+      right: -100%;
+      font-size: 1.286rem;
       gap: 3.1rem;
       flex-direction: column;
       justify-content: flex-start;
@@ -161,6 +168,10 @@
   &__menu {
     display: flex;
     align-items: center;
+    @include media(mobile){
+      transition: $transition;
+      
+    }
   }
 
   &__list {
@@ -179,6 +190,7 @@
     padding: 0.714rem 0;
     margin: 0 0.5rem 0 1.1rem;
     display: flex;
+    align-items: center;
     transition: $transition;
 
     @include media(tablet) {
@@ -187,7 +199,8 @@
 
     @include media(mobile) {
       margin: 0 1.1rem 0 0;
-      transition: none;
+      transition: margin 0s ease-in-out, width 0.3s ease-in-out ;
+      
     }
 
     &.active .header__input {
@@ -207,10 +220,11 @@
     &.active {
       margin-right: 1.143rem;
       border-bottom: 0.071rem solid $black-text;
-      transition: $transition;
+ 
 
       @include media(mobile) {
         margin: 0;
+        width: 100%;
       }
     }
 
@@ -250,19 +264,19 @@
   &__basket {
     margin-right: 2.2rem;
     cursor: pointer;
+    @include media(mobile) {
+      margin-right: 0;
+    }
+
     svg {
       width: 1.357rem;
       height: 1.357rem;
       stroke: $black-text;
       transition: $transition;
-    }
-
-    @include media(mobile) {
-      margin-right: 0;
-
-      svg {
+      @include media(mobile) {
         width: 2.05rem;
         height: 2.05rem;
+        stroke-width: 0.03rem;
       }
     }
   }
@@ -380,11 +394,13 @@
       font-weight: 600;
       line-height: 1.2rem;
       text-align: left;
-
-	  @include media(mobile){
-		width: 100vw;
-		left: 0;
-	  }
+      @include media(tablet) {
+        width: 23.5rem;
+      }
+      @include media(mobile) {
+        width: 100vw;
+        left: 0;
+      }
 
       &::-webkit-scrollbar {
         display: none;
@@ -421,9 +437,9 @@
       #search__btn {
         margin-top: 1.2rem;
 
-		svg{
-			stroke: $white;
-		}
+        svg {
+          stroke: $white;
+        }
       }
 
       &--open {
@@ -436,7 +452,7 @@
         background-color: $white;
         display: flex;
         flex-direction: column;
-		font-weight: 400;
+        font-weight: 400;
         align-items: flex-start;
         justify-content: flex-start;
         font-family: $helvetica;

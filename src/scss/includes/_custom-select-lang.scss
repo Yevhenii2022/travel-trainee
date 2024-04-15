@@ -1,7 +1,4 @@
-.custom-select,
-.blog-select,
-.excursions-select,
-.custom-select-search,.custom-select-guests {
+.custom-select {
 	position: relative;
 	min-width: 3.757rem;
 
@@ -12,40 +9,17 @@
 	}
 }
 
-.custom-select,
-.blog-select,
-.excursions-select,
-.custom-select-search,.custom-select-guests {
+.custom-select
 	select {
-		display: none;
-	}
+	display: none;
 }
 
-.blog-select,
-.excursions-select,
-.custom-select-search,.custom-select-guests {
-	.same-as-selected {
-		display: none;
-	}
-	span {
-		@include media(
-			mobile
-		) {
-			display: none;
-		}
-	}
-}
-.blog-select {
-	span {
-		color: $gray-text;
-	}
-}
 .select-selected {
 	padding: 0.3rem 0
 		0.3rem 0.3rem;
 	color: $black-text;
 	text-transform: uppercase;
-	// transition: $transition;
+	transition: $transition;
 
 	@include media(
 		mobile
@@ -87,7 +61,6 @@
 	}
 
 	&.select-arrow-active {
-		// background-color: $white;
 		&:after {
 			transform: translateY(
 					-50%

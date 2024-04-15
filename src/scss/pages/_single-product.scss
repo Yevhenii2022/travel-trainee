@@ -1,412 +1,345 @@
 .product {
-	padding: 12.4rem 0
-		8.4rem 0;
-	background-color: $white-bg;
+  padding: 12.4rem 0 8.4rem 0;
+  background-color: $white-bg;
 
-	@include media(
-		mobile
-	) {
-		padding: 8.6rem
-			0 5.75rem 0;
-	}
+  @include media(mobile) {
+    padding: 8.6rem 0 5.75rem 0;
+  }
 
-	&__link {
-		width: fit-content;
-		margin-bottom: 2.2rem;
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 0.286rem;
-		text-transform: uppercase;
+  &__link {
+    width: fit-content;
+    margin-bottom: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.286rem;
+    text-transform: uppercase;
 
-		svg {
-			width: 0.786rem;
-			height: 0.786rem;
-		}
-	}
+    svg {
+      width: 0.786rem;
+      height: 0.786rem;
+    }
+  }
 
-	&__title {
-		margin-bottom: 2.3rem;
-		width: 65rem;
-		font-size: 3.929rem;
-		letter-spacing: -0.15rem;
+  &__title {
+    margin-bottom: 2.3rem;
+    width: 65rem;
+    font-size: 3.929rem;
+    letter-spacing: -0.15rem;
 
-		@include media(
-			mobile
-		) {
-			width: 100%;
-			margin-bottom: 1.8rem;
-			font-size: 2.571rem;
-			letter-spacing: -0.1rem;
-		}
-	}
+    @include media(mobile) {
+      width: 100%;
+      margin-bottom: 1.8rem;
+      font-size: 2.571rem;
+      letter-spacing: -0.1rem;
+    }
+  }
 
-	&__banner {
-		display: flex;
+  &__banner {
+    display: flex;
 
-		@include media(
-			mobile
-		) {
-			display: none;
-		}
-	}
+    @include media(mobile) {
+      display: none;
+    }
+  }
 
-	&__image {
-		width: 100%;
+  &__image {
+    width: 100%;
 
-		@include media(
-			mobile
-		) {
-			width: auto;
-			margin: 0 -1.143rem;
-		}
+    @include media(mobile) {
+      width: auto;
+      margin: 0 -1.143rem;
+    }
 
-		img {
-			height: 40.8rem;
+    img {
+      height: 40.8rem;
 
-			@include media(
-				mobile
-			) {
-				height: 16.714rem;
-			}
-		}
+      @include media(mobile) {
+        height: 16.714rem;
+      }
+    }
 
-		&--hide {
-			display: none;
+    &--hide {
+      display: none;
 
-			@include media(
-				mobile
-			) {
-				display: block;
-			}
-		}
-	}
+      @include media(mobile) {
+        display: block;
+      }
+    }
+  }
 
-	&__gallery {
-		position: relative;
-		margin-left: 1.143rem;
-		width: 48.4rem;
+  &__gallery {
+    position: relative;
+    margin-left: 1.143rem;
+    width: 48.4rem;
 
-		img {
-			height: 19.84rem;
-		}
+    img {
+      height: 19.84rem;
+    }
 
-		.first {
-			img {
-				height: 40.8rem;
-			}
-		}
+    .first {
+      img {
+        height: 40.8rem;
+      }
+    }
 
-		.second {
-			display: flex;
-			flex-direction: column;
-			gap: 1.143rem;
-		}
+    .second {
+      display: flex;
+      flex-direction: column;
+      gap: 1.143rem;
+    }
 
-		.third {
-			display: grid;
-			grid-template-columns: repeat(
-				2,
-				1fr
-			);
-			gap: 1.143rem;
+    .third {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.143rem;
 
-			&
-				> a:nth-child(
-					n + 3
-				) {
-				grid-column: 1 /
-					-1;
-			}
-		}
+      & > a:nth-child(n + 3) {
+        grid-column: 1 / -1;
+      }
+    }
 
-		.fourth {
-			height: 40.8rem;
-			display: grid;
-			grid-template-columns: repeat(
-				2,
-				1fr
-			);
-			gap: 1.143rem;
-			overflow: hidden;
+    .fourth {
+      height: 40.8rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.143rem;
+      overflow: hidden;
 
-			&
-				+ .product__label {
-				opacity: 1;
-			}
-		}
-	}
+      & + .product__label {
+        opacity: 1;
+      }
+    }
+  }
 
-	&__label {
-		position: absolute;
-		right: 1.1rem;
-		bottom: 1.1rem;
-		padding: 0.429rem
-			0.571rem;
-		display: flex;
-		gap: 0.357rem;
-		background-color: $white;
-		opacity: 0;
-		cursor: pointer;
-		pointer-events: none;
+  &__label {
+    position: absolute;
+    right: 1.1rem;
+    bottom: 1.1rem;
+    padding: 0.429rem 0.571rem;
+    display: flex;
+    gap: 0.357rem;
+    background-color: $white;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
 
-		p {
-			font-size: 0.714rem;
-			line-height: 1.2;
-			text-transform: uppercase;
-		}
+    p {
+      font-size: 0.714rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
 
-		svg {
-			width: 0.714rem;
-			height: 0.714rem;
-		}
-	}
+    svg {
+      width: 0.714rem;
+      height: 0.714rem;
+    }
+  }
 
-	&__slider-wrap {
+  &__slider-wrap {
+    display: none;
+
+    @include media(mobile) {
+      display: block;
+      margin: 0 -1.143rem;
+      position: relative;
+
+      img {
+        height: 16.714rem;
+      }
+
+      &:has(.excursions__slider) {
+        .swiper__nav--prev {
+          position: absolute;
+          top: 40%;
+          left: 1.143rem;
+          z-index: 1;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff' transform='rotate(-180 12.5 12.5)'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='M12.151 8.863 8.515 12.5m0 0 3.636 3.637M8.515 12.5H17'/%3E%3C/svg%3E");
+        }
+
+        .swiper__nav--next {
+          position: absolute;
+          top: 40%;
+          right: 1.143rem;
+          z-index: 1;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='m12.849 16.137 3.636-3.637m0 0L12.85 8.863m3.636 3.637H8'/%3E%3C/svg%3E");
+        }
+
+        .swiper__pagination {
+          width: 2.857rem;
+          height: 1.357rem;
+          position: absolute;
+          bottom: 1.15rem;
+          left: 22.8rem;
+          align-items: center;
+          background-color: $white;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  &__box {
+    padding: 2.286rem 0 8.571rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include media(tablet) {
+      padding: 1.6rem 0 5.6rem 0;
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    width: 56.857rem;
+    font-size: 1.429rem;
+    line-height: 1.2;
+
+    @include media(tablet) {
+      width: 100%;
+      margin-bottom: 5.8rem;
+    }
+
+    @include media(mobile) {
+      font-size: 1rem;
+      letter-spacing: 0.001rem;
+    }
+    p + p{
+      margin-top: 2rem;
+    }
+    h3 {
+      font-family: $kudryashev;
+      font-size: 2.286rem;
+      line-height: 1;
+      letter-spacing: -0.093rem;
+
+      @include media(mobile) {
+        font-size: 1.571rem;
+        letter-spacing: -0.06rem;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 2.1rem;
+
+      @include media(mobile) {
+        padding-left: 1.5rem;
+      }
+    }
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  &__flex {
+    @include media(tablet) {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+
+  &__form {
+    width: 32rem;
+    height: 31.714rem;
+    padding: 1.714rem;
+    background-color: $white;
+
+    @include media(mobile) {
+      width: 100%;
+      padding: 1.6rem 1.143rem;
+    }
+
+    &:has(.form__input) {
+      .form__input label textarea {
+        height: 6.4rem;
+      }
+    }
+
+    h3 {
+      margin-bottom: 0.286rem;
+      font-size: 1.429rem;
+      font-weight: 600;
+      line-height: 1.2;
+
+      @include media(mobile) {
+        letter-spacing: 0.02rem;
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+	.form__button{
 		display: none;
-
-		@include media(
-			mobile
-		) {
-			display: block;
-			margin: 0 -1.143rem;
-			position: relative;
-
-			img {
-				height: 16.714rem;
-			}
-
-			&:has(
-					.excursions__slider
-				) {
-				.swiper__nav--prev {
-					position: absolute;
-					top: 40%;
-					left: 1.143rem;
-					z-index: 1;
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff' transform='rotate(-180 12.5 12.5)'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='M12.151 8.863 8.515 12.5m0 0 3.636 3.637M8.515 12.5H17'/%3E%3C/svg%3E");
-				}
-
-				.swiper__nav--next {
-					position: absolute;
-					top: 40%;
-					right: 1.143rem;
-					z-index: 1;
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' fill='none'%3E%3Ccircle cx='12.5' cy='12.5' r='12.5' fill='%23fff'/%3E%3Cpath stroke='%23202020' stroke-linecap='round' stroke-linejoin='round' d='m12.849 16.137 3.636-3.637m0 0L12.85 8.863m3.636 3.637H8'/%3E%3C/svg%3E");
-				}
-
-				.swiper__pagination {
-					width: 2.857rem;
-					height: 1.357rem;
-					position: absolute;
-					bottom: 1.15rem;
-					left: 22.8rem;
-					align-items: center;
-					background-color: $white;
-					z-index: 1;
-				}
-			}
-		}
 	}
+  }
 
-	&__box {
-		padding: 2.286rem
-			0 8.571rem 0;
-		display: flex;
-		justify-content: space-between;
+  &__subtitle {
+    margin-bottom: 2.3rem;
+    font-size: 3.929rem;
+    letter-spacing: -0.15rem;
 
-		@include media(
-			tablet
-		) {
-			padding: 1.6rem
-				0 5.6rem 0;
-			flex-direction: column;
-		}
-	}
+    @include media(mobile) {
+      margin-bottom: 2.4rem;
+      font-size: 1.857rem;
+      letter-spacing: -0.08rem;
+    }
+  }
 
-	&__content {
-		width: 56.857rem;
-		font-size: 1.429rem;
-		line-height: 1.2;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.071rem;
 
-		@include media(
-			tablet
-		) {
-			width: 100%;
-			margin-bottom: 5.8rem;
-		}
+    @include media(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
-		@include media(
-			mobile
-		) {
-			font-size: 1rem;
-			letter-spacing: 0.001rem;
-		}
+    &:has(.excursion-card) {
+      .excursion-card__image {
+        img {
+          height: 18.2rem;
 
-		h3 {
-			font-family: $kudryashev;
-			font-size: 2.286rem;
-			line-height: 1;
-			letter-spacing: -0.093rem;
+          @include media(mobile) {
+            height: 20rem;
+          }
+        }
+      }
+      .excursion-card__wrapper {
+        padding: 1.143rem;
+      }
+      .excursion-card__title {
+        margin-bottom: 0.3rem;
+        height: 3.2rem;
+        font-size: 1.5rem;
+        letter-spacing: -0.059rem;
+        
 
-			@include media(
-				mobile
-			) {
-				font-size: 1.571rem;
-				letter-spacing: -0.06rem;
-			}
-		}
+        @include media(mobile) {
+          margin-bottom: 0.4rem;
+          letter-spacing: -0.025rem;
+        }
+      }
+      .excursion-card__price {
+        @include media(mobile) {
+          margin-right: 0;
+        }
 
-		strong {
-			font-weight: 600;
-		}
+        p {
+          margin-right: 0.38rem;
 
-		ul {
-			padding-left: 2.1rem;
-
-			@include media(
-				mobile
-			) {
-				padding-left: 1.5rem;
-			}
-		}
-
-		li {
-			list-style: disc;
-		}
-	}
-
-	&__flex {
-		@include media(
-			tablet
-		) {
-			display: flex;
-			justify-content: space-between;
-			gap: 2rem;
-		}
-	}
-
-	&__form {
-		width: 32rem;
-		height: 31.714rem;
-		padding: 1.714rem;
-		background-color: $white;
-
-		@include media(
-			mobile
-		) {
-			width: 100%;
-			padding: 1.6rem
-				1.143rem;
-		}
-
-		&:has(
-				.form__input
-			) {
-			.form__input
-				label
-				textarea {
-				height: 6.4rem;
-			}
-		}
-
-		h3 {
-			margin-bottom: 0.286rem;
-			font-size: 1.429rem;
-			font-weight: 600;
-			line-height: 1.2;
-
-			@include media(
-				mobile
-			) {
-				letter-spacing: 0.02rem;
-			}
-		}
-
-		p {
-			margin-bottom: 2rem;
-			line-height: 1.2;
-		}
-	}
-
-	&__subtitle {
-		margin-bottom: 2.3rem;
-		font-size: 3.929rem;
-		letter-spacing: -0.15rem;
-
-		@include media(
-			mobile
-		) {
-			margin-bottom: 2.4rem;
-			font-size: 1.857rem;
-			letter-spacing: -0.08rem;
-		}
-	}
-
-	&__inner {
-		display: grid;
-		grid-template-columns: repeat(
-			3,
-			1fr
-		);
-		gap: 1.071rem;
-
-		@include media(
-			mobile
-		) {
-			grid-template-columns: repeat(
-				1,
-				1fr
-			);
-		}
-
-		&:has(
-				.excursion-card
-			) {
-			.excursion-card__image {
-				img {
-					height: 18.2rem;
-
-					@include media(
-						mobile
-					) {
-						height: 20rem;
-					}
-				}
-			}
-			.excursion-card__wrapper {
-				padding: 1.143rem;
-			}
-			.excursion-card__title {
-				margin-bottom: 0.3rem;
-				height: 3.2rem;
-				font-size: 1.5rem;
-				letter-spacing: -0.059rem;
-
-				@include media(
-					mobile
-				) {
-					margin-bottom: 0.4rem;
-					letter-spacing: -0.025rem;
-				}
-			}
-			.excursion-card__price {
-				@include media(
-					mobile
-				) {
-					margin-right: 0;
-				}
-
-				p {
-					margin-right: 0.38rem;
-
-					@include media(
-						mobile
-					) {
-						margin-right: 0.22rem;
-					}
-				}
-			}
-		}
-	}
+          @include media(mobile) {
+            margin-right: 0.22rem;
+          }
+        }
+      }
+    }
+  }
 }

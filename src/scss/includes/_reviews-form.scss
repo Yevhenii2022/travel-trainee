@@ -24,7 +24,7 @@
 						32,
 						0.4
 					);
-				border-radius: 0;
+				border-radius: 0 !important;
 				font-family: $helvetica;
 				font-size: 0.714rem;
 				font-weight: 400;
@@ -128,6 +128,7 @@
 	&__inner {
 		display: flex;
 		gap: 1.143rem;
+		
 	}
 
 	&__file {
@@ -191,6 +192,9 @@
 		input[type='file'] {
 			display: none;
 		}
+	}
+	&__button{
+		display: none;
 	}
 }
 

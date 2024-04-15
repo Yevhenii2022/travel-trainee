@@ -41,7 +41,8 @@ function creating_post_slug($slug, $post_ID, $post_status, $post_type)
         'я',
         'і',
         'ї',
-        'є'
+        'є',
+        'ь'
     ];
     $eng = [
         'a',
@@ -77,9 +78,10 @@ function creating_post_slug($slug, $post_ID, $post_status, $post_type)
         'ya',
         'i',
         'yi',
-        'ye'
+        'ye',
+        ''
     ];
     $new_slug = str_replace($cyr, $eng, $cyr_slug);
-    $new_slug2 = preg_replace('|[а-яеёіїєА-ЯЕЁІЇЄ]|iu', '-', $new_slug);
+    $new_slug2 = preg_replace('|[а-яеёіїєьА-ЯЕЁІЇЄЬ]|iu', '-', $new_slug);
     return $new_slug2;
 }

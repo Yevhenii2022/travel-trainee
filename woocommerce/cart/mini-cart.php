@@ -41,6 +41,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 				jQuery(document).ready(function ($) {
 					$('.sidebar-cart__close').on('click', function () {
 						$('.sidebar-cart').removeClass('active');
+						$('body').removeClass('overflow-hidden');
 					});
 				});
 			</script>
@@ -105,8 +106,32 @@ do_action('woocommerce_before_mini_cart'); ?>
 
 						<?php echo wc_get_formatted_cart_item_data($cart_item); ?>
 						<!-- <?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); ?> -->
-						<?= $excursion_date ?>
-						<?= $excursion_guest ?>
+						<div class="sidebar-cart__info">
+							<div class="sidebar-cart__date">
+								<div class="sidebar-cart__date-number">
+									<?= $excursion_date ?>
+								</div>
+							</div>
+							<div class="sidebar-cart__people">
+								<div class="sidebar-cart__people-number">
+									<?php
+									echo ($excursion_guest == 1) ? '<span>' . $excursion_guest . '</span><span>' . ' ' . pll__('гость') . '</span>' : '';
+									echo ($excursion_guest >= 2 && $excursion_guest <= 4) ? '<span>' . $excursion_guest . '</span><span>' . ' ' . pll__('гостя') . '</span>' : '';
+									echo ($excursion_guest >= 5) ? '<span>' . $excursion_guest . '</span><span>' . ' ' . pll__('гостей') . '</span>' : '';
+									?>
+
+
+
+								</div>
+							</div>
+							<div class="sidebar-cart__price">
+								<div class="sidebar-cart__price-number">
+
+									<?= $product_price ?>
+								</div>
+							</div>
+						</div>
+
 					</li>
 					<?php
 				}
@@ -129,8 +154,23 @@ do_action('woocommerce_before_mini_cart'); ?>
 			</p>
 
 			<div class="sidebar-cart__buttons">
-				<a href="<?= get_home_url() . '/checkout' ?>" class="sidebar-cart__button btn">
-					<?php pll_e("Оформить заказ"); ?>
+				
+				<a href="<?php 
+				if(pll_current_language() === 'uk'){
+					echo get_home_url() . '/uk/checkout/';
+				}else{
+					echo get_home_url() . '/checkout/';
+				}
+				?>" class="sidebar-cart__button btn">
+					<div class="btn__text">
+						<span>
+							<?php pll_e("Оформить заказ"); ?>
+						</span>
+						<span>
+							<?php pll_e("Оформить заказ"); ?>
+						</span>
+					</div>
+
 
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
 						<path stroke-linecap="round" stroke-linejoin="round"
@@ -139,8 +179,16 @@ do_action('woocommerce_before_mini_cart'); ?>
 				</a>
 
 				<a href="<?= get_home_url() . '/excursions' ?>" class="sidebar-cart__button btn btn--white">
-					<?php pll_e("Продолжить покупки"); ?>
+					<div class="btn__text">
+						<span>
+							<?php pll_e("Продолжить покупки"); ?>
+						</span>
+						<span>
+							<?php pll_e("Продолжить покупки"); ?>
+						</span>
 
+
+					</div>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
 						<path stroke-linecap="round" stroke-linejoin="round"
 							d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
@@ -168,6 +216,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 			jQuery(document).ready(function ($) {
 				$('.sidebar-cart__close').on('click', function () {
 					$('.sidebar-cart').removeClass('active');
+					$('body').removeClass('overflow-hidden');
 				});
 			});
 		</script>
@@ -178,8 +227,15 @@ do_action('woocommerce_before_mini_cart'); ?>
 
 		<div class="sidebar-cart__bottom">
 			<a href="<?= get_home_url() . '/excursions/' ?>" class="sidebar-cart__button btn">
-				<?php pll_e('Найти экскурсию'); ?>
+				<div class="btn__text">
+					<span>
+						<?php pll_e('Найти экскурсию'); ?>
+					</span>
+					<span>
+						<?php pll_e('Найти экскурсию'); ?>
+					</span>
 
+				</div>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
 					<path stroke-linecap="round" stroke-linejoin="round"
 						d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />

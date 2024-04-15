@@ -1,287 +1,275 @@
 .reviews {
-	background-color: $white-bg;
+  background-color: $white-bg;
+  .pagination {
+    position: absolute;
+    bottom: -5.14rem;
+    left: 50%;
+    gap: 0.9rem;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    @include media(mobile) {
+      gap: 0.5rem;
+    }
 
-	&__wrapper {
-		padding: 12.25rem
-			0 8.5rem 0;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.214rem;
+      height: 2.214rem;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 0.071rem solid transparent;
+      transition: $transition;
 
-		@include media(
-			mobile
-		) {
-			padding: 8.7rem
-				0 5.7rem 0;
-		}
-	}
+      &:hover {
+        border: 0.071rem solid #262626;
+      }
 
-	&__title {
-		margin: 0 auto;
-		margin-bottom: 5.9rem;
-		width: 40rem;
-		text-align: center;
+      &.pagination_active {
+        background-color: #262626;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        overflow: hidden;
+        color: $white;
+      }
+    }
+  }
+  &__wrapper {
+    padding: 12.25rem 0 8.5rem 0;
 
-		@include media(
-			mobile
-		) {
-			width: 100%;
-			margin-bottom: 2.8rem;
-		}
-	}
+    @include media(mobile) {
+      padding: 8.7rem 0 5.7rem 0;
+    }
+  }
 
-	&__count {
-		margin-bottom: 1.714rem;
-		display: flex;
-		justify-content: center;
-		gap: 0.714rem;
-		text-transform: uppercase;
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 5.9rem;
+    width: 40rem;
+    text-align: center;
 
-		@include media(
-			mobile
-		) {
-			margin-bottom: 1.1rem;
-		}
+    @include media(mobile) {
+      width: 100%;
+      margin-bottom: 2.8rem;
+    }
+  }
 
-		p {
-			color: $gray-text;
-		}
-	}
+  &__count {
+    margin-bottom: 1.714rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.714rem;
+    text-transform: uppercase;
 
-	&__nothing {
-		margin: 4rem
-			auto;
-		font-size: 2.5rem;
-		text-align: center;
-	}
+    @include media(mobile) {
+      margin-bottom: 1.1rem;
+    }
 
-	&__inner {
-		display: grid;
-		grid-template-columns: repeat(
-			2,
-			1fr
-		);
-		grid-gap: 1.143rem;
+    p {
+      color: $gray-text;
+    }
+  }
 
-		@include media(
-			mobile
-		) {
-			grid-template-columns: repeat(
-				1,
-				1fr
-			);
-		}
-	}
+  &__nothing {
+    margin: 4rem auto;
+    font-size: 2.5rem;
+    text-align: center;
+  }
 
-	&__column--first,
-	&__column--second {
-		display: flex;
-		flex-direction: column;
-		gap: 1.143rem;
-	}
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.143rem;
+	position: relative;
 
-	&__card {
-		padding: 1.714rem;
-		height: fit-content;
-		background-color: $white;
+    @include media(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 
-		@include media(
-			mobile
-		) {
-			padding: 1.143rem;
-		}
-	}
+  &__column--first,
+  &__column--second {
+    display: flex;
+    flex-direction: column;
+    gap: 1.143rem;
+  }
 
-	&__box {
-		margin-bottom: 1.6rem;
-		display: flex;
-		align-items: center;
-		gap: 1.143rem;
-		text-transform: uppercase;
+  &__card {
+    padding: 1.714rem;
+    height: fit-content;
+    background-color: $white;
 
-		@include media(
-			mobile
-		) {
-			margin-bottom: 1.1rem;
-			gap: 1rem;
-		}
+    @include media(mobile) {
+      padding: 1.143rem;
+    }
+  }
 
-		h4 {
-			margin-bottom: 0.2rem;
-		}
-	}
+  &__box {
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.143rem;
+    text-transform: uppercase;
 
-	&__circle {
-		width: 9.571rem;
-		height: 9.571rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		color: $gray-text-dark;
-		background-color: $white-bg;
-		font-size: 2.857rem;
-		line-height: 1;
+    @include media(mobile) {
+      margin-bottom: 1.1rem;
+      gap: 1rem;
+    }
 
-		@include media(
-			mobile
-		) {
-			width: 5.357rem;
-			height: 5.357rem;
-			font-size: 1.6rem;
-		}
-	}
+    h4 {
+      margin-bottom: 0.2rem;
+    }
+  }
 
-	&__time {
-		margin-bottom: 1.714rem;
-		opacity: 0.4;
-		line-height: 1.2;
+  &__circle {
+    width: 9.571rem;
+    height: 9.571rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $gray-text-dark;
+    background-color: $white-bg;
+    font-size: 2.857rem;
+    line-height: 1;
 
-		@include media(
-			mobile
-		) {
-			margin-bottom: 0.714rem;
-		}
-	}
+    @include media(mobile) {
+      width: 5.357rem;
+      height: 5.357rem;
+      font-size: 1.6rem;
+    }
+  }
 
-	&__rating {
-		display: flex;
-		gap: 0.071rem;
+  &__time {
+    margin-bottom: 1.714rem;
+    opacity: 0.4;
+    line-height: 1.2;
 
-		svg {
-			width: 1.786rem;
-			height: 1.786rem;
-		}
-	}
+    @include media(mobile) {
+      margin-bottom: 0.714rem;
+    }
+  }
 
-	&__content {
-		font-size: 1.429rem;
-		line-height: 1.2;
+  &__rating {
+    display: flex;
+    gap: 0.071rem;
 
-		@include media(
-			mobile
-		) {
-			font-size: 1rem;
-		}
-	}
+    svg {
+      width: 1.786rem;
+      height: 1.786rem;
+    }
+  }
 
-	&__gallery {
-		margin-top: 1.85rem;
-		display: grid;
-		grid-template-columns: repeat(
-			4,
-			1fr
-		);
-		gap: 0.571rem;
+  &__content {
+    font-size: 1.429rem;
+    line-height: 1.2;
 
-		@include media(
-			mobile
-		) {
-			margin-top: 1.9rem;
-			gap: 0.286rem;
-		}
+    @include media(mobile) {
+      font-size: 1rem;
+    }
+  }
 
-		img {
-			height: 10.857rem;
+  &__gallery {
+    margin-top: 1.85rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.571rem;
 
-			@include media(
-				tablet
-			) {
-				height: 7.5rem;
-			}
+    @include media(mobile) {
+      margin-top: 1.9rem;
+      gap: 0.286rem;
+    }
 
-			@include media(
-				mobile
-			) {
-				height: 5.357rem;
-			}
-		}
-	}
+    img {
+      height: 10.857rem;
 
-	&__bottom {
-		height: 53.143rem;
-		display: flex;
-		background-color: $white;
+      @include media(tablet) {
+        height: 7.5rem;
+      }
 
-		@include media(
-			tablet
-		) {
-			height: 46.1rem;
-		}
+      @include media(mobile) {
+        height: 5.357rem;
+      }
+    }
+  }
 
-		@include media(
-			mobile
-		) {
-			height: auto;
-			flex-direction: column;
-		}
-	}
+  &__bottom {
+    height: 53.143rem;
+    display: flex;
+    background-color: $white;
 
-	&__image {
-		img {
-			height: 100%;
+    @include media(tablet) {
+      height: 46.1rem;
+    }
 
-			@include media(
-				tablet
-			) {
-				width: 34.5rem;
-			}
+    @include media(mobile) {
+      height: auto;
+      flex-direction: column;
+    }
+  }
 
-			@include media(
-				mobile
-			) {
-				width: 100%;
-				height: 27.571rem;
-			}
-		}
-	}
+  &__image {
+    img {
+      height: 100%;
 
-	&__form-wrap {
-		padding: 2.2rem;
-		width: 49.8%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+      @include media(tablet) {
+        width: 34.5rem;
+      }
 
-		@include media(
-			mobile
-		) {
-			padding: 2.7rem
-				1.143rem
-				2.75rem
-				1.143rem;
-			width: 100%;
-		}
+      @include media(mobile) {
+        width: 100%;
+        height: 27.571rem;
+      }
+    }
+  }
 
-		h3 {
-			margin-bottom: 1.03rem;
-			font-size: 3.929rem;
-			letter-spacing: -0.16rem;
+  &__form-wrap {
+    padding: 2.2rem;
+    width: 49.8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-			@include media(
-				mobile
-			) {
-				margin-bottom: 0.571rem;
-				font-size: 1.857rem;
-				letter-spacing: -0.08rem;
-			}
-		}
+    @include media(mobile) {
+      padding: 2.7rem 1.143rem 2.75rem 1.143rem;
+      width: 100%;
+    }
 
-		h4 {
-			width: 26rem;
-			font-size: 1.429rem;
-			line-height: 1.2;
+    h3 {
+      margin-bottom: 1.03rem;
+      font-size: 3.929rem;
+      letter-spacing: -0.16rem;
 
-			@include media(
-				mobile
-			) {
-				margin-bottom: 3.29rem;
-				width: 100%;
-				font-size: 1rem;
-			}
-		}
-	}
+      @include media(mobile) {
+        margin-bottom: 0.571rem;
+        font-size: 1.857rem;
+        letter-spacing: -0.08rem;
+      }
+    }
+
+    h4 {
+      width: 26rem;
+      font-size: 1.429rem;
+      line-height: 1.2;
+
+      @include media(mobile) {
+        margin-bottom: 3.29rem;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 .page-id-86 {
-	.footer {
-		border-top: none;
-	}
+  .footer {
+    border-top: none;
+  }
 }

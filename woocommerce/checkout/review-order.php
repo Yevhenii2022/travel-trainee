@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 <table class="shop_table woocommerce-checkout-review-order-table">
 	<thead>
 		<tr>
-			<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+			<th class="product-name"><?php pll_e('Экскурсии'); ?></th>
 			<th class="product-total"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
@@ -52,10 +52,7 @@ defined( 'ABSPATH' ) || exit;
 	</tbody>
 	<tfoot>
 
-		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_subtotal_html(); ?></td>
-		</tr>
+		
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
@@ -100,7 +97,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+			<th><?php pll_e('Всего:') ?></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 

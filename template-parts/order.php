@@ -18,12 +18,13 @@ $image = get_sub_field('order_img');
 
       <ul class="order__list">
         <?php $icon_list = get_sub_field('order_icon_list');
-        if ($icon_list) : ?>
-          <?php while (have_rows('order_icon_list')) : the_row();
+        if ($icon_list): ?>
+          <?php while (have_rows('order_icon_list')):
+            the_row();
             $icon = get_sub_field('order_icon');
             $file_path = get_attached_file($icon);
             $svg_content = file_get_contents($file_path);
-          ?>
+            ?>
             <li>
               <?php if ($svg_content !== false) {
                 echo $svg_content;
@@ -33,14 +34,23 @@ $image = get_sub_field('order_img');
         <?php endif ?>
       </ul>
 
-      <h2 class="section__title order__title"><?= $title ?></h2>
+      <h2 class="section__title order__title">
+        <?= $title ?>
+      </h2>
 
       <?php
       $btn_text = get_sub_field('order_btn_text') ?? '';
       ?>
       <button popovertarget="consultation" class="order__button btn">
-        <span class="btn--top-text"><?= $btn_text ?></span>
-        <span class="btn--bottom-text"><?= $btn_text ?></span>
+        <div class="btn__text">
+          <span>
+            <?= $btn_text ?>
+          </span>
+          <span>
+            <?= $btn_text ?>
+          </span>
+        </div>
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
         </svg>

@@ -2,7 +2,7 @@
 function my_custom_scripts_excursions()
 {
     wp_enqueue_script('my-custom-scripts-excursions', get_template_directory_uri() . '/src/js/load-more-excursions.js', array('jquery'), null, true);
-    wp_localize_script('my-custom-scripts-excursions', 'MyAjaxexcursions', array('ajaxurl' => admin_url('admin-ajax.php')));
+    wp_localize_script('my-custom-scripts-excursions', 'MyAjaxExcursion', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'my_custom_scripts_excursions');

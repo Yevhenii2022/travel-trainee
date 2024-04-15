@@ -28,7 +28,9 @@ $currency_symbol = get_woocommerce_currency_symbol();
 
         <div class="order-card__box">
 
-            <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+            <form class="cart"
+                action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
+                method="post" enctype='multipart/form-data'>
                 <?php
                 do_action('woocommerce_before_add_to_cart_button');
                 ?>
@@ -36,28 +38,33 @@ $currency_symbol = get_woocommerce_currency_symbol();
                 <div class="order-card__inputs">
                     <!-- Дата пикер -->
                     <div class="order-card__input-date">
-                        <input type="text" id="excursion_date" name="excursion_date" readonly required placeholder="<?php pll_e('Дата') ?>">
+                        <input type="text" id="excursion_date" name="excursion_date" readonly required
+                            placeholder="<?php pll_e('Дата') ?>">
                     </div>
 
                     <!-- Поле выбора количества людей -->
                     <div class="order-card__input-people">
                         <input type="hidden" name="guests" value="1" id="quantity_hidden">
 
-                        <div class="custom-select">
+                        <div class="custom-select-guests">
                             <select id="guests">
-                                <option value="0"><?php echo pll__('Для кого'); ?></option>
                                 <?php
-                                $words = array(pll__('Гость'), 'Гостя', 'Гостя', 'Гостя', 'Гостей', 'Гостей', 'Гостей', 'Гостей');
-
-                                // Генерируем опции для количества людей от 1 до 8
+                                // Генерируем опции для количества людей от 1 до 5
                                 for ($i = 1; $i <= 8; $i++) {
-                                    $word = $words[$i - 1];
-                                    echo '<option value="' . $i . '">' . $i . ' ' . $word . '</option>';
+                                    echo '<option value="' . $i . '">';
+                                    if ($i == 1) {
+                                        echo '<span>' . $i .  '</span><span>' . ' ' . pll__('гость') . '</span>';
+                                    } elseif ($i >= 2 && $i <= 4) {
+                                        echo '<span>' . $i .  '</span><span>' . ' ' . pll__('гостя') . '</span>';
+                                    } elseif ($i >= 5) {
+                                        echo '<span>' . $i .  '</span><span>' . ' ' . pll__('гостей') . '</span>';
+                                    }
+                                    echo '</option>';
                                 }
+
                                 ?>
                             </select>
                         </div>
-
                     </div>
                 </div>
 
@@ -65,11 +72,20 @@ $currency_symbol = get_woocommerce_currency_symbol();
                 <input type="hidden" name="quantity" value="1">
 
                 <!-- Кнопка "Добавить в корзину" -->
-                <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="btn btn--cart">
-                    <span class="btn--top-text"><?php pll_e('Заказать тур'); ?></span>
-                    <span class="btn--bottom-text"><?php pll_e('Заказать тур'); ?></span>
+                <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>"
+                    class="btn btn--cart">
+                    <div class="btn__text">
+                        <span>
+                            <?php pll_e('Заказать тур'); ?>
+                        </span>
+                        <span>
+                            <?php pll_e('Заказать тур'); ?>
+                        </span>
+                    </div>
+
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
                     </svg>
                 </button>
 
@@ -83,12 +99,12 @@ $currency_symbol = get_woocommerce_currency_symbol();
     </div>
 
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             $('#excursion_date').multiDatesPicker({
                 dateFormat: 'dd.mm.yy', // Формат даты
                 minDate: new Date(), // Минимальная дата
                 // addDisabledDates: <?php echo json_encode(array_map('trim', $excursion_dates_array)); ?>,
-                onSelect: function(dateText, inst) {
+                onSelect: function (dateText, inst) {
                     console.log(dateText)
                     // При выборе даты закрываем датапикер
                     $(this).datepicker('hide');
@@ -98,9 +114,9 @@ $currency_symbol = get_woocommerce_currency_symbol();
         });
     </script>
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             // Обработчик отправки формы
-            $('form.cart').submit(function(e) {
+            $('form.cart').submit(function (e) {
                 // Проверяем, выбрана ли дата экскурсии
                 if ($('#excursion_date').val() == '') {
                     // Если дата не выбрана, отменяем отправку формы
@@ -111,14 +127,14 @@ $currency_symbol = get_woocommerce_currency_symbol();
                 }
             });
         });
-        jQuery(document).ready(function($) {
-            $('#guests').on('change', function() {
+        jQuery(document).ready(function ($) {
+            $('#guests').on('change', function () {
                 $('#quantity_hidden').val($(this).val());
             });
         });
     </script>
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             // Функция для загрузки содержимого корзины
             function loadCartContents() {
                 $.ajax({
@@ -127,7 +143,7 @@ $currency_symbol = get_woocommerce_currency_symbol();
                     data: {
                         action: 'load_cart_contents'
                     },
-                    success: function(response) {
+                    success: function (response) {
                         $('#sidebar-cart').html(response);
                         $('#sidebar-cart').addClass('active');
                     }
@@ -135,14 +151,14 @@ $currency_symbol = get_woocommerce_currency_symbol();
             }
 
             // Пример обработчика для кнопки открытия корзины
-            $('.header__basket').on('click', function(e) {
+            $('.header__basket').on('click', function (e) {
                 e.preventDefault();
                 loadCartContents();
             });
 
             // Добавьте обработчик для закрытия корзины, если необходимо
 
-            $('form.cart').on('submit', function(e) {
+            $('form.cart').on('submit', function (e) {
                 if ($('#excursion_date').val() == '') {
                     // Если дата не выбрана, отменяем отправку формы
                     e.preventDefault();
@@ -170,13 +186,13 @@ $currency_symbol = get_woocommerce_currency_symbol();
                         excursion_date: excursion_date,
                         guests: guests
                     },
-                    beforeSend: function(response) {
+                    beforeSend: function (response) {
                         // Можно добавить индикатор загрузки
                     },
-                    complete: function(response) {
+                    complete: function (response) {
                         // Убрать индикатор загрузки
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response.error & !response.cart_hash) {
                             alert(response.error);
                             return;

@@ -98,9 +98,9 @@ document.addEventListener(
 
 				if (
 					scrolled >
-						80 &&
+					80 &&
 					scrolled >
-						scrollPrev
+					scrollPrev
 				) {
 					header.classList.add(
 						'header--hidden',
@@ -308,3 +308,5 @@ document.addEventListener(
 		//burger menu
 	},
 );
+
+

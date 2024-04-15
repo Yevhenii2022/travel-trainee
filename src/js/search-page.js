@@ -1,35 +1,32 @@
 jQuery(document).ready(function ($) {
     var preloader = $("#search-preloader");
+    var currentLanguage = document.documentElement.lang;
     function getQueryParam(param) {
         var params = new URLSearchParams(window.location.search);
         return params.get(param);
     }
-
-
     var searchQuery = getQueryParam('s');
 
 
     if (searchQuery) {
         $('#search-bar__input').val(searchQuery);
-
         setTimeout(() => { $('#search-bar__button').click(); }, 0)
 
     }
 
-
     // Обработчик клика на кнопку поиска
     $('#search-bar__button').on('click', function () {
         var query = $('#search-bar__input').val();
-        fetchData(query, 'all', 'all'); // 
+        fetchData(query, 'all', 'all', currentLanguage); // 
     });
 
-    
+
     $(document).on('click', '.search-result__tab', function () {
         preloader.show();
         var category = $(this).data('category');
         var postType = $(this).data('post');
         var query = $('#search-bar__input').val();
-        fetchData(query, category, postType);
+        fetchData(query, category, postType, currentLanguage);
         $('.search-result__tab').each(function (index, element) {
             var $item = $(element);
             if ($item.hasClass('search-result__tab--selected')) {
@@ -46,13 +43,13 @@ jQuery(document).ready(function ($) {
         var selectedOption = $(this).find('option:selected');
         var category = selectedOption.data('category') ? selectedOption.data('category') : 'all';
         var postType = selectedOption.data('post') ? selectedOption.data('post') : 'all';
-    
-        fetchData(query, category, postType);
+
+        fetchData(query, category, postType, currentLanguage);
     });
 
 
     // Функция для выполнения AJAX запроса
-    function fetchData(query, category, postType) {
+    function fetchData(query, category, postType, currentLanguage) {
         $('.search-result__result').html('')
         preloader.show();
         $.ajax({
@@ -63,7 +60,8 @@ jQuery(document).ready(function ($) {
                 query: query,
                 category: category,
                 postType: postType,
-                security: myAjaxPage.nonce
+                security: myAjaxPage.nonce,
+                lang: currentLanguage
             },
             success: function (response) {
                 preloader.hide();
@@ -76,12 +74,12 @@ jQuery(document).ready(function ($) {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let clear = document.getElementById('search-bar__clear');
-    if(clear){
-        clear.addEventListener('click', function() {
+    if (clear) {
+        clear.addEventListener('click', function () {
             document.getElementById('search-bar__input').value = '';
         });
     }
-    
+
 });

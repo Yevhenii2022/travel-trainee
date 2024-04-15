@@ -5,7 +5,7 @@ function my_ajax_search()
 {
     // Проверяем nonce для безопасности
     check_ajax_referer('my_ajax_search_nonce', 'security');
-
+    $lang = sanitize_text_field($_POST['lang']);
     $query = sanitize_text_field($_POST['query']);
     $search_results = new WP_Query(
         array(
@@ -16,17 +16,16 @@ function my_ajax_search()
     );
     $total_posts = $search_results->found_posts;
 
-    if ($search_results->have_posts()) : ?>
-        <div class="search__total">(
-            <?= $total_posts ?>)<span>
+    if ($search_results->have_posts()): ?>
+        <div class="search__total">(<?= $total_posts ?>)<span>
                 <?php pll_e('Результатов') ?>
             </span>
         </div>
-        <?php while ($search_results->have_posts()) :
+        <?php while ($search_results->have_posts()):
             $search_results->the_post(); ?>
 
             <a class="search__link" href="<?= get_permalink() ?>">
-                <?php if (get_the_title()) : ?>
+                <?php if (get_the_title()): ?>
                     <h4>
                         <?= get_the_title() ?>
                     </h4>
@@ -35,15 +34,22 @@ function my_ajax_search()
 
         <?php endwhile; ?>
         <div id="search__btn" class="btn search__button">
-            <span class="btn--top-text"><?= pll_e('Все результаты') ?></span>
-            <span class="btn--bottom-text"><?= pll_e('Все результаты') ?></span>
+            <div class="btn__text">
+                <span>
+                    <?= pll_e('Все результаты') ?>
+                </span>
+                <span>
+                    <?= pll_e('Все результаты') ?>
+                </span>
+            </div>
+
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
             </svg>
         </div>
-    <?php
+        <?php
 
-    else :
+    else:
         echo '<p class="search__results-nothing">';
         pll_e("Нічого не знайдено");
         echo '</p>';
@@ -117,7 +123,7 @@ function my_ajax_search_page()
     } else {
         echo '<script>document.querySelector(".search__title-find").style.display = "none"; document.querySelector(".search__title-empty").style.display = "block"</script>';
     }
-    if ($search_results->have_posts()) :
+    if ($search_results->have_posts()):
 
         echo '<div class="search-result__filter" >';
         echo '<p class="search-result__filter-heading">';
@@ -126,7 +132,7 @@ function my_ajax_search_page()
         echo '<span class="search-result__tab search-result__tab--selected" data-category="all" data-post="all">'; ?>
         <?php pll_e('Все результаты') ?>
         <?php echo '</span>';
-        while ($search_results->have_posts()) :
+        while ($search_results->have_posts()):
             $search_results->the_post();
 
 
@@ -136,19 +142,19 @@ function my_ajax_search_page()
             if (!empty($post_type_slug)) {
                 $unique_post_type_slugs[] = $post_type_slug;
             }
-        ?>
+            ?>
 
-            <?php endwhile;
+        <?php endwhile;
 
         $unique_post_type_slugs = array_unique($unique_post_type_slugs);
         $unique_post_type_slugs_string = join(', ', $unique_post_type_slugs);
 
 
-        if (!empty($unique_post_type_slugs_string)) :
+        if (!empty($unique_post_type_slugs_string)):
             $unique_post_type_slugs_array = explode(', ', $unique_post_type_slugs_string);
-            foreach ($unique_post_type_slugs_array as $unique_post_type_slug) :
+            foreach ($unique_post_type_slugs_array as $unique_post_type_slug):
                 $post_type_object = get_post_type_object($unique_post_type_slug); // Получаем 
-                if ($post_type_object) : ?>
+                if ($post_type_object): ?>
                     <span class="search-result__tab" data-post="<?= esc_attr($unique_post_type_slug); ?>">
 
                         <?php
@@ -162,52 +168,57 @@ function my_ajax_search_page()
 
                         ?>
                     </span>
-        <?php endif;
+                <?php endif;
             endforeach;
         endif; ?>
         </div>
 
-        <?php endif;
+    <?php endif;
 
     echo '<div class="search-result__result" >';
-    if ($search_results->have_posts()) :
-        while ($search_results->have_posts()) :
+    if ($search_results->have_posts()):
+        while ($search_results->have_posts()):
             $search_results->the_post();
 
             $post_type_slug = get_post_type();
-        ?>
+            ?>
 
             <a href="<?= get_permalink() ?>" class="search-result__item" data-post="<?= esc_attr($post_type_slug); ?>">
                 <div class="search-result__image">
-                    <?php if (get_the_post_thumbnail_url()) : ?>
+                    <?php if (get_the_post_thumbnail_url()): ?>
                         <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
+                    <?php else: ?>
+                        <img src="wp-content/themes/pointer-theme/src/img/img-placeholder.png" alt="">
                     <?php endif ?>
                 </div>
-                <?php if ($post_type_slug) : ?>
+                <?php if ($post_type_slug): ?>
                     <div class="search-result__info">
                         <div class="search-result__top">
-                            <div class="search-result__tag">
-                                <?php $post_type_obj = get_post_type_object($post_type_slug);
-
-                                if ($post_type_obj) {
-
-                                    if ($post_type_obj->labels->singular_name == 'Post') {
+                            <?php
+                            $post_type_obj = get_post_type_object($post_type_slug);
+                            $post_type_singular_name = $post_type_obj->labels->singular_name;
+                           
+                            if ($post_type_singular_name == 'Post' || $post_type_singular_name == 'Запис' || $post_type_singular_name == 'Экскурсії' || $post_type_singular_name == 'Экскурсии'):
+                                ?>
+        
+                                <div class="search-result__tag">
+                                    <?php
+                                    if ($post_type_singular_name == 'Post' || $post_type_singular_name == 'Запис') {
                                         pll_e('Блог');
-                                    }
-                                    if ($post_type_obj->labels->singular_name == 'Product') {
+                                    } else if ($post_type_singular_name == 'Экскурсії' || $post_type_singular_name == 'Экскурсии') {
                                         pll_e('Экскурсия');
                                     }
-                                } ?>
-                            </div>
+                                    ?>
+                                </div>
+                            <?php endif; ?>
 
-
-                            <?php if (get_the_title()) : ?>
+                            <?php if (get_the_title()): ?>
                                 <h3 class="search-result__title">
                                     <?= get_the_title() ?>
                                 </h3>
                             <?php endif ?>
 
-                            <?php if (get_the_excerpt()) : ?>
+                            <?php if (get_the_excerpt()): ?>
                                 <p class="search-result__excerpt">
                                     <?= get_the_excerpt() ?>
                                 </p>
@@ -215,8 +226,15 @@ function my_ajax_search_page()
                         </div>
 
                         <div class="search-result__more btn">
-                            <span class="btn--top-text"><?php pll_e('Детальніше') ?></span>
-                            <span class="btn--bottom-text"><?php pll_e('Детальніше') ?></span>
+                            <div class="btn__text">
+                                <span>
+                                    <?php pll_e('Детальніше') ?>
+                                </span>
+                                <span>
+                                    <?php pll_e('Детальніше') ?>
+                                </span>
+                            </div>
+
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1">
                                 </path>
@@ -228,7 +246,7 @@ function my_ajax_search_page()
 
             </a>
 
-<?php endwhile;
+        <?php endwhile;
     endif;
     echo '</div>';
     wp_reset_postdata();

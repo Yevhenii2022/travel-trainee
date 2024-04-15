@@ -13,15 +13,26 @@ get_header();
 
 <main style="height: 100vh; background-color: #eaf2f5;">
 	<div style=" padding: 15rem 10rem;">
-		<h1 class="section__title"><?php pll_e('Такая страница отсутствует') ?></h1>
+		<h1 class="section__title">
+			<?php pll_e('Такая страница отсутствует') ?>
+		</h1>
 		<a class="btn" href="<?php echo home_url(); ?>" aria-label="посилання на головну сторінку">
-			<?php pll_e('Назад к главной странице') ?>
+			<div class="btn__text">
+				<span>
+					<?php pll_e('Назад к главной странице') ?>
+				</span>
+				<span>
+					<?php pll_e('Назад к главной странице') ?>
+				</span>
+			</div>
+
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
+				<path stroke-linecap="round" stroke-linejoin="round"
+					d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
 			</svg>
 		</a>
 	</div>
 
-	<?php get_footer();	?>
+	<?php get_footer(); ?>
 
 </main>

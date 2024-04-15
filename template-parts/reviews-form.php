@@ -26,26 +26,12 @@
         </svg>
      </label>
    </div>
-
-   <div class="reviews-form__rating">
+  <div class="reviews-form__rating">
     {Оценка}
     [star_rating star_rating-511 class:reviews-form-img max:5]
   </div>
-
   <div class="reviews-form__inner">
-   <label><div id="search__btn" class="btn search__button">
-            <div class="btn__text">
-                <span>{Отправить} </span>
-                <span>{Отправить} </span>
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 12" fill="none">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5.849 9.637 9.485 6m0 0L5.85 2.363M9.485 6H1" />
-            </svg>
-        </div>
- [submit class:form__button class:reviews-form__button "{Отправить}"]
- </label>
-   
+    [submit class:form__button class:reviews-form__button "{Отправить}"]
 
    <div class="reviews-form__file">
      <label><p class="reviews-form__file-text">{Добавить фото}</p>[file file filetypes:png|jpeg|jpg]</label>

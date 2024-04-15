@@ -1,35 +1,27 @@
 @font-face {
-	font-display: swap;
-	font-family: 'Kudryashev';
-	font-style: normal;
-	font-weight: 400;
-	src:
-		url('/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff2')
-			format(
-				'woff2'
-			),
-		url('/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff')
-			format('woff'),
-		url('/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.ttf')
-			format(
-				'truetype'
-			);
+  font-display: swap;
+  font-family: "Kudryashev";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff2")
+      format("woff2"),
+    url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.woff")
+      format("woff"),
+    url("/wp-content/themes/pointer-theme/src/fonts/Kudryashev-Regular.ttf")
+      format("truetype");
 }
 
 @font-face {
-	font-display: swap;
-	font-family: 'Helvetica';
-	font-style: normal;
-	font-weight: 400;
-	src:
-		url('/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff2')
-			format(
-				'woff2'
-			),
-		url('/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff')
-			format('woff'),
-		url('/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.ttf')
-			format(
-				'truetype'
-			);
+  font-display: swap;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff2")
+      format("woff2"),
+    url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.woff")
+      format("woff"),
+    url("/wp-content/themes/pointer-theme/src/fonts/HelveticaNeueCyr-Roman.ttf")
+      format("truetype");
 }

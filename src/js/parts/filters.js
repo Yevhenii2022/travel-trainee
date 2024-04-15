@@ -135,6 +135,7 @@ if(window.innerWidth < 542){
     if(document.querySelector('.excursions-page__filters-button') && document.querySelector('.excursions-page__filters')){
         document.querySelector('.excursions-page__filters-button').addEventListener('click', function() {
             document.querySelector('.excursions-page__filters').classList.add('open');
+            document.querySelector('.excursions-page__filters-button').classList.add('open');
         });
 
         document.addEventListener('click', function(event) {
@@ -142,6 +143,7 @@ if(window.innerWidth < 542){
             const button = document.querySelector('.excursions-page__filters-button');
             if (!filters.contains(event.target) && event.target !== button) {
                 filters.classList.remove('open');
+                document.querySelector('.excursions-page__filters-button').classList.remove('open');
             }
         });
     }

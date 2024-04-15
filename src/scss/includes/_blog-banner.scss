@@ -1,72 +1,57 @@
 .blog-banner {
-	margin-bottom: 5.143rem;
-	display: flex;
-	background-color: $white;
+  margin-bottom: 5.143rem;
+  display: flex;
+  background-color: $white;
 
-	@include media(
-		mobile
-	) {
-		display: none;
-	}
+  @include media(mobile) {
+    display: none;
+  }
 
-	&__image {
-		width: 51%;
-		img {
-			height: 37.786rem;
+  &__image {
+    width: 51%;
+    img {
+      height: 37.786rem;
 
-			@include media(
-				tablet
-			) {
-				height: 31.7rem;
-			}
-		}
-	}
+      @include media(tablet) {
+        height: 31.7rem;
+      }
+    }
+  }
 
-	&__wrapper {
-		width: 50%;
-		padding: 2.286rem
-			12.143rem
-			2.286rem
-			3.3rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+  &__wrapper {
+    width: 50%;
+    padding: 2.286rem 12.143rem 2.286rem 3.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-		@include media(
-			tablet
-		) {
-			padding: 2.2rem
-				4.1rem
-				2.2rem
-				2.3rem;
-		}
+    @include media(tablet) {
+      padding: 2.2rem 4.1rem 2.2rem 2.3rem;
+    }
 
-		p {
-			margin-bottom: 0.7rem;
-			height: 5rem;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 4;
-			overflow: hidden;
-			line-height: 1.2;
-		}
-	}
+    p {
+      margin-bottom: 0.7rem;
+      height: 5rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      line-height: 1.2;
+    }
+  }
 
-	&__time {
-		opacity: 0.4;
-		line-height: 1.2;
-	}
+  &__time {
+    opacity: 0.4;
+    line-height: 1.2;
+  }
 
-	&__title {
-		margin: 1.143rem
-			0;
-		font-size: 3.929rem;
-		letter-spacing: -0.16rem;
+  &__title {
+    margin: 1.143rem 0;
+    font-size: 3.929rem;
+    letter-spacing: -0.16rem;
 
-		@include media(
-			tablet
-		) {
-			font-size: 3.1rem;
-		}
-	}
+    @include media(tablet) {
+      font-size: 3.1rem;
+    }
+  }
 }
